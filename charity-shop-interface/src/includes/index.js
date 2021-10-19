@@ -1,7 +1,8 @@
 /* sets up the header of the website */
 
 import React from "react";
-import { Menu, NavLink, NavMenu } from "./navbarComponents";
+import { Menu, NavLink, NavMenu, Logo } from "./navbarComponents";
+import charityLogo from "../resources/Charity_Logo.png";
 
 const Navbar = () => {
 	return (
@@ -9,7 +10,7 @@ const Navbar = () => {
 			<Menu className={"menu"}>
 				{/* using NavLinks in order to show what menu button has been selected*/}
 				<NavLink to="/">
-					<h1>❀Charity</h1>
+					<Logo src={charityLogo}></Logo>
 				</NavLink>
 				<NavMenu>
 					<NavLink to="/about" activeStyle>

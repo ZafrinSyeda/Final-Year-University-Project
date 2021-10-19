@@ -6,13 +6,12 @@ import { NavLink as Link } from "react-router-dom";
 
 // sets up the styling for the entire menu
 export const Menu = styled.nav`
-	background: #0E540D;
+	background: #0e540d;
 	height: 90px;
 	justify-content: space-between;
 	display: flex;
 	padding: 30px;
 	z-index: 10;
-    font-weight
 `;
 
 /* sets up the styling for each of the individual links on the navigation bar*/
@@ -29,7 +28,8 @@ export const NavLink = styled(Link)`
         color: #80c476;
     }
     &.active {
-        background-color: #1A4819
+        text-decoration: underline;
+        color: #80c476;
     }
 `;
 
@@ -41,4 +41,8 @@ export const NavMenu = styled.div`
 	@media screen and (max-width: 768px) {
 		display: none;
 	}
+`;
+
+export const Logo = styled.img`
+	width: 80px;
 `;

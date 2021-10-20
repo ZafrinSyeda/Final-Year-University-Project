@@ -30,6 +30,7 @@ export const NavLink = styled(Link)`
     &.active {
         text-decoration: underline;
         color: #80c476;
+        background-color: #0d470c;
     }
 `;
 
@@ -44,5 +45,6 @@ export const NavMenu = styled.div`
 `;
 
 export const Logo = styled.img`
-	width: 80px;
+	width: 80px !important;
+	background: #0e540d;
 `;

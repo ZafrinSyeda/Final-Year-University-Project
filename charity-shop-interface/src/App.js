@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages";
 import CollectionBooking from "./pages/collectionBooking";
 import VoidPage from "./pages/voidPage";
+import ColllectionForm from "./pages/bookingFormPages/CollectionForm";
 
 function App() {
 	return (
@@ -19,6 +20,11 @@ function App() {
 				<Route path="/contact-us" exact component={VoidPage} />
 				<Route path="/shop" exact component={VoidPage} />
 				<Route path="/make-donation" exact component={VoidPage} />
+				<Route
+					path="/book-collection/collection-form"
+					exact
+					component={ColllectionForm}
+				/>
 			</Switch>
 		</Router>
 	);

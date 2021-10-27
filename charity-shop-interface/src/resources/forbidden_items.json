@@ -1,0 +1,48 @@
+[
+	{ "type": "Kitchenware", "items": ["Knives", "Scissors", "Refrigerators"] },
+	{
+		"type": "Safety Equipment",
+		"items": [
+			"Safety helmets",
+			"Safety harnesses",
+			"Cycle helmets",
+			"Life jackets",
+			"Buoyancy aids"
+		]
+	},
+	{
+		"type": "Children’s Items",
+		"items": [
+			"Inflatable toys",
+			"Car seats",
+			"Prams",
+			"Pushchairs",
+			"Buggies",
+			"Cots",
+			"High chairs",
+			"Cot mattresses",
+			"Soft toys without the CE label"
+		]
+	},
+	{
+		"type": "Soft Furnishings",
+		"items": [
+			"Used pillows and duvets (not pillow cases or mattress covers",
+			"Cushions",
+			"Furniture covers without fire safety labels"
+		]
+	},
+	{
+		"type": "Electrical Items",
+		"items": ["Electric blankets", "Power tools without instructions"]
+	},
+	{
+		"type": "Other",
+		"items": [
+			"Guns (including replicas)",
+			"Swords",
+			"Oil lamps",
+			"Prescription glasses"
+		]
+	}
+]

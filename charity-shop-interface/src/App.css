@@ -18,10 +18,13 @@ h1 {
 	text-align: center;
 }
 
-p {
+p,
+form {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 25px;
-	padding: 5%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	text-align: center;
 }
 
 body {
@@ -35,8 +38,15 @@ body {
 	padding-right: 20%;
 }
 
-.collectionStart {
+.defaultContainer {
+	align-items: center;
+	justify-content: center;
 	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.collectionStart {
+	padding-left: 8%;
 	padding-right: 40%;
 	padding-bottom: 5%;
 	text-align: center;

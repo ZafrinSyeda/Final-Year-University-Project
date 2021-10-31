@@ -2,11 +2,8 @@ import React from "react";
 import forbiddenItems from "../../resources/forbidden_items.json";
 import { useState } from "react";
 
-function Filter() {
+function HealthSafety() {
 	const [searchTerm, setSearchTerm] = useState("");
-}
-
-const healthSafety = ({ searchTerm, setSearchTerm }) => {
 	return (
 		<div>
 			<div className="defaultContainer">
@@ -49,7 +46,7 @@ const healthSafety = ({ searchTerm, setSearchTerm }) => {
 						<ul>
 							{val.items
 								.filter((item) => {
-									if ((searchTerm = "")) {
+									if (searchTerm == "") {
 										return item;
 									} else if (
 										item.toLowerCase().includes(searchTerm.toLowerCase())
@@ -66,6 +63,6 @@ const healthSafety = ({ searchTerm, setSearchTerm }) => {
 			</div>
 		</div>
 	);
-};
+}
 
-export default healthSafety;
+export default HealthSafety;

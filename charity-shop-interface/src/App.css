@@ -1,7 +1,7 @@
 /* Manages the CSS for the whole website */
 
-@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -11,7 +11,7 @@
 h1,
 h2,
 h3 {
-	font-family: "PT Serif", serif;
+	font-family: "Spectral", serif;
 }
 
 h1 {
@@ -19,20 +19,51 @@ h1 {
 }
 
 p,
-form {
-	font-family: Arial, Helvetica, sans-serif;
+form,
+label {
+	font-family: "Karla", sans-serif;
 	font-size: 25px;
 	padding-top: 2%;
 	padding-bottom: 2%;
 	text-align: center;
 }
 
+label {
+	display: block;
+	font-size: 18px;
+	text-align: center;
+	padding: 0;
+}
+
 body {
 	background-color: #f8f4e9;
 }
 
+ul {
+	list-style: none;
+}
+
+li {
+	font-family: "Karla", sans-serif;
+	font-size: 18px;
+}
+
+li::before {
+	content: "\2022";
+	padding-right: 10px;
+	color: #0e540d;
+}
+
+hr {
+	color: #e4dcca;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
 .title {
 	font-size: 50px;
+	font-weight: 800;
+
 	padding-top: 5%;
 	padding-left: 20%;
 	padding-right: 20%;
@@ -41,8 +72,10 @@ body {
 .defaultContainer {
 	align-items: center;
 	justify-content: center;
-	padding-left: 5%;
-	padding-right: 5%;
+	padding-left: 250px;
+	padding-right: 250px;
+	padding-bottom: 2%;
+	text-align: center;
 }
 
 .collectionStart {
@@ -74,15 +107,16 @@ button:hover {
 	display: flex;
 	flex-flow: row wrap;
 	flex-basis: 10px;
-	padding: 5%;
+	padding: 10px;
+	padding-bottom: 5%;
 	align-items: center;
 	justify-content: center;
 }
 
 .containerItem {
 	width: 33%;
-	padding-right: 5%;
-	padding-left: 5%;
+	padding-right: 2%;
+	padding-left: 2%;
 	font-weight: bold;
 	text-align: center;
 }
@@ -97,4 +131,50 @@ button:hover {
 	padding: 15px;
 	font-weight: bold;
 	width: 20%;
+}
+
+#filter-items {
+	display: inline-block;
+	width: 60%;
+	padding: 15px 20px;
+	background-color: #ffffff;
+	font-size: 15px;
+}
+
+.containerLi {
+	width: 33%;
+	padding-right: 5%;
+	padding-left: 5%;
+	padding-top: 0%;
+	text-align: left;
+}
+
+.item-warn-good,
+.item-warn-bad {
+	display: flex;
+	justify-content: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 10px;
+}
+.item-warn-good {
+	color: #ffffff;
+	background-color: #529447;
+	border: solid 1px #0e540d;
+}
+
+.item-warn-bad {
+	color: #ffffff;
+	background-color: #d64b4b;
+	border: solid 1px #6b1d1d;
+}
+
+.left-h1 {
+	text-align: left;
+}
+
+.sm-p {
+	font-size: 20px;
+	font-weight: normal;
 }

@@ -7,8 +7,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages";
 import CollectionBooking from "./pages/collectionBooking";
 import About from "./pages/about";
-import VoidPage from "./pages/voidPage";
 import ColllectionForm from "./pages/bookingFormPages/CollectionForm";
+import Shop from "./pages/Shop";
+import Donate from "./pages/Donate.js";
 
 function App() {
 	return (
@@ -18,8 +19,8 @@ function App() {
 				<Route path="/" exact component={Home} />
 				<Route path="/book-collection" exact component={CollectionBooking} />
 				<Route path="/about" exact component={About} />
-				<Route path="/shop" exact component={VoidPage} />
-				<Route path="/make-donation" exact component={VoidPage} />
+				<Route path="/shop" exact component={Shop} />
+				<Route path="/make-donation" exact component={Donate} />
 				<Route
 					path="/book-collection/collection-form"
 					exact

@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 
 // sets up the styling for the entire menu
+
 export const Menu = styled.nav`
 	background: #0e540d;
 	height: 90px;
@@ -26,6 +27,7 @@ export const NavLink = styled(Link)`
 
     :hover {
         color: #80c476;
+        background-color: #0d470c;
     }
     &.active {
         text-decoration: underline;

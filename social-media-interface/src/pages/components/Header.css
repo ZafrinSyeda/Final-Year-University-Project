@@ -1,0 +1,33 @@
+.header {
+	height: 60px;
+	background-color: #f0f0f0;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.header button {
+	margin: 10px;
+	height: 30px;
+	font-size: 15px;
+	font-weight: bold;
+	background-color: #6e8acd;
+	border: none;
+	padding: 0px 10px;
+	color: #fff;
+	opacity: 70%;
+}
+
+.header .logout {
+	background-color: #c92929;
+}
+
+.header .edit {
+	background-color: transparent;
+	color: #6e8acd;
+}
+
+.header button:hover {
+	opacity: 100%;
+}

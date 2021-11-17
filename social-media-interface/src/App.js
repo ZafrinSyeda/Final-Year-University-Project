@@ -2,6 +2,8 @@ import "./App.css";
 import React, { useState } from "react";
 import LoginForm from "./pages/Login";
 import Profile from "./pages/Profile";
+import HeaderMenu from "./pages/components/HeaderMenu";
+import UserProfile from "./pages/components/UserProfile";
 
 function App() {
 	const userDetails = {
@@ -35,7 +37,13 @@ function App() {
 	return (
 		<div className="App">
 			{user.username !== "" ? (
-				<Profile Logout={Logout} />
+				<div className="profilePage">
+					<HeaderMenu Logout={Logout} />
+					<div className="container">
+						<UserProfile />
+						<Profile />
+					</div>
+				</div>
 			) : (
 				<LoginForm Login={Login} error={error} />
 			)}

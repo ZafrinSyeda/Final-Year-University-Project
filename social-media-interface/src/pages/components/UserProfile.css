@@ -1,0 +1,18 @@
+.userProfile {
+	flex: 1;
+	background-color: #f0f0f0;
+}
+
+.sideProfile {
+	background-color: #fff;
+	height: 70vh;
+	width: 250px;
+	margin: 30px 50px;
+	padding: 20px;
+}
+
+img {
+	height: 150px;
+	width: 150px;
+	object-fit: cover;
+}

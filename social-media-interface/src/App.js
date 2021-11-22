@@ -39,10 +39,7 @@ function App() {
 			{user.username !== "" ? (
 				<div className="profilePage">
 					<HeaderMenu Logout={Logout} />
-					<div className="container">
-						<UserProfile />
-						<Profile />
-					</div>
+					<Profile />
 				</div>
 			) : (
 				<LoginForm Login={Login} error={error} />

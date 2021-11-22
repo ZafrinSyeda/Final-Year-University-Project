@@ -15,7 +15,7 @@
 	height: 30px;
 	font-size: 15px;
 	font-weight: bold;
-	background-color: #6e8acd;
+	background-color: #7f7f7f;
 	border: none;
 	padding: 0px 10px;
 	color: #fff;
@@ -28,7 +28,7 @@
 
 .header .edit {
 	background-color: transparent;
-	color: #6e8acd;
+	color: #7f7f7f;
 }
 
 .header button:hover {

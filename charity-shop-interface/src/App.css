@@ -76,11 +76,12 @@ form hr {
 	padding-right: 20%;
 }
 
+.homePage,
 .defaultContainer {
 	align-items: center;
 	justify-content: center;
-	padding-left: 250px;
-	padding-right: 250px;
+	padding-left: 20%;
+	padding-right: 20%;
 	padding-bottom: 2%;
 	text-align: center;
 }
@@ -90,6 +91,24 @@ form hr {
 	padding-right: 40%;
 	padding-bottom: 5%;
 	text-align: center;
+}
+
+.homePromo .title {
+	padding-left: 5%;
+	padding-right: 30%;
+}
+.homePromo p {
+	padding: 5%;
+	color: #ecedfc;
+	font-weight: bold;
+}
+
+.homePage {
+	padding: 10%;
+}
+
+.homePage button {
+	margin: 10px;
 }
 
 button {
@@ -224,7 +243,8 @@ button:hover {
 	border: solid 2px #0e540d;
 }
 
-.donateForm .container-img-sm:hover {
+.donateForm .container-img-sm:hover,
+.donateForm .container-img-sm:focus {
 	transform: scale(1);
 	opacity: 1;
 }
@@ -266,6 +286,10 @@ button:hover {
 	box-shadow: none;
 }
 
+.donateForm [type="radio"]:focus + label {
+	border: 2px solid #529447;
+}
+
 .donateRadio {
 	display: flex;
 	align-items: center;
@@ -295,5 +319,15 @@ button:hover {
 }
 
 .donateForm [type="submit"]:hover {
-	background-color: #6b1d1d;
+	background-color: #80c476;
+}
+
+.formError {
+	color: #ff0000;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.homePage {
+	padding: 5%;
 }

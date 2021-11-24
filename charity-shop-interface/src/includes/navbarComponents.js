@@ -13,6 +13,7 @@ export const Menu = styled.nav`
 	display: flex;
 	padding: 30px;
 	z-index: 10;
+	position: sticky;
 `;
 
 /* sets up the styling for each of the individual links on the navigation bar*/
@@ -47,6 +48,6 @@ export const NavMenu = styled.div`
 `;
 
 export const Logo = styled.img`
-	width: 80px !important;
+	height: 80px !important;
 	background: #0e540d;
 `;

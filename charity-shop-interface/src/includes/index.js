@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Menu, NavLink, NavMenu, Logo } from "./navbarComponents";
-import charityLogo from "../resources/Charity_Logo.png";
+import banner from "../resources/banner.png";
 
 const Navbar = () => {
 	return (
@@ -10,7 +10,7 @@ const Navbar = () => {
 			<Menu className={"menu"}>
 				{/* using NavLinks in order to show what menu button has been selected*/}
 				<NavLink to="/">
-					<Logo src={charityLogo}></Logo>
+					<Logo src={banner} alt="website banner"></Logo>
 				</NavLink>
 				<NavMenu>
 					<NavLink to="/about" activeStyle>

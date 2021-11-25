@@ -4,7 +4,6 @@ import hsword from "../resources/horizontal-sword.jpg";
 import vsword from "../resources/vertical-sword.jpg";
 import crab from "../resources/crab_watercolour.jpg";
 import { useState } from "react";
-import "./components/UserProfile.css";
 import "./Profile.css";
 import logo from "../resources/bigLogo.png";
 import Masonry from "@mui/lab/Masonry";

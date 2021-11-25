@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import LoginForm from "./pages/Login";
 import Profile from "./pages/Profile";
 import HeaderMenu from "./pages/components/HeaderMenu";
-import UserProfile from "./pages/components/UserProfile";
+import EditMenu from "./pages/components/EditMenu";
+import NewPost from "./pages/components/NewPost";
 
 function App() {
 	const userDetails = {
@@ -13,6 +14,7 @@ function App() {
 
 	const [user, setUser] = useState({ username: "" });
 	const [error, setError] = useState("");
+	const [edit, setEdit] = useState(false);
 
 	const Login = (details) => {
 		console.log(details);
@@ -31,14 +33,33 @@ function App() {
 
 	const Logout = () => {
 		setUser({ username: "" });
-		console.log("logging out");
+	};
+
+	const EditPage = () => {
+		setEdit(!edit);
+	};
+
+	const [createPost, setCreatePost] = useState(false);
+
+	const ToggleCreatePost = () => {
+		setCreatePost(!createPost);
+		console.log(createPost);
 	};
 
 	return (
 		<div className="App">
 			{user.username !== "" ? (
 				<div className="profilePage">
-					<HeaderMenu Logout={Logout} />
+					{!edit ? (
+						<HeaderMenu
+							Logout={Logout}
+							EditPage={EditPage}
+							NewPost={ToggleCreatePost}
+						/>
+					) : (
+						<EditMenu CloseEdit={EditPage} />
+					)}
+					{createPost ? <NewPost Close={ToggleCreatePost} /> : null}
 					<Profile />
 				</div>
 			) : (

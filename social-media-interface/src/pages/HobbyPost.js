@@ -12,7 +12,7 @@ export const HobbyPost = (props) => {
 						<p>
 							<i>{post.title}</i>
 						</p>
-						<p>{post.description}</p>
+						<description>{post.description}</description>
 					</div>
 				</div>
 			))}

@@ -93,7 +93,7 @@ const Profile = () => {
 						it obvious for the user to go back to view all posts */
 						<p>
 							<button className="back" onClick={() => setActiveButton(0)}>
-								<BiArrowBack size={20} />
+								<BiArrowBack size={20} data-testid="backBtn" />
 							</button>{" "}
 						</p>
 					) : null}

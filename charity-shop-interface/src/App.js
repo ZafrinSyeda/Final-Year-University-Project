@@ -2,11 +2,11 @@
 
 import React from "react";
 import "./App.css";
-import Navbar from "./includes/index";
+import Navbar from "./includes/Navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./pages";
+import Home from "./pages/Home";
 import CollectionBooking from "./pages/collectionBooking";
-import About from "./pages/about";
+import About from "./pages/About";
 import ColllectionForm from "./pages/bookingFormPages/CollectionForm";
 import Shop from "./pages/Shop";
 import Donate from "./pages/Donate.js";
@@ -16,10 +16,15 @@ function App() {
 		<Router>
 			<Navbar />
 			<Switch>
+				{/* Route that directs to the home page */}
 				<Route path="/" exact component={Home} />
+				{/* Route that directs to the 'book a collection' page */}
 				<Route path="/book-collection" exact component={CollectionBooking} />
+				{/* Route that directs to the about us page */}
 				<Route path="/about" exact component={About} />
+				{/* Route that directs to the shop page */}
 				<Route path="/shop" exact component={Shop} />
+				{/* Route that directs to the collection booking form */}
 				<Route path="/make-donation" exact component={Donate} />
 				<Route
 					path="/book-collection/collection-form"

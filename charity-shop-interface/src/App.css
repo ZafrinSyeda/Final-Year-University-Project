@@ -1,7 +1,10 @@
 /* Manages the CSS for the whole website */
 
+/* Google font imports that are used throughout the website */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+/* GLOBAL STYLES: */
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -48,10 +51,24 @@ li {
 	font-size: 18px;
 }
 
+/* Represents how the bullet point should look for a list item*/
 li::before {
 	content: "\2022";
 	padding-right: 10px;
 	color: #0e540d;
+}
+
+/* The button colour matches the colour of the menu to make them stand out but also remain consistent
+with the general colour scheme of the website */
+button {
+	background-color: #0e540d;
+	border: none;
+	color: white;
+	transition: 0.4s;
+}
+
+button:hover {
+	background-color: #80c476;
 }
 
 hr {
@@ -60,22 +77,25 @@ hr {
 	margin-bottom: 1%;
 }
 
+/*differs from the hr used elsewhere as it shouldn't take up the full size of a form, and it should
+be centered*/
 form hr {
 	width: 70%;
 	margin-left: auto;
 	margin-right: auto;
-	color: #ecedfc;
 }
 
+/* CLASSES USED THROUGHOUT: */
+/* Used to represent the title on each web page - the title usually matches the name on the menu */
 .title {
 	font-size: 50px;
 	font-weight: 800;
-
 	padding-top: 5%;
 	padding-left: 20%;
 	padding-right: 20%;
 }
 
+/* The default padding and sizes for most of the pages */
 .homePage,
 .defaultContainer {
 	align-items: center;
@@ -86,49 +106,7 @@ form hr {
 	text-align: center;
 }
 
-.collectionStart {
-	padding-left: 8%;
-	padding-right: 40%;
-	padding-bottom: 5%;
-	text-align: center;
-}
-
-.homePromo .title {
-	padding-left: 5%;
-	padding-right: 30%;
-}
-.homePromo p {
-	padding: 5%;
-	color: #ecedfc;
-	font-weight: bold;
-}
-
-.homePage {
-	padding: 10%;
-}
-
-.homePage button {
-	margin: 10px;
-}
-
-button {
-	background-color: #0e540d;
-	border: none;
-	color: white;
-	transition-duration: 0.65s;
-}
-
-button:hover {
-	background-color: #80c476;
-}
-
-.startBooking {
-	font-size: 25px;
-	padding: 10px;
-	font-weight: bold;
-	width: 50%;
-}
-
+/* flex container that fits 3 divs onto one line */
 .threeContainer {
 	display: flex;
 	flex-flow: row wrap;
@@ -139,46 +117,17 @@ button:hover {
 	align-items: stretch;
 }
 
+/* the div that exists within threecontainer */
 .containerItem {
 	width: 33%;
-	padding-right: 2%;
-	padding-left: 2%;
+	padding: 0 2%;
 	font-weight: bold;
 	text-align: center;
 	align-items: center;
 	justify-content: space-between;
 }
 
-.container-img {
-	max-width: 90%;
-	max-height: 90%;
-}
-
-.container-img-sm {
-	display: inline-block;
-	height: 150px;
-	transition: transform 0.2s;
-}
-
-.container-img-sm:hover {
-	transform: scale(1.15);
-}
-
-.topScrollButton {
-	font-size: 20px;
-	padding: 15px;
-	font-weight: bold;
-	width: 20%;
-}
-
-#filter-items {
-	display: inline-block;
-	width: 60%;
-	padding: 15px 20px;
-	background-color: #ffffff;
-	font-size: 15px;
-}
-
+/* Represents a list item in 3-column flex div*/
 .containerLi {
 	width: 33%;
 	padding-right: 5%;
@@ -188,45 +137,81 @@ button:hover {
 	align-items: center;
 }
 
-.item-warn-good,
-.item-warn-bad {
-	display: flex;
-	justify-content: center;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 18px;
-	font-weight: bold;
-	padding: 10px;
-}
-.item-warn-good {
-	color: #ffffff;
-	background-color: #529447;
-	border: solid 1px #0e540d;
+/* a medium sized image */
+.container-img {
+	height: 200px;
 }
 
-.item-warn-bad {
-	color: #ffffff;
-	background-color: #d64b4b;
-	border: solid 1px #6b1d1d;
+/* a small image that enlarges on hover*/
+.container-img-sm {
+	display: inline-block;
+	height: 150px;
+	transition: transform 0.2s;
+}
+.container-img-sm:hover {
+	transform: scale(1.15);
 }
 
-.left-h1 {
+/* a style of button that may frequently be used in the website */
+.cshButton {
+	font-size: 20px;
+	padding: 15px;
+	width: 20%;
+}
+
+/* the default heading is aligned towards the center but this class allows for it to
+align towards the left where needed*/
+.leftH1 {
 	text-align: left;
 }
 
-.sm-p {
+/* used when providing extra information about something but it doesn't need to stand out too much */
+.description {
 	font-size: 20px;
 	font-weight: normal;
 	font-style: italic;
 }
-.containerItem h2 {
+
+/* HOME PAGE SPECIFIC: */
+/* Used as text for the promotional image at the front of the home page */
+.promo {
+	font-size: 40px;
+	font-family: "Karla", sans-serif;
+	font-weight: 800;
+	padding-right: 30%;
+	padding-left: 5%;
+	padding-top: 5%;
+}
+
+/* Adjusts the placing of the title so the text doesn't clash with a background image */
+.homePromo .title {
+	padding-left: 5%;
+	padding-right: 30%;
+}
+
+/* Makes the font white to not clash with the image */
+.homePromo p {
+	padding: 5%;
+	color: #ecedfc;
+	font-weight: bold;
+}
+
+/* Used for the main div on the home page */
+.homePage {
+	padding: 5%;
+}
+
+/* used when promoting something so it stands out, but also so it can be used as a link*/
+/* for the heading part of the promotion */
+.clickableHeading {
 	border: solid 3px #529447;
 	transition-duration: 0.4s;
 }
-.containerItem h2:hover {
+.clickableHeading:hover {
 	background-color: #529447;
 	color: #ffffff;
 }
-
+/* for the link part of the promotion */
 .pageLink {
 	font-family: "Spectral", serif;
 	color: black;
@@ -238,11 +223,66 @@ button:hover {
 	color: #ffffff;
 }
 
+/* SPECIFIC TO COLLECTION BOOKING: */
+/* The button used on the collection booking page */
+.collectionStart {
+	padding-left: 8%;
+	padding-right: 40%;
+	padding-bottom: 5%;
+	text-align: center;
+}
+
+/* This button should stand out a bit more on the page as it is likely a button people 
+will look for when they click onto collection booking from the menu */
+.startBooking {
+	font-size: 25px;
+	padding: 10px;
+	font-weight: bold;
+	width: 50%;
+}
+
+/* represents the search bar on the health and safety page */
+#filter-items {
+	display: inline-block;
+	width: 60%;
+	padding: 15px 20px;
+	background-color: #ffffff;
+	font-size: 15px;
+}
+
+/*  Represents the warning box that appears depending on the user's search term in the health 
+and safety form */
+.itemWarnGood,
+.itemWarnBad {
+	display: flex;
+	justify-content: center;
+	font-family: "Karla", sans-serif;
+	font-size: 18px;
+	font-style: italic;
+	font-weight: bold;
+}
+
+/* if the user can donate an item the box is green */
+.itemWarnGood {
+	color: #ffffff;
+	background-color: #529447;
+	border: 1px solid #0e540d;
+}
+
+/* if the user can't donate an item the box is red */
+.itemWarnBad {
+	color: #ffffff;
+	background-color: #d64b4b;
+}
+
+/* SPECIFIC TO THE DONATION FORM: */
+/* the background of the fom itself */
 .donateForm {
 	background-color: #ffffff;
 	border: solid 2px #0e540d;
 }
 
+/* images used as radio buttons are initially a low opacity and then on hover become clearer */
 .donateForm .container-img-sm:hover,
 .donateForm .container-img-sm:focus {
 	transform: scale(1);
@@ -261,15 +301,23 @@ button:hover {
 	opacity: 0.6;
 }
 
+/* for when an image radio button has been selected */
 .donateForm [type="radio"]:checked + img {
 	outline: 5px solid #529447;
 	opacity: 1;
 }
 
+/* for when an image radio button has been selected */
+.donateForm [type="radio"]:focus + img {
+	opacity: 1;
+}
+
+/* for when a regular radio button has been checked */
 .donateForm [type="radio"]:checked {
 	color: #529447;
 }
 
+/* for radio buttons that have not been selected yet*/
 .donateForm [type="radio"] + label {
 	display: flex;
 	align-items: center;
@@ -279,6 +327,7 @@ button:hover {
 	justify-content: center;
 }
 
+/* for when the radio button has been selected */
 .donateForm [type="radio"]:checked + label {
 	background-color: #529447;
 	color: #ecedfc;
@@ -286,6 +335,7 @@ button:hover {
 	box-shadow: none;
 }
 
+.donateForm [type="radio"]:hover + label,
 .donateForm [type="radio"]:focus + label {
 	border: 2px solid #529447;
 }
@@ -326,8 +376,4 @@ button:hover {
 	color: #ff0000;
 	font-size: 16px;
 	font-weight: bold;
-}
-
-.homePage {
-	padding: 5%;
 }

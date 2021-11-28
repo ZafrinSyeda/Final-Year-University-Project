@@ -1,3 +1,5 @@
+/* FOR THE USER'S POSTS */
+/* the div that displays the user's posts*/
 .profile {
 	flex: 4;
 	background-color: #f0f0f0;
@@ -6,11 +8,14 @@
 	padding-left: 350px;
 }
 
+/* the style for when one hobby has been selected - the posts are displayed in one column 
+that is centered in the profile div */
 .selectedHobby {
 	margin: 0 auto;
 	width: 70%;
 }
 
+/* the outside container of the boxes for the posts, which also conatin the post dates */
 .postPreview {
 	background-color: #111111;
 	color: #fff;
@@ -18,6 +23,8 @@
 	border: 5px solid #111111;
 }
 
+/* the inner div for a post preview for both displaying all the posts and the posts of one
+specific hobby*/
 .postContainer,
 .hobbyPostContainer {
 	background-color: #fff;
@@ -26,23 +33,30 @@
 	object-fit: cover;
 }
 
+/* as when the posts of one specific hobby is displayed in a single column, if a post is too
+ long the user may have to scroll too much so if it reaches a certain height it will become a 
+ scrollable div instead */
 .hobbyPostContainer {
 	max-height: 80vh;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
 
+/* shows the whole image of a post as it's often the focal point */
 .postImg {
 	width: 100%;
 	height: 100%;
 }
 
+/* the date displayed on a post */
 .date {
 	text-align: left;
 	font-size: 14px;
 	padding: 10px;
 }
 
+/* FOR THE USER'S SIDE BAR PROFILE*/
+/* the div for where the side profile is displayed on the side of the screen */
 .userProfile {
 	flex: 1;
 	background-color: #f0f0f0;
@@ -52,6 +66,7 @@
 	width: 300px;
 }
 
+/* the side profile itself which doesn't take up the full space */
 .sideProfile {
 	background-color: #fff;
 	height: 75vh;
@@ -61,32 +76,48 @@
 	padding: 20px;
 }
 
-img {
+/* the profile picture is a fixed size, and also rounded in shape*/
+.profilePicture {
 	height: 150px;
 	width: 150px;
+	border-radius: 75px;
 	object-fit: cover;
 }
 
-.hobbyButton {
-	background-color: #7f7f7f;
-	color: #fff;
-	width: 80%;
-	height: 40px;
-	margin: 10px;
-	font-size: 14px;
-	border: none;
-	padding: 2px;
+.profilePicture:hover {
+	border: 5px solid #111;
 }
 
+/* the buttons displayed on the side profile */
+.hobbyButton {
+	background-color: #fff;
+	color: #111;
+	width: 80%;
+	height: 50px;
+	margin: 10px;
+	font-size: 14px;
+	border: solid 2px #111;
+	border-radius: 5px;
+	padding: 2px;
+	transition: ease-in 0.2s;
+}
 .hobbyButton:hover,
 .active {
 	background-color: #111;
+	color: #fff;
+	font-weight: bold;
 }
 
-.upload {
-	top: 0;
+/* the button that's selected when the user wants to go back to viewing all posts */
+.back {
+	background-color: transparent;
+	border: none;
 }
 
+/* FOR UPLOADING A NEW POST: */
+/* the div for adding a new post - it is overlayed over the profile screen*/
+/* the background of the new post overlay, which makes the background slightly transparent in 
+opacity */
 .popup-outer {
 	padding-left: 350px;
 	padding-top: 100px;
@@ -97,7 +128,9 @@ img {
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
+/* the stylings of the upload form itself, which is made scrollable */
 .upload {
+	top: 0;
 	height: 90%;
 	width: 75%;
 	margin: auto;
@@ -106,18 +139,19 @@ img {
 	border-radius: 10px;
 	padding: 5%;
 	overflow: auto;
+	position: relative;
 }
 
+/* a button to cancel the process of uploading a new post */
 .cancel {
-	background-color: #c92929;
-	color: #fff;
+	background-color: transparent;
 	border: none;
-	padding: 5px;
-	margin: 10px;
-	height: 30px;
-	float: right;
+	position: absolute;
+	top: 0px;
+	right: 0px;
 }
 
+/* the label in the upload post form */
 .upload label {
 	font-size: 18px;
 }
@@ -125,19 +159,27 @@ img {
 .upload form {
 	padding: 5%;
 }
-form input[type="text"] {
+
+/* the input text boxes used in the form - they shouldnt span the length of the entire form*/
+.upload form input[type="text"] {
 	width: 300px;
 	font-size: 18px;
 }
 
+.upload button {
+	margin: 15px;
+}
+
+/* adds some space between items */
 br {
 	margin: 10px 0;
 }
 
+/* the text box where users can enter a post description*/
 .description {
 	height: 500px;
 }
 
-form input[type="radio"] {
+.upload form input[type="radio"] {
 	padding: 5%;
 }

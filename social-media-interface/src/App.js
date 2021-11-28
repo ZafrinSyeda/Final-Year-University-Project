@@ -1,5 +1,6 @@
-import "./App.css";
 import React, { useState } from "react";
+import "./App.css";
+/* Imports for the different pages that should be accessed */
 import LoginForm from "./pages/Login";
 import Profile from "./pages/Profile";
 import HeaderMenu from "./pages/components/HeaderMenu";
@@ -7,15 +8,22 @@ import EditMenu from "./pages/components/EditMenu";
 import NewPost from "./pages/components/NewPost";
 
 function App() {
+	/* Hardcoded user details in order to access a page */
 	const userDetails = {
 		username: "UserA",
 		password: "password123",
 	};
 
+	/* Used to take the user name to be used when logging in and logging out */
 	const [user, setUser] = useState({ username: "" });
+	/* Used to set the validation error if the username or password is incorrect */
 	const [error, setError] = useState("");
+	/* Variable that is set when the user wants to edit the user page or not */
 	const [edit, setEdit] = useState(false);
+	/* Variable that is set when the user wants to add a new post to their profile */
+	const [createPost, setCreatePost] = useState(false);
 
+	/* Used when the user is logging in, takes details from the login form */
 	const Login = (details) => {
 		console.log(details);
 
@@ -23,43 +31,54 @@ function App() {
 			details.username == userDetails.username &&
 			details.password == userDetails.password
 		) {
+			/* if the username and password matches the hardcoded versions, the user can login in */
 			setUser({
 				username: details.username,
 			});
+			/* if there is any error it is made back to nothing so when the user logs out the 
+			error message won't still be displayed */
+			setError("");
 		} else {
+			/* if there is some type of error, an error message will be displayed instead */
 			setError("Incorrect username or password!");
 		}
 	};
 
+	/* when the user logs out their user changes, and they will be set back to the login screen */
 	const Logout = () => {
 		setUser({ username: "" });
 	};
 
-	const EditPage = () => {
+	/* toggled to be true or false depending on whether the user wants to edit their profile page or
+	not */
+	const toggleEditPage = () => {
 		setEdit(!edit);
 	};
 
-	const [createPost, setCreatePost] = useState(false);
-
-	const ToggleCreatePost = () => {
+	/* toggled to be true or false depending on whether the user wants to add a new post or not */
+	const toggleCreatePost = () => {
 		setCreatePost(!createPost);
-		console.log(createPost);
 	};
 
 	return (
 		<div className="App">
+			{/* when the user logs in correctly, the username is set to the username, so when it's not blank 
+			the user profile should be displayed, otherwise a login page is shown */}
 			{user.username !== "" ? (
 				<div className="profilePage">
+					{/* if the user has clicked the button to edit their profile, the header is displayed
+					as an edit menu, otherwise it's set to the regular menu header */}
 					{!edit ? (
 						<HeaderMenu
 							Logout={Logout}
-							EditPage={EditPage}
-							NewPost={ToggleCreatePost}
+							EditPage={toggleEditPage}
+							NewPost={toggleCreatePost}
 						/>
 					) : (
-						<EditMenu CloseEdit={EditPage} />
+						<EditMenu CloseEdit={toggleEditPage} />
 					)}
-					{createPost ? <NewPost Close={ToggleCreatePost} /> : null}
+					{/* if the user wants to add a new post the NewPost page will be overlayed on the screen */}
+					{createPost ? <NewPost Close={toggleCreatePost} /> : null}
 					<Profile />
 				</div>
 			) : (

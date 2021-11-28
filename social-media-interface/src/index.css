@@ -16,6 +16,7 @@ h3 {
 	display: flex;
 }
 
+/* the background of the login form */
 .login {
 	display: block;
 	position: fixed;
@@ -30,7 +31,8 @@ h3 {
 	);
 }
 
-.login-form {
+/* the stylings for the login form itself that is displayed in the center of the screen */
+.loginForm {
 	position: relative;
 	margin: auto;
 	width: 550px;
@@ -44,18 +46,20 @@ h3 {
 	box-shadow: 2px 5px 5px 0px #76809b;
 }
 
-.login-logo {
+.loginLogo {
 	width: 300px;
 }
 
-.form-group {
+/* used for each section within the form */
+.formGroup {
 	display: block;
 	margin-bottom: 15px;
 	padding-left: 50px;
 	padding-right: 50px;
 }
 
-form .form-group label {
+/* the stylings of the labels used in the form */
+form .formGroup label {
 	display: block;
 	color: #444444;
 	font-size: 13px;
@@ -65,11 +69,13 @@ form .form-group label {
 	transition: 0.3s;
 }
 
-form .form-group:focus-within label {
+/* the label changes colour to highlight that it is being written to */
+form .formGroup:focus-within label {
 	color: #f46c9d;
 }
 
-form .form-group input {
+/* the input box of the form */
+form .formGroup input {
 	display: inline-block;
 	width: 100%;
 	padding: 10px 15px;
@@ -77,6 +83,7 @@ form .form-group input {
 	border-radius: 8px;
 }
 
+/* the button to log into the profile */
 form input[type="submit"] {
 	display: inline-block;
 	font-size: 20px;
@@ -87,15 +94,15 @@ form input[type="submit"] {
 	color: #fff;
 	transition: all 0.3s ease-in;
 }
-
 form input[type="submit"]:hover {
 	background-color: #ffb4d1;
 }
 
+/* used to represent an error message when the user enters the wrong username or password*/
 .error {
 	color: #df0f00;
 	background-color: #ffbaba;
-	font-weight: bold;
+	font-style: italic;
 	font-size: 15px;
 	border: 1px solid;
 	padding: 10px;

@@ -1,4 +1,8 @@
+/* This page acts as a menu to allow users to be able to begin to buy items in order to
+support a charity, users can choose to shop by product category or by charity */
+
 import React from "react";
+/* These are imports for images used on this page */
 import charity1 from "../resources/charity1.png";
 import charity2 from "../resources/charity2.png";
 import charity3 from "../resources/charity3.png";
@@ -14,21 +18,19 @@ const Shop = () => {
 	return (
 		<div className="defaultContainer">
 			<h1 className="title">Shop</h1>
+			{/* Allows users to shop by the type of product they are looking for by selecting
+			one of the div items*/}
 			<h1>Shop by Category</h1>
 			<div className="threeContainer">
 				<div className="containerItem">
-					<img
-						className="container-img-sm"
-						src={clothes}
-						alt="clothes image"
-					></img>
+					<img className="container-img-sm" src={clothes} alt="clothes"></img>
 					<p>Clothes</p>
 				</div>
 				<div className="containerItem">
 					<img
 						className="container-img-sm"
 						src={furniture}
-						alt="furniture image"
+						alt="furniture"
 					></img>
 					<p>Furniture</p>
 				</div>
@@ -36,31 +38,28 @@ const Shop = () => {
 					<img
 						className="container-img-sm"
 						src={electricals}
-						alt="electricals image"
+						alt="electrical goods"
 					></img>
 					<p>Electricals</p>
 				</div>
 				<div className="containerItem">
-					<img className="container-img-sm" src={books} alt="book image"></img>
+					<img className="container-img-sm" src={books} alt="books"></img>
 					<p>Books</p>
 				</div>
 				<div className="containerItem">
-					<img className="container-img-sm" src={media} alt="media image"></img>
+					<img className="container-img-sm" src={media} alt="media"></img>
 					<p>Media</p>
 				</div>
 				<div className="containerItem">
-					<img className="container-img-sm" src={toys} alt="toys image "></img>
+					<img className="container-img-sm" src={toys} alt="toys"></img>
 					<p>Toys</p>
 				</div>
 				<div className="containerItem">
-					<img
-						className="container-img-sm"
-						src={other}
-						alt="other image "
-					></img>
+					<img className="container-img-sm" src={other} alt="other"></img>
 					<p>Other</p>
 				</div>
 			</div>
+			{/* Allows users to shop by a specific charity by selecting one of the div items*/}
 			<h1>Shop by Charity</h1>
 			<div className="threeContainer">
 				<div className="containerItem">

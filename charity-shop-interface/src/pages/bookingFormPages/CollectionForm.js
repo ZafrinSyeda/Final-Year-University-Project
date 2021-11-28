@@ -1,4 +1,6 @@
+/* Used to handle the pages of the multi-page booking collection form */
 import React, { Component } from "react";
+/* Imports all of the pages involved */
 import ContactDetails from "./ContactDetails";
 import HealthSafety from "./HealthSafety";
 import ItemSelect from "./ItemSelect";
@@ -7,6 +9,7 @@ import Review from "./Review";
 import Success from "./Success";
 
 export default class collectionForm extends Component {
+	/* Represents the information that will be stored for the form */
 	state = {
 		step: 1,
 		collectionList: [""],
@@ -18,22 +21,26 @@ export default class collectionForm extends Component {
 		phoneNumber: "",
 	};
 
+	/* The function to be used by the 'next' button when moving to the next page in a form */
 	nextStep = () => {
 		const { step } = this.state;
 		this.setState({ step: step + 1 });
 	};
 
+	/* The function to be used by the 'previous' button when moving to the previous page in a form */
 	prevStep = () => {
 		const { step } = this.state;
 		this.setState({ step: step - 1 });
 	};
 
+	/* Used to change the value of a form item when it's changed within the form */
 	changeState = (input) => (e) => {
 		this.setState({ [input]: e.target.value });
 	};
 
 	render() {
 		const { step } = this.state;
+		/* The state values that are dependent on the user input within the form */
 		const {
 			collectionList,
 			address,
@@ -52,7 +59,10 @@ export default class collectionForm extends Component {
 			email,
 			phoneNumber,
 		};
-
+		{
+			/* Depending on what stage of the form the user is in, they will be presented with a 
+		different page of the form */
+		}
 		switch (step) {
 			case 1:
 				return (

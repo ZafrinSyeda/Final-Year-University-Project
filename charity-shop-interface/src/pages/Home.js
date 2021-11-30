@@ -6,7 +6,7 @@ import charity2Promo from "../resources/charity2promo.jpg";
 
 const Home = () => {
 	return (
-		<div className="homePage">
+		<div className="homePage" data-testid="homePage">
 			{/* Allows for a background image for the promo*/}
 			<div
 				style={{

@@ -75,6 +75,9 @@ function HealthSafety() {
 									"sorry! we may not be able to take in this item - please check below"
 								);
 								setIsForbidden(true);
+							} else if (itemNum === includesItem) {
+								setItemWarn("");
+								setIsForbidden(false);
 							}
 						}}
 					/>
@@ -109,7 +112,7 @@ function HealthSafety() {
 										) {
 											return item;
 										} else {
-											includesItem -= 1;
+											includesItem = includesItem - 1;
 										}
 									})
 									.map((item, index) => (

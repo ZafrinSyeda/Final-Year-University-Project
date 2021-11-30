@@ -17,7 +17,9 @@ import other from "../resources/delivery_boxes.png";
 const Shop = () => {
 	return (
 		<div className="defaultContainer">
-			<h1 className="title">Shop</h1>
+			<h1 className="title" data-testid="shopTitle">
+				Shop
+			</h1>
 			{/* Allows users to shop by the type of product they are looking for by selecting
 			one of the div items*/}
 			<h1>Shop by Category</h1>

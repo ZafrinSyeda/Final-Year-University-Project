@@ -8,7 +8,9 @@ import charity3 from "../resources/charity3.png";
 const about = () => {
 	return (
 		<div className="defaultContainer">
-			<h1 className="title">About Us</h1>
+			<h1 className="title" data-testid="aboutTitle">
+				About Us
+			</h1>
 			{/* Provides information about charity shop helper */}
 			<h1 className="leftH1">Our Mission Statement</h1>
 			<p>

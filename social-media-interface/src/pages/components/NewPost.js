@@ -40,7 +40,7 @@ export default function NewPost({ Close }) {
 							<option value="Antique Sword Collecting">
 								Antique Sword Collecting
 							</option>
-							<option value="Watercolouring" selected>
+							<option value="Watercolouring" defaultValue>
 								Watercolouring
 							</option>
 						</select>

@@ -3,7 +3,6 @@
 .profile {
 	flex: 4;
 	background-color: #f0f0f0;
-	overflow: auto;
 	padding: 50px;
 	padding-left: 350px;
 }

@@ -85,6 +85,7 @@ const Donate = () => {
 		e.preventDefault();
 		/* Validates the form and refreshes the page if there are no errors to make it look like a donation
 		was submitted*/
+		console.log(values.amount);
 		const isValid = validate();
 		if (isValid) {
 			window.location.reload();
@@ -254,7 +255,16 @@ const Donate = () => {
 				{/* If this radio button is selected, it will present the user with a text box where
 				they can enter their own choice of money to donate */}
 				<label className="donateRadio">
-					<input type="radio" id="other" name="amount" onClick={enterAmount} />
+					{/* if the user clicks on the other button, but doesn't enter anything in the textbox,
+					it should reset the amount value to nothing again */}
+					<input
+						type="radio"
+						id="other"
+						name="amount"
+						value=""
+						onClick={enterAmount}
+						onChange={handleChange}
+					/>
 					<label for="other" className="labelTextbox">
 						<b>Enter an amount instead: </b>
 					</label>
@@ -264,6 +274,7 @@ const Donate = () => {
 							id="otherAmount"
 							name="amount"
 							onChange={handleChange}
+							data-testid="otherAmount"
 						/>
 					) : null}
 				</label>

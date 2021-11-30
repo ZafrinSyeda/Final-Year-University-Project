@@ -26,7 +26,7 @@ const CollectionBooking = () => {
 					backgroundRepeat: "no-repeat",
 				}}
 			>
-				<h1 className="title">
+				<h1 className="title" data-testid="bookingTitle">
 					Book a free collection on any unwanted goods today
 				</h1>
 				<div className="collectionStart">

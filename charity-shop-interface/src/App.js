@@ -5,7 +5,7 @@ import "./App.css";
 import Navbar from "./Components/Navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import CollectionBooking from "./pages/collectionBooking";
+import CollectionBooking from "./pages/CollectionBooking";
 import About from "./pages/About";
 import ColllectionForm from "./pages/bookingFormPages/CollectionForm";
 import Shop from "./pages/Shop";

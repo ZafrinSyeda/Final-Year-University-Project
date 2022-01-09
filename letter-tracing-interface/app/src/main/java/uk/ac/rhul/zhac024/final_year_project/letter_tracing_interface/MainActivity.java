@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -12,7 +13,6 @@ import android.view.View;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.NumberPicker;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -33,12 +33,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.startButton:
+                openLetterSelection();
                 //toast messages useful for test messages
                 Toast.makeText(this, "hello there", Toast.LENGTH_SHORT).show();
                 break;
             default:
                 break;
         }
+    }
+
+    public void openLetterSelection() {
+        Intent intent = new Intent(this, LetterSelectionMenu.class);
+        startActivity(intent);
     }
 
     @Override
@@ -97,9 +103,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 int currentYear = Calendar.getInstance().get(Calendar.YEAR);
                 // the maximum valid age someone could be to be considered grown up
                 int minYear = currentYear - 120;
-                // the minimum age someone could be to be considered grown up
+                // considering if an older sibling, at least a teenager could want to adjust the settings
                 int maxYear = currentYear - 13;
-                if ((inputYear >= minYear) || (inputYear <= maxYear)) {
+                if ((inputYear >= minYear) && (inputYear <= maxYear)) {
                     Toast.makeText(MainActivity.this, txtYear.getText(), Toast.LENGTH_SHORT).show();
                 } else{
                     Toast.makeText(MainActivity.this, "invalid year", Toast.LENGTH_SHORT).show();

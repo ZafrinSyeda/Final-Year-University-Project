@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -27,19 +28,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnConfirmYear;
     private FloatingActionButton btnCloseValidation;
 
+    private MediaPlayer xylophoneSound, titleSound;
+
 
     @Override
     // all UI elements are views - onClick not limited for buttons
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.startButton:
-                openLetterSelection();
-                //toast messages useful for test messages
-                Toast.makeText(this, "hello there", Toast.LENGTH_SHORT).show();
-                break;
-            default:
-                break;
+        if (view.getId() == R.id.startButton) {
+            //plays sound on click
+            xylophoneSound = MediaPlayer.create(this, R.raw.xylophone_sweep);
+            xylophoneSound.start();
+            // starts a new activity to show the menu
+            openLetterSelection();
         }
+
     }
 
     public void openLetterSelection() {
@@ -51,17 +53,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         FloatingActionButton btnStart = findViewById(R.id.startButton);
         // sets on click listener and passes the class
         btnStart.setOnClickListener(this);
-        btnStart.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                Toast.makeText(MainActivity.this, "hey that hurts!", Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });
+        titleSound = MediaPlayer.create(this, R.raw.lets_learn_letters);
+        titleSound.start();
     }
 
     // allows for the menu that appears with the settings icon

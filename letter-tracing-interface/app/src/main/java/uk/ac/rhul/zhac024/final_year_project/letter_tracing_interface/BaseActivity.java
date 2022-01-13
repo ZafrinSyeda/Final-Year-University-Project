@@ -26,7 +26,7 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.Calendar;
 
-public class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
     private AlertDialog.Builder dialogueBuilder;
     private AlertDialog dialogue;
     private EditText txtYear;
@@ -35,8 +35,7 @@ public class BaseActivity extends AppCompatActivity {
     private MediaPlayer unavailable;
     private SwitchMaterial soundSwitch;
 
-    public static final String SHARED_PREFS = "sharedPrefs";
-    //public static final boolean SOUND_SWITCH = "soundSwitch";
+    private static final String SHARED_PREFS = "sharedPrefs";
 
     // allows for the menu that appears with the settings icon
     @Override
@@ -58,7 +57,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     // pop up dialogue for when the settings button is pressed
-    public void createNewVerificationDialog() {
+    protected void createNewVerificationDialog() {
         dialogueBuilder = new AlertDialog.Builder(this);
         final View verificationPopupView = getLayoutInflater().inflate(R.layout.verification_popup,null);
         txtYear = verificationPopupView.findViewById(R.id.txtYear);
@@ -100,7 +99,7 @@ public class BaseActivity extends AppCompatActivity {
         });
     }
 
-    private void createNewSettingsDialog() {
+    protected void createNewSettingsDialog() {
         dialogueBuilder = new AlertDialog.Builder(this);
         final View settingsPopupView = getLayoutInflater().inflate(R.layout.settings_popup,null);
 
@@ -122,21 +121,11 @@ public class BaseActivity extends AppCompatActivity {
                 editor.putBoolean("SOUND_SWITCH", isChecked);
                 editor.apply();
 
-                if (!isChecked) {
-                    amanager.setStreamMute(AudioManager.STREAM_NOTIFICATION, true);
-                    amanager.setStreamMute(AudioManager.STREAM_ALARM, true);
-                    amanager.setStreamMute(AudioManager.STREAM_MUSIC, true);
-                    amanager.setStreamMute(AudioManager.STREAM_RING, true);
-                    amanager.setStreamMute(AudioManager.STREAM_SYSTEM, true);
-
-                    Toast.makeText(BaseActivity.this, "no sound", Toast.LENGTH_SHORT).show();
-                } else {
-                    amanager.setStreamMute(AudioManager.STREAM_NOTIFICATION, false);
-                    amanager.setStreamMute(AudioManager.STREAM_ALARM, false);
-                    amanager.setStreamMute(AudioManager.STREAM_MUSIC, false);
-                    amanager.setStreamMute(AudioManager.STREAM_RING, false);
-                    amanager.setStreamMute(AudioManager.STREAM_SYSTEM, false);
-                }
+                    amanager.setStreamMute(AudioManager.STREAM_NOTIFICATION, !isChecked);
+                    amanager.setStreamMute(AudioManager.STREAM_ALARM, !isChecked);
+                    amanager.setStreamMute(AudioManager.STREAM_MUSIC, !isChecked);
+                    amanager.setStreamMute(AudioManager.STREAM_RING, !isChecked);
+                    amanager.setStreamMute(AudioManager.STREAM_SYSTEM, !isChecked);
             }});
 
 

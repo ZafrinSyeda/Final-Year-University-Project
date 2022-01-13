@@ -7,8 +7,9 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toolbar;
 
-public class LetterSelectionMenu extends AppCompatActivity implements View.OnClickListener {
+public class LetterSelectionMenu extends BaseActivity implements View.OnClickListener {
 
     private CardView cardA, cardB, cardC;
     private MediaPlayer learn_a, learn_b, unavailable;

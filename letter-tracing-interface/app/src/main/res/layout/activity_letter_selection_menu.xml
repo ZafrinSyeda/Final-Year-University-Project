@@ -33,6 +33,7 @@
                 android:text="Select a Letter"
                 android:textSize="55sp"
                 app:fontFamily="@font/baloo"
+                android:gravity="center"
 
                 ></TextView>
 
@@ -40,16 +41,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="20dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:padding="10dp"
+                android:padding="0dp"
                 app:alignmentMode="alignMargins"
                 app:columnCount="2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/menu_title"
-                app:rowCount="3">
+                app:rowCount="4">
 
                 <!-- Card View for the Letter A -->
                 <com.google.android.material.card.MaterialCardView
@@ -57,12 +58,12 @@
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardCornerRadius="20dp"
                     app:cardElevation="10dp"
                     app:layout_columnWeight="1"
-                    app:layout_rowWeight="1"
-                    android:clickable="true"
-                    android:focusable="true">
+                    app:layout_rowWeight="1">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -81,12 +82,12 @@
                 </com.google.android.material.card.MaterialCardView>
                 <!-- Card View for the Letter B -->
                 <com.google.android.material.card.MaterialCardView
-                    android:clickable="true"
-                    android:focusable="true"
                     android:id="@+id/cardB"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardCornerRadius="20dp"
                     app:cardElevation="10dp"
                     app:layout_columnWeight="1"
@@ -109,12 +110,12 @@
                 </com.google.android.material.card.MaterialCardView>
                 <!-- Card View for the Letter C -->
                 <com.google.android.material.card.MaterialCardView
-                    android:clickable="true"
-                    android:focusable="true"
                     android:id="@+id/cardC"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardCornerRadius="20dp"
                     app:cardElevation="10dp"
                     app:layout_columnWeight="1"
@@ -137,12 +138,12 @@
                 </com.google.android.material.card.MaterialCardView>
                 <!-- Card View for the Letter D -->
                 <com.google.android.material.card.MaterialCardView
-                    android:clickable="true"
-                    android:focusable="true"
                     android:id="@+id/cardD"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardCornerRadius="20dp"
                     app:cardElevation="10dp"
                     app:layout_columnWeight="1"
@@ -165,12 +166,12 @@
                 </com.google.android.material.card.MaterialCardView>
                 <!-- Card View for the Letter E -->
                 <com.google.android.material.card.MaterialCardView
-                    android:clickable="true"
-                    android:focusable="true"
                     android:id="@+id/cardE"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardCornerRadius="20dp"
                     app:cardElevation="10dp"
                     app:layout_columnWeight="1"
@@ -193,12 +194,12 @@
                 </com.google.android.material.card.MaterialCardView>
                 <!-- Card View for the Letter F -->
                 <com.google.android.material.card.MaterialCardView
-                    android:clickable="true"
-                    android:focusable="true"
                     android:id="@+id/cardF"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardCornerRadius="20dp"
                     app:cardElevation="10dp"
                     app:layout_columnWeight="1"
@@ -221,12 +222,12 @@
                 </com.google.android.material.card.MaterialCardView>
                 <!-- Card View for the Letter G -->
                 <com.google.android.material.card.MaterialCardView
-                    android:clickable="true"
-                    android:focusable="true"
                     android:id="@+id/cardG"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardCornerRadius="20dp"
                     app:cardElevation="10dp"
                     app:layout_columnWeight="1"
@@ -249,12 +250,12 @@
                 </com.google.android.material.card.MaterialCardView>
                 <!-- Card View for the Letter G -->
                 <com.google.android.material.card.MaterialCardView
-                    android:clickable="true"
-                    android:focusable="true"
                     android:id="@+id/cardH"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardCornerRadius="20dp"
                     app:cardElevation="10dp"
                     app:layout_columnWeight="1"

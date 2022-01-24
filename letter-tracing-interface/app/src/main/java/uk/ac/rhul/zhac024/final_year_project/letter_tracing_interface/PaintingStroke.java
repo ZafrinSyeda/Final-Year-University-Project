@@ -6,11 +6,13 @@ import android.graphics.Path;
 public class PaintingStroke {
     public int colour;
     public int strokeWidth;
+
     //represents geometric paths that can be drawn
     public Path path;
 
-    public PaintingStroke(int colour, int strokeWidth, Path path) {
+    public PaintingStroke(int colour,  int strokeWidth, Path path) {
         this.colour = colour;
+
         this.strokeWidth = strokeWidth;
         this.path = path;
     }

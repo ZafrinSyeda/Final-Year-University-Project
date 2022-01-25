@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 /* Imports for the different pages that should be accessed */
 import LoginForm from "./pages/Login";
@@ -6,6 +7,7 @@ import Profile from "./pages/Profile";
 import HeaderMenu from "./pages/components/HeaderMenu";
 import EditMenu from "./pages/components/EditMenu";
 import NewPost from "./pages/components/NewPost";
+import SideMenu from "./pages/components/SideMenu";
 
 function App() {
 	/* Hardcoded user details in order to access a page */
@@ -65,21 +67,18 @@ function App() {
 			{/* when the user logs in correctly, the username is set to the username, so when it's not blank 
 			the user profile should be displayed, otherwise a login page is shown */}
 			{user.username !== "" ? (
-				<div className="profilePage">
-					{/* if the user has clicked the button to edit their profile, the header is displayed
-					as an edit menu, otherwise it's set to the regular menu header */}
-					{!edit ? (
-						<HeaderMenu
-							Logout={Logout}
-							EditPage={toggleEditPage}
-							NewPost={toggleCreatePost}
-						/>
-					) : (
-						<EditMenu CloseEdit={toggleEditPage} />
-					)}
+				<div className="pageTemplate">
+					<HeaderMenu Logout={Logout} />
+					<Router>
+						<SideMenu />
+						<Routes>
+							<Route path="/" element={<Profile />} />
+							<Route path="/Profile" element={<Profile />} />
+						</Routes>
+					</Router>
+
 					{/* if the user wants to add a new post the NewPost page will be overlayed on the screen */}
 					{createPost ? <NewPost Close={toggleCreatePost} /> : null}
-					<Profile />
 				</div>
 			) : (
 				<LoginForm Login={Login} error={error} />

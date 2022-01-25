@@ -152,9 +152,7 @@ const Profile = () => {
 		<div>
 			<div className="container">
 				{/* displays the side profile */}
-				<div className="userProfile">
-					<SideProfile />
-				</div>
+
 				{/* displays either all posts or posts of a specific hobby, depending on what
 				button has been selected */}
 				<div className="profile">

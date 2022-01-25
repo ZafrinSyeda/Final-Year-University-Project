@@ -1,10 +1,9 @@
 /* FOR THE USER'S POSTS */
 /* the div that displays the user's posts*/
 .profile {
-	flex: 4;
-	background-color: #f0f0f0;
 	padding: 50px;
-	padding-left: 350px;
+	padding-left: 250px;
+	padding-right: 0px;
 }
 
 /* the style for when one hobby has been selected - the posts are displayed in one column 
@@ -57,7 +56,6 @@ specific hobby*/
 /* FOR THE USER'S SIDE BAR PROFILE*/
 /* the div for where the side profile is displayed on the side of the screen */
 .userProfile {
-	flex: 1;
 	background-color: #f0f0f0;
 	position: fixed;
 	top: 0;
@@ -100,8 +98,7 @@ specific hobby*/
 	padding: 2px;
 	transition: ease-in 0.2s;
 }
-.hobbyButton:hover,
-.active {
+.hobbyButton:hover {
 	background-color: #111;
 	color: #fff;
 	font-weight: bold;

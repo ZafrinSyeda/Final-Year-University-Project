@@ -2,11 +2,11 @@
 /* places the header at the top of the page, even after scrolling it will stay at the top*/
 .header {
 	height: 60px;
-	background-color: #f0f0f0;
 	padding: 10px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	float: right;
 	position: sticky;
 	top: 0;
 	z-index: 1;

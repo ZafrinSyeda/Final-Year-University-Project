@@ -86,7 +86,7 @@ const Profile = () => {
 	/* represents the side profile displayed on the user's profile that details their name, and hobbies*/
 	function SideProfile() {
 		return (
-			<div className="userProfile">
+			<div className="page">
 				<div className="sideProfile">
 					{activeButton != 0 ? (
 						/* when the user has selected a button, a back button should be displayed to make
@@ -114,6 +114,28 @@ const Profile = () => {
 		);
 	}
 
+	function UserDetails() {
+		return (
+			<div>
+				<div className="userCard">
+					<img
+						className="profilePicture"
+						src={profilepicture}
+						alt="profile picture"
+						onClick={() => setActiveButton(0)}
+					></img>
+					<div className="profileDetail">
+						<h3>Firstname Surname</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut
+							ligula ex. Phasellus malesuada cursus faucibus. Vivamus sed.
+						</p>
+					</div>
+				</div>
+			</div>
+		);
+	}
+
 	/* Shows all of the user's posts  */
 	function AllPosts() {
 		return (
@@ -122,12 +144,9 @@ const Profile = () => {
 				<Masonry columns={{ sm: 1, md: 2 }} spacing={5}>
 					{posts.map((post) => (
 						<div className="postPreview" key={post.id}>
-							<p className="date">{post.date}</p>
-							<div className="postContainer">
-								<img src={post.post_img} className="postImg" />
-								<p>
-									<i>{post.title}</i>
-								</p>
+							<img src={post.post_img} className="postImg" />
+							<div className="titleOverlay">
+								<p>{post.title}</p>
 							</div>
 						</div>
 					))}
@@ -149,10 +168,9 @@ const Profile = () => {
 	}
 
 	return (
-		<div>
+		<div className="page">
+			<UserDetails />
 			<div className="container">
-				{/* displays the side profile */}
-
 				{/* displays either all posts or posts of a specific hobby, depending on what
 				button has been selected */}
 				<div className="profile">

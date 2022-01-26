@@ -68,15 +68,14 @@ function App() {
 			the user profile should be displayed, otherwise a login page is shown */}
 			{user.username !== "" ? (
 				<div className="pageTemplate">
-					<HeaderMenu Logout={Logout} />
 					<Router>
-						<SideMenu />
+						<SideMenu NewPost={toggleCreatePost} />
 						<Routes>
 							<Route path="/" element={<Profile />} />
 							<Route path="/Profile" element={<Profile />} />
 						</Routes>
 					</Router>
-
+					<HeaderMenu Logout={Logout} />
 					{/* if the user wants to add a new post the NewPost page will be overlayed on the screen */}
 					{createPost ? <NewPost Close={toggleCreatePost} /> : null}
 				</div>

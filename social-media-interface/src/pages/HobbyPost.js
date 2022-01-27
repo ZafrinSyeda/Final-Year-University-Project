@@ -1,24 +1,23 @@
 /* Used to display the user's posts when it's filtered  */
 import React from "react";
+import Masonry from "@mui/lab/Masonry";
 
 export const HobbyPost = (props) => {
 	/* takes the posts as a prop from where the component is being called */
 	const posts = props.posts;
 	return (
 		<div>
-			{/* maps all of the posts taken from the prop */}
-			{posts.map((post) => (
-				<div className="postPreview" key={post.id}>
-					<p className="date">{post.date}</p>
-					<div className="hobbyPostContainer">
+			{/* a MUI import that allows for the posts to be displayed in a masonry view */}
+			<Masonry columns={{ sm: 1, md: 2 }} spacing={5}>
+				{posts.map((post) => (
+					<div className="postPreview" key={post.id}>
 						<img src={post.post_img} className="postImg" />
-						<p>
-							<i>{post.title}</i>
-						</p>
-						<p>{post.description}</p>
+						<div className="titleOverlay">
+							<p>{post.title}</p>
+						</div>
 					</div>
-				</div>
-			))}
+				))}
+			</Masonry>
 		</div>
 	);
 };

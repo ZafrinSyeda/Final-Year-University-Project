@@ -135,24 +135,44 @@ const Profile = () => {
 			</div>
 		);
 	}
+	//{activeButton !== 0 ? <HobbySelect /> : <AllPosts />}
+
+	const handleChange = (event) => {
+		console.log(event.target.value);
+	};
+
+	function HobbyMenu() {
+		return (
+			<div className="hobbyMenu">
+				<form className="hobbyDropdown">
+					<label for="hobbyOptions">
+						<i>Displaying:</i>{" "}
+					</label>
+					<select id="hobbyOptions" name="hobbyOptions" onChange={handleChange}>
+						{" "}
+						<option value="all" onClick={() => setActiveButton(0)}>
+							{" "}
+							All{" "}
+						</option>
+						{hobbies.map((hobby) => (
+							<option
+								key={hobby.hobby_id}
+								id={hobby.hobby_id}
+								value={hobby.name}
+								onClick={() => setActiveButton(hobby.hobby_id)}
+							>
+								{hobby.name}
+							</option>
+						))}
+					</select>
+				</form>
+			</div>
+		);
+	}
 
 	/* Shows all of the user's posts  */
 	function AllPosts() {
-		return (
-			<div>
-				{/* a MUI import that allows for the posts to be displayed in a masonry view */}
-				<Masonry columns={{ sm: 1, md: 2 }} spacing={5}>
-					{posts.map((post) => (
-						<div className="postPreview" key={post.id}>
-							<img src={post.post_img} className="postImg" />
-							<div className="titleOverlay">
-								<p>{post.title}</p>
-							</div>
-						</div>
-					))}
-				</Masonry>
-			</div>
-		);
+		return <HobbyPost posts={posts} />;
 	}
 
 	/* the display of a post when just one hobby has been selected from the side profile menu */
@@ -170,6 +190,7 @@ const Profile = () => {
 	return (
 		<div className="page">
 			<UserDetails />
+			<HobbyMenu />
 			<div className="container">
 				{/* displays either all posts or posts of a specific hobby, depending on what
 				button has been selected */}

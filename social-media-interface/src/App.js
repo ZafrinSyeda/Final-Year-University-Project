@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import "./App.css";
 /* Imports for the different pages that should be accessed */
 import LoginForm from "./pages/Login";

@@ -8,6 +8,7 @@ import { HobbyPost } from "./HobbyPost";
 import hsword from "../resources/horizontal-sword.jpg";
 import vsword from "../resources/vertical-sword.jpg";
 import crab from "../resources/crab_watercolour.jpg";
+import basket from "../resources/mushroom-basket.jpg";
 import profilepicture from "../resources/profilepicture.PNG";
 /* stylesheet */
 import "./Profile.css";
@@ -20,19 +21,19 @@ const Profile = () => {
 	const [posts, setPosts] = useState([
 		{
 			id: 1,
-			title: "An Amazing Find!",
-			post_img: hsword,
-			date: "14 / 03 / 2021",
-			description:
-				"Rare sword I just about won in a bid, my oponent may have been tough but I was more resilient. Also I may or may not be broke now 😅",
-			hobby_id: 1,
+			title: "post 1",
+			post_img: basket,
+			date: "01 / 04 / 2021",
+			description: "desc",
+			hobby_id: 3,
 		},
 		{
 			id: 2,
-			title: "post 2",
+			title: "An Amazing Find!",
 			post_img: vsword,
 			date: "12 / 03 / 2021",
-			description: "desc",
+			description:
+				"Rare sword I just about won in a bid, my oponent may have been tough but I was more resilient. Also I may or may not be broke now 😅",
 			hobby_id: 1,
 		},
 		{
@@ -42,6 +43,14 @@ const Profile = () => {
 			date: "09 / 03 / 2021",
 			description: "desc",
 			hobby_id: 2,
+		},
+		{
+			id: 4,
+			title: "post 4",
+			post_img: hsword,
+			date: "28 / 02 / 2021",
+			description: "desc",
+			hobby_id: 1,
 		},
 	]);
 
@@ -55,6 +64,7 @@ const Profile = () => {
 			hobby_id: 2,
 			name: "Watercolouring",
 		},
+		{ hobby_id: 3, name: "Mushroom Foraging" },
 	]);
 
 	/* variable used depending on whether the user has selected one of the hobbies on the side profile
@@ -125,7 +135,7 @@ const Profile = () => {
 						onClick={() => setActiveButton(0)}
 					></img>
 					<div className="profileDetail">
-						<h3>Firstname Surname</h3>
+						<h3>Makayla Madelynn Kovačić</h3>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut
 							ligula ex. Phasellus malesuada cursus faucibus. Vivamus sed.
@@ -135,10 +145,12 @@ const Profile = () => {
 			</div>
 		);
 	}
-	//{activeButton !== 0 ? <HobbySelect /> : <AllPosts />}
+
+	const [selectedValue, setSelectedValue] = useState("");
 
 	const handleChange = (event) => {
-		console.log(event.target.value);
+		setActiveButton(parseInt(event.target.value));
+		setSelectedValue(event.target.value);
 	};
 
 	function HobbyMenu() {
@@ -148,18 +160,19 @@ const Profile = () => {
 					<label for="hobbyOptions">
 						<i>Displaying:</i>{" "}
 					</label>
-					<select id="hobbyOptions" name="hobbyOptions" onChange={handleChange}>
+					<select
+						id="hobbyOptions"
+						name="hobbyOptions"
+						value={selectedValue}
+						onChange={handleChange}
+					>
 						{" "}
-						<option value="all" onClick={() => setActiveButton(0)}>
-							{" "}
-							All{" "}
-						</option>
+						<option value="0"> All </option>
 						{hobbies.map((hobby) => (
 							<option
 								key={hobby.hobby_id}
 								id={hobby.hobby_id}
-								value={hobby.name}
-								onClick={() => setActiveButton(hobby.hobby_id)}
+								value={hobby.hobby_id}
 							>
 								{hobby.name}
 							</option>
@@ -194,9 +207,8 @@ const Profile = () => {
 			<div className="container">
 				{/* displays either all posts or posts of a specific hobby, depending on what
 				button has been selected */}
-				<div className="profile">
-					{activeButton !== 0 ? <HobbySelect /> : <AllPosts />}
-				</div>
+
+				{activeButton !== 0 ? <HobbySelect /> : <AllPosts />}
 			</div>
 		</div>
 	);

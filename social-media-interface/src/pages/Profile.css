@@ -3,13 +3,6 @@
 /* FOR THE USER'S POSTS */
 /* the div that displays the user's posts*/
 
-/* the style for when one hobby has been selected - the posts are displayed in one column 
-that is centered in the profile div */
-.selectedHobby {
-	margin: 0 auto;
-	width: 70%;
-}
-
 .container {
 	padding: 30px;
 	padding-right: 0px;
@@ -53,15 +46,6 @@ that is centered in the profile div */
 
 .postPreview:hover .titleOverlay {
 	opacity: 1;
-}
-
-/* as when the posts of one specific hobby is displayed in a single column, if a post is too
- long the user may have to scroll too much so if it reaches a certain height it will become a 
- scrollable div instead */
-.hobbyPostContainer {
-	max-height: 80vh;
-	overflow-x: hidden;
-	overflow-y: auto;
 }
 
 /* shows the whole image of a post as it's often the focal point */
@@ -184,7 +168,6 @@ br {
 	height: 30vh;
 	margin: 0 auto;
 	border-radius: 10px;
-	padding: 10px;
 	position: relative;
 	margin-top: 80px;
 }

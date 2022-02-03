@@ -7,7 +7,7 @@ import React from "react";
 import forbiddenItems from "../../resources/forbidden_items.json";
 import { useState } from "react";
 
-function HealthSafety() {
+function HealthSafety({ nextStep }) {
 	/* Represents the value that is being written into the search bar */
 	const [searchTerm, setSearchTerm] = useState("");
 	/* Represents the message that will tell users whether the item that they're searching for
@@ -28,18 +28,22 @@ function HealthSafety() {
 		<div>
 			<div className="defaultContainer">
 				{/* Provides the relevant health and safety information */}
-				<h1 className="title">Health and Safety</h1>
+				<h1 className="formTitle">Health and Safety</h1>
 				<p>
 					As much as we’d love to take in everything you give to use, there is a
 					lot of things that we cannot take in due to health and safety reasons,
 					these will be listed below, please take some time to check if one of
-					the items you want to donate is one that we cannot take. There are
-					also some health and safety considerations, such as that fire labels
-					must be attached to things such as furniture, and items must be in
-					good, sellable condition.
+					the items you want to donate is one that we cannot take.{" "}
+				</p>
+				<p>
+					While you're looking the stuff you want to please also consider that
+					fire labels must be attached to things such as furniture, and items
+					must be in good, sellable condition for us to be able to take it in.
 				</p>
 				<p>When you are ready to continue, press here:</p>
-				<button className="cshButton">Continue</button>
+				<button className="cshButton" onClick={nextStep}>
+					Continue
+				</button>
 			</div>
 
 			<div className="defaultContainer">

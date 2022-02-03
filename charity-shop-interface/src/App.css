@@ -1,20 +1,22 @@
 /* Manages the CSS for the whole website */
 
 /* Google font imports that are used throughout the website */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900");
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800");
 
 /* GLOBAL STYLES: */
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	font-family: "Montserrat", sans-serif;
 }
 
 h1,
 h2,
 h3 {
-	font-family: "Spectral", serif;
+	font-family: "Karla", serif;
 }
 
 h1 {
@@ -24,8 +26,7 @@ h1 {
 p,
 form,
 label {
-	font-family: "Karla", sans-serif;
-	font-size: 25px;
+	font-size: 22px;
 	padding-top: 2%;
 	padding-bottom: 2%;
 	text-align: center;
@@ -241,6 +242,22 @@ will look for when they click onto collection booking from the menu */
 	width: 50%;
 }
 
+.formTitle {
+	font-size: 35px;
+	text-align: left;
+	padding: 30px;
+	margin-top: 30px;
+	padding-bottom: 5px;
+	font-weight: 800;
+}
+
+.subtitle {
+	font-family: "karla", serif;
+	font-size: 22px;
+	color: #676767;
+	text-align: left;
+}
+
 /* represents the search bar on the health and safety page */
 #filter-items {
 	display: inline-block;
@@ -273,6 +290,56 @@ and safety form */
 .itemWarnBad {
 	color: #ffffff;
 	background-color: #d64b4b;
+}
+
+.instructions {
+	font-size: 22px;
+	color: #676767;
+	padding: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 80%;
+}
+
+.selectList {
+	background-color: #ffffff;
+	border: 3px solid #658e4b;
+	box-sizing: border-box;
+	border-radius: 30px;
+	padding: 30px;
+	height: 80vh;
+}
+
+.collectList {
+	font-size: 20px;
+	padding: 10px;
+	margin: 10px 5%;
+}
+.collectListItem {
+	display: flex;
+	justify-content: space-between;
+	font-size: 18px;
+	margin: 0 5%;
+}
+
+.quantityBtn {
+	width: 30px;
+	font-size: 23px;
+	margin: 0px 18px;
+	border: 2px solid #0e540d;
+	border-radius: 50%;
+	color: #0e540d;
+	background-color: #ffffff;
+}
+
+.quantityInput {
+	font-size: 20px;
+	width: 50px;
+	text-align: center;
+	border: 2px solid #0e540d;
+	border-radius: 5px;
 }
 
 /* SPECIFIC TO THE DONATION FORM: */
@@ -331,7 +398,6 @@ and safety form */
 .donateForm [type="radio"]:checked + label {
 	background-color: #529447;
 	color: #ecedfc;
-	font-weight: bolder;
 	box-shadow: none;
 }
 

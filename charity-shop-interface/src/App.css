@@ -155,9 +155,10 @@ form hr {
 
 /* a style of button that may frequently be used in the website */
 .cshButton {
-	font-size: 20px;
+	font-size: 18px;
 	padding: 15px;
 	width: 20%;
+	border-radius: 15px;
 }
 
 /* the default heading is aligned towards the center but this class allows for it to
@@ -334,12 +335,33 @@ and safety form */
 	background-color: #ffffff;
 }
 
+.quantityBtn:disabled {
+	color: #a0a0a0;
+	border: 2px solid #a0a0a0;
+	background-color: #ececec;
+}
+
 .quantityInput {
 	font-size: 20px;
 	width: 50px;
 	text-align: center;
 	border: 2px solid #0e540d;
 	border-radius: 5px;
+}
+
+.deleteBtn {
+	color: #0e540d;
+	background-color: transparent;
+}
+
+.deleteBtn:hover {
+	color: #529447;
+	background-color: transparent;
+}
+
+.filledList {
+	max-height: 50vh;
+	overflow: auto;
 }
 
 /* SPECIFIC TO THE DONATION FORM: */

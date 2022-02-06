@@ -2,8 +2,15 @@
 select or enter the items that they would like to be collected */
 
 import React from "react";
+import DeleteIcon from "@mui/icons-material/Delete";
 
-const itemSelect = ({ values, handleQuantityChange }) => {
+const itemSelect = ({
+	nextStep,
+	prevStep,
+	values,
+	handleQuantityChange,
+	handleDeleteItem,
+}) => {
 	function EmptyList() {
 		return (
 			<div className="instructions">
@@ -18,14 +25,15 @@ const itemSelect = ({ values, handleQuantityChange }) => {
 
 	function FilledList() {
 		return (
-			<div>
-				{values.list.map((item, index) => (
+			<div className="filledList">
+				{values.list.slice(1).map((item, index) => (
 					<div className="collectList">
 						<div className="collectListItem" key={item.id}>
 							{item.item}
 							<form></form>
 							<div>
 								<button
+									disabled={item.quantity === 1}
 									className="quantityBtn"
 									onClick={handleQuantityChange(index, "minus")}
 								>
@@ -33,7 +41,7 @@ const itemSelect = ({ values, handleQuantityChange }) => {
 								</button>
 								<input
 									className="quantityInput"
-									type="number"
+									type="numeric"
 									name="quantity"
 									min="1"
 									value={item.quantity}
@@ -44,6 +52,12 @@ const itemSelect = ({ values, handleQuantityChange }) => {
 									onClick={handleQuantityChange(index, "plus")}
 								>
 									+
+								</button>
+								<button
+									className="deleteBtn"
+									onClick={() => handleDeleteItem(item.id)}
+								>
+									<DeleteIcon style={{ fontSize: "30px" }} />
 								</button>
 							</div>
 						</div>
@@ -61,8 +75,15 @@ const itemSelect = ({ values, handleQuantityChange }) => {
 			</p>
 			<div className="selectList">
 				<h1>My List:</h1>
-				{values.list.length > 0 ? <FilledList /> : <EmptyList />}
+				{values.list.length > 1 ? <FilledList /> : <EmptyList />}
+				<button className="cshButton">Add to List</button>
 			</div>
+			<button className="cshButton" onClick={prevStep}>
+				Previous{" "}
+			</button>
+			<button className="cshButton" onClick={nextStep}>
+				Next{" "}
+			</button>
 		</div>
 	);
 };

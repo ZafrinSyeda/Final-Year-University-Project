@@ -7,6 +7,7 @@ import ItemSelect from "./ItemSelect";
 import TimePlace from "./TimePlace";
 import Review from "./Review";
 import Success from "./Success";
+import { render } from "@testing-library/react";
 
 const CollectionForm = () => {
 	/* Represents the information that will be stored for the form */
@@ -14,6 +15,7 @@ const CollectionForm = () => {
 	const [step, setStep] = useState(1);
 
 	const [collectionList, setCollectionList] = useState([
+		{ id: 0, item: "", quantity: 0 },
 		{ id: 1, item: "Exercise Machine", quantity: 1 },
 		{ id: 2, item: "Bags", quantity: 2 },
 	]);
@@ -47,20 +49,31 @@ const CollectionForm = () => {
 		const newList = [...collectionList];
 		switch (type) {
 			case "input":
-				newList[index].quantity = e.target.value;
-
-				break;
+				newList[index + 1].quantity = e.target.value;
 			case "plus":
-				newList[index].quantity++;
-
+				newList[index + 1].quantity++;
 				break;
 			case "minus":
-				newList[index].quantity--;
+				newList[index + 1].quantity--;
 				break;
 			default:
 				break;
 		}
+		if (isNaN(e.target.value)) {
+			newList[index + 1].quantity = 1;
+		}
+		console.log("sdf");
 		setCollectionList(newList);
+	};
+
+	const handleDeleteItem = (id) => {
+		console.log("hello");
+		const newList = collectionList.filter((item) => item.id !== id);
+		setCollectionList(newList);
+		setFormData({
+			...formData,
+			list: newList,
+		});
 	};
 
 	{
@@ -77,6 +90,7 @@ const CollectionForm = () => {
 					prevStep={prevStep}
 					handleChange={handleChange}
 					handleQuantityChange={handleQuantityChange}
+					handleDeleteItem={handleDeleteItem}
 					values={formData}
 				/>
 			);

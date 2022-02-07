@@ -1,0 +1,65 @@
+[
+	{
+		"type": "Electricals",
+		"items": [
+			"Televisions",
+			"Laptops",
+			"PC Monitors",
+			"Other Computing Technologies",
+			"Game Consoles",
+			"Lamps",
+			"Speakers",
+			"Printers",
+			"Vacuum Cleaners",
+			"Radiators"
+		]
+	},
+	{
+		"type": "Living Room/ Home Office",
+		"items": [
+			"Sofas",
+			"Sofa Beds",
+			"Armchairs",
+			"TV stand",
+			"Coffee Tables",
+			"Footstools",
+			"Bean Bags",
+			"Desks",
+			"Office Chairs"
+		]
+	},
+	{
+		"type": "Kitchen/ Dining",
+		"items": [
+			"Tables",
+			"Dining Chairs",
+			"Kitchen Trolleys",
+			"Bar Stools",
+			"Freezers"
+		]
+	},
+	{
+		"type": "Bedroom",
+		"items": [
+			"Beds",
+			"Mattresses",
+			"Wardrobes",
+			"Chest of Drawers",
+			"Bedside Tables",
+			"Dressing Tables",
+			"Bookcases",
+			"Cots",
+			"Mirrors"
+		]
+	},
+	{
+		"type": "Outdoor Gym/ Garden Furniture",
+		"items": [
+			"Treadmills",
+			"Exercise Bikes",
+			"Rowing Machines",
+			"Garden Dining Sets",
+			"Outdoor Sofas"
+		]
+	}
+]

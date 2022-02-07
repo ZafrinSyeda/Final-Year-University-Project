@@ -1,5 +1,5 @@
 /* Used to handle the pages of the multi-page booking collection form */
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 /* Imports all of the pages involved */
 import ContactDetails from "./ContactDetails";
 import HealthSafety from "./HealthSafety";
@@ -7,7 +7,6 @@ import ItemSelect from "./ItemSelect";
 import TimePlace from "./TimePlace";
 import Review from "./Review";
 import Success from "./Success";
-import { render } from "@testing-library/react";
 
 const CollectionForm = () => {
 	/* Represents the information that will be stored for the form */

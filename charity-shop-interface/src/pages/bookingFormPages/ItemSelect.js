@@ -4,6 +4,7 @@ select or enter the items that they would like to be collected */
 import React, { useState } from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import collectionItems from "../../resources/collection_items.json";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const ItemSelect = ({
 	nextStep,
@@ -83,7 +84,7 @@ const ItemSelect = ({
 					<div className="collectList">
 						<div className="collectListItem" key={item.item}>
 							{item.item}
-							<span>
+							<div className="horizontalAlign">
 								{QuantitySection(item.item)}
 								<button
 									className="deleteBtn"
@@ -91,7 +92,7 @@ const ItemSelect = ({
 								>
 									<DeleteIcon style={{ fontSize: "30px" }} />
 								</button>
-							</span>
+							</div>
 						</div>
 						<hr />
 					</div>
@@ -161,7 +162,13 @@ const ItemSelect = ({
 			return (
 				<div>
 					<div className="selectionHeading">
-						<button onClick={() => setViewItemList("")}>back</button>
+						<button
+							button
+							className="backBtn"
+							onClick={() => setViewItemList("")}
+						>
+							<ArrowBackIcon />
+						</button>
 						<h2>{viewItemList}</h2>
 					</div>
 					<p className="subtitle">
@@ -171,10 +178,14 @@ const ItemSelect = ({
 						must say “Charity Shop Helper Collection”.
 					</p>
 					<div className="collectList">
-						<div className="collectListItem">Bags</div>
-						{QuantitySection("Bags")}
-						<div className="collectListItem">Boxes</div>
-						{QuantitySection("Boxes")}
+						<div className="collectListItem">
+							Bags
+							{QuantitySection("Bags")}
+						</div>
+						<div className="collectListItem">
+							Boxes
+							{QuantitySection("Boxes")}
+						</div>
 					</div>
 				</div>
 			);
@@ -182,9 +193,16 @@ const ItemSelect = ({
 			return (
 				<div>
 					<div className="selectionHeading">
-						<button onClick={() => setViewItemList("")}>back</button>
+						<button className="backBtn" onClick={() => setViewItemList("")}>
+							<ArrowBackIcon />
+						</button>
 						<h2>{viewItemList}</h2>
 					</div>
+					<p className="subtitle">
+						⚠ Before adding any item to your list, please ensure it has a fire
+						safety label if it originally came with one, and that it is in
+						selling condition ⚠{" "}
+					</p>
 					<div className="collectList">
 						{collectionItems
 							.filter((listItem) => listItem.type === viewItemList)
@@ -192,8 +210,11 @@ const ItemSelect = ({
 								<div key={key}>
 									{val.items.map((item) => (
 										<div>
-											<div className="collectListItem">{item}</div>
-											{QuantitySection(item)}
+											<div className="collectListItem">
+												{item}
+												{QuantitySection(item)}
+											</div>
+											<hr />
 										</div>
 									))}
 								</div>

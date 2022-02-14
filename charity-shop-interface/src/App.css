@@ -174,6 +174,10 @@ align towards the left where needed*/
 	font-style: italic;
 }
 
+.horizontalAlign {
+	display: flex;
+}
+
 /* HOME PAGE SPECIFIC: */
 /* Used as text for the promotional image at the front of the home page */
 .promo {
@@ -310,7 +314,9 @@ and safety form */
 	box-sizing: border-box;
 	border-radius: 30px;
 	padding: 30px;
-	height: 85vh;
+	height: 90vh;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 .collectList {
@@ -321,8 +327,8 @@ and safety form */
 .collectListItem {
 	display: flex;
 	justify-content: space-between;
-	font-size: 18px;
-	margin: 0 5%;
+	vertical-align: bottom;
+	margin: 5% 5% 0% 5%;
 }
 
 .quantityBtn {
@@ -360,7 +366,7 @@ and safety form */
 }
 
 .filledList {
-	max-height: 50vh;
+	max-height: 80vh;
 	overflow: auto;
 }
 
@@ -391,6 +397,22 @@ and safety form */
 	padding: 12px 22px;
 	margin: -1px;
 	transition: all 0.3s ease-in-out;
+}
+
+.selectionHeading {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	color: #fff;
+	background-color: #529447;
+	margin: -40px;
+	margin-bottom: 1px;
+	padding: 5%;
+}
+
+.selectionHeading h2 {
+	flex: 1;
+	text-align: center;
 }
 
 .selectRadio:focus + label,
@@ -427,6 +449,16 @@ counter {
 .itemTypeBtn:focus {
 	color: #fff;
 	background-color: #529447;
+}
+
+.backBtn {
+	background-color: transparent;
+}
+
+.backBtn:hover,
+.backBtn:focus {
+	background-color: transparent;
+	color: #0e540d;
 }
 
 /* SPECIFIC TO THE DONATION FORM: */

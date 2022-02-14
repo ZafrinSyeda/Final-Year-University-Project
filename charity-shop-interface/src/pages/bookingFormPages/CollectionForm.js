@@ -14,9 +14,9 @@ const CollectionForm = () => {
 	const [step, setStep] = useState(1);
 
 	const [collectionList, setCollectionList] = useState([
-		{ id: 0, item: "", quantity: 0 },
-		{ id: 1, item: "Exercise Machine", quantity: 1 },
-		{ id: 2, item: "Bags", quantity: 2 },
+		{ item: "", quantity: 0 },
+		{ item: "Exercise Machine", quantity: 1 },
+		{ item: "Bags", quantity: 2 },
 	]);
 	const [formData, setFormData] = useState({
 		list: collectionList,
@@ -44,30 +44,56 @@ const CollectionForm = () => {
 	};
 
 	/* Used to change the value of the quantity of an item added to the list when it's changed within the form */
-	const handleQuantityChange = (index, type) => (e) => {
-		const newList = [...collectionList];
+	const handleQuantityChange = (index, type, listItem) => (e) => {
+		let newList = [];
+		if (index === -1) {
+			newList = [...collectionList, listItem];
+			index = newList.length - 1;
+			setFormData({
+				...formData,
+				list: newList,
+			});
+		} else {
+			newList = [...collectionList];
+		}
+
+		console.log("add", collectionList);
+
 		switch (type) {
 			case "input":
-				newList[index + 1].quantity = e.target.value;
+				newList[index].quantity = e.target.value - 1;
 			case "plus":
-				newList[index + 1].quantity++;
-				break;
-			case "minus":
-				newList[index + 1].quantity--;
+				console.log(collectionList);
+				newList[index].quantity++;
 				break;
 			default:
 				break;
 		}
+
 		if (isNaN(e.target.value)) {
-			newList[index + 1].quantity = 1;
+			newList[index].quantity = 1;
 		}
-		console.log("sdf");
+
 		setCollectionList(newList);
+		if (newList[index].quantity === 0) {
+			handleDeleteItem(listItem.item);
+		}
+		//	}
+	};
+
+	const handleMinus = (index) => {
+		console.log(index);
+		const newList = [...collectionList];
+		newList[index].quantity--;
+		if (newList[index].quantity === 0) {
+			handleDeleteItem(newList[index].item);
+		} else {
+			setCollectionList(newList);
+		}
 	};
 
 	const handleDeleteItem = (id) => {
-		console.log("hello");
-		const newList = collectionList.filter((item) => item.id !== id);
+		const newList = collectionList.filter((item) => item.item !== id);
 		setCollectionList(newList);
 		setFormData({
 			...formData,
@@ -90,6 +116,7 @@ const CollectionForm = () => {
 					handleChange={handleChange}
 					handleQuantityChange={handleQuantityChange}
 					handleDeleteItem={handleDeleteItem}
+					handleMinus={handleMinus}
 					values={formData}
 				/>
 			);

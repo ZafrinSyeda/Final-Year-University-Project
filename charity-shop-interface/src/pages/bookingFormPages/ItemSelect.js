@@ -17,9 +17,8 @@ const ItemSelect = ({
 	const [viewItemList, setViewItemList] = useState("");
 
 	function getIndex(itemName) {
-		/* goes through the list to find the item name under the collection list that matches the item name being looked for and returns the index if found*/
-		//console.log("getindex", itemName);
-		//console.log(values.list.findIndex((arr) => arr.item === itemName));
+		/* goes through the list to find the item name under the collection list that matches the item name 
+		being looked for and returns the index if found*/
 		return values.list.findIndex((arr) => arr.item === itemName);
 	}
 
@@ -63,14 +62,11 @@ const ItemSelect = ({
 						className="quantityInput"
 						type="numeric"
 						name="quantity"
-						//{values.list.length > 1 ? <FilledList /> : <EmptyList />}
 						value={listItem.quantity}
-						//value={item.quantity}
 						onChange={handleQuantityChange(getIndex(item), "input", listItem)}
 					></input>
 					<button
 						className="quantityBtn"
-						//onClick={handleQuantityChange(getIndex(item), "plus", listItem)}
 						onClick={handleQuantityChange(getIndex(item), "plus", listItem)}
 					>
 						+
@@ -146,7 +142,12 @@ const ItemSelect = ({
 					</div>
 					{collectionItems.map((val, key) => (
 						<div key={key} className="containerLi">
-							<button className="itemTypeBtn">{val.type} </button>
+							<button
+								className="itemTypeBtn"
+								onClick={() => setViewItemList(val.type)}
+							>
+								{val.type}{" "}
+							</button>
 						</div>
 					))}
 					;
@@ -156,24 +157,51 @@ const ItemSelect = ({
 	}
 
 	function ItemSelection() {
-		return (
-			<div>
-				<button onClick={() => setViewItemList("")}>back</button>
-				<h2>{viewItemList}</h2>
-				<p className="subtitle">
-					For smaller items such as clothes, books, toys, CDs, accessories, and
-					other miscalleneous items, we can only collect them if they are placed
-					in a labelled box/ bag at your collection point. The label must say
-					“Charity Shop Helper Collection”.
-				</p>
-				<div className="collectList">
-					<div className="collectListItem">Bags</div>
-					{QuantitySection("Bags")}
-					<div className="collectListItem">Boxes</div>
-					{QuantitySection("Boxes")}
+		if (viewItemList === "Bags/ Boxes of clothes and other smaller items") {
+			return (
+				<div>
+					<div className="selectionHeading">
+						<button onClick={() => setViewItemList("")}>back</button>
+						<h2>{viewItemList}</h2>
+					</div>
+					<p className="subtitle">
+						For smaller items such as clothes, books, toys, CDs, accessories,
+						and other miscalleneous items, we can only collect them if they are
+						placed in a labelled box/ bag at your collection point. The label
+						must say “Charity Shop Helper Collection”.
+					</p>
+					<div className="collectList">
+						<div className="collectListItem">Bags</div>
+						{QuantitySection("Bags")}
+						<div className="collectListItem">Boxes</div>
+						{QuantitySection("Boxes")}
+					</div>
 				</div>
-			</div>
-		);
+			);
+		} else {
+			return (
+				<div>
+					<div className="selectionHeading">
+						<button onClick={() => setViewItemList("")}>back</button>
+						<h2>{viewItemList}</h2>
+					</div>
+					<div className="collectList">
+						{collectionItems
+							.filter((listItem) => listItem.type === viewItemList)
+							.map((val, key) => (
+								<div key={key}>
+									{val.items.map((item) => (
+										<div>
+											<div className="collectListItem">{item}</div>
+											{QuantitySection(item)}
+										</div>
+									))}
+								</div>
+							))}
+					</div>
+				</div>
+			);
+		}
 	}
 
 	return (

@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import collectionItems from "../../resources/collection_items.json";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import Snackbar from "@mui/material/Snackbar";
 
 const ItemSelect = ({
 	nextStep,
@@ -12,10 +13,10 @@ const ItemSelect = ({
 	values,
 	handleQuantityChange,
 	handleDeleteItem,
-	handleMinus,
 }) => {
 	const [viewList, setViewList] = useState(true);
 	const [viewItemList, setViewItemList] = useState("");
+	const [showSnackbar, setShowSnackbar] = useState("");
 
 	function getIndex(itemName) {
 		/* goes through the list to find the item name under the collection list that matches the item name 
@@ -55,7 +56,12 @@ const ItemSelect = ({
 					<button
 						className="quantityBtn"
 						disabled={listItem.quantity === 0}
-						onClick={() => handleMinus(getIndex(item))}
+						onClick={handleQuantityChange(
+							getIndex(item),
+							"minus",
+							listItem,
+							setShowSnackbar
+						)}
 					>
 						-
 					</button>
@@ -64,17 +70,32 @@ const ItemSelect = ({
 						type="numeric"
 						name="quantity"
 						value={listItem.quantity}
-						onChange={handleQuantityChange(getIndex(item), "input", listItem)}
+						onChange={handleQuantityChange(
+							getIndex(item),
+							"input",
+							listItem,
+							setShowSnackbar
+						)}
 					></input>
 					<button
 						className="quantityBtn"
-						onClick={handleQuantityChange(getIndex(item), "plus", listItem)}
+						onClick={handleQuantityChange(
+							getIndex(item),
+							"plus",
+							listItem,
+							setShowSnackbar
+						)}
 					>
 						+
 					</button>
 				</div>
 			</div>
 		);
+	};
+
+	const handleCloseSnackbar = (event, reason) => {
+		if ("clickaway" == reason) return;
+		setShowSnackbar("");
 	};
 
 	function FilledList() {
@@ -88,7 +109,7 @@ const ItemSelect = ({
 								{QuantitySection(item.item)}
 								<button
 									className="deleteBtn"
-									onClick={() => handleDeleteItem(item.item)}
+									onClick={() => handleDeleteItem(item.item, setShowSnackbar)}
 								>
 									<DeleteIcon style={{ fontSize: "30px" }} />
 								</button>
@@ -258,12 +279,21 @@ const ItemSelect = ({
 			<div className="selectList">
 				{viewList ? <ShowList /> : <ItemSelectionController />}
 			</div>
-			<button className="cshButton" onClick={prevStep}>
-				Previous{" "}
-			</button>
-			<button className="cshButton" onClick={nextStep}>
-				Next{" "}
-			</button>
+			<div className="horizontalAlign">
+				<button className="progressFormBtn" onClick={prevStep}>
+					Previous{" "}
+				</button>
+				<button className="progressFormBtn" onClick={nextStep}>
+					Next{" "}
+				</button>
+			</div>
+			<Snackbar
+				open={showSnackbar != ""}
+				autoHideDuration={6000}
+				onClose={handleCloseSnackbar}
+				message={showSnackbar}
+				action="UNDO "
+			/>
 		</div>
 	);
 };

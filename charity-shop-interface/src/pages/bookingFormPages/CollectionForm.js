@@ -15,8 +15,6 @@ const CollectionForm = () => {
 
 	const [collectionList, setCollectionList] = useState([
 		{ item: "", quantity: 0 },
-		{ item: "Exercise Machine", quantity: 1 },
-		{ item: "Bags", quantity: 2 },
 	]);
 	const [formData, setFormData] = useState({
 		list: collectionList,
@@ -44,56 +42,51 @@ const CollectionForm = () => {
 	};
 
 	/* Used to change the value of the quantity of an item added to the list when it's changed within the form */
-	const handleQuantityChange = (index, type, listItem) => (e) => {
-		let newList = [];
-		if (index === -1) {
-			newList = [...collectionList, listItem];
-			index = newList.length - 1;
-			setFormData({
-				...formData,
-				list: newList,
-			});
-		} else {
-			newList = [...collectionList];
-		}
+	const handleQuantityChange =
+		(index, type, listItem, setShowSnackbar) => (e) => {
+			let newList = [];
+			if (index === -1) {
+				newList = [...collectionList, listItem];
+				index = newList.length - 1;
+				setFormData({
+					...formData,
+					list: newList,
+				});
+			} else {
+				newList = [...collectionList];
+			}
 
-		console.log("add", collectionList);
+			switch (type) {
+				case "input":
+					newList[index].quantity = e.target.value - 1;
+					setShowSnackbar("You have added '" + listItem.item + "'");
+					break;
+				case "plus":
+					console.log(collectionList);
+					newList[index].quantity++;
+					setShowSnackbar("You have added '" + listItem.item + "'");
+					break;
+				case "minus":
+					newList[index].quantity--;
+					setShowSnackbar("You have removed '" + listItem.item + "'");
+					break;
+				default:
+					break;
+			}
 
-		switch (type) {
-			case "input":
-				newList[index].quantity = e.target.value - 1;
-			case "plus":
-				console.log(collectionList);
-				newList[index].quantity++;
-				break;
-			default:
-				break;
-		}
+			if (isNaN(e.target.value)) {
+				newList[index].quantity = 1;
+			}
 
-		if (isNaN(e.target.value)) {
-			newList[index].quantity = 1;
-		}
-
-		setCollectionList(newList);
-		if (newList[index].quantity === 0) {
-			handleDeleteItem(listItem.item);
-		}
-		//	}
-	};
-
-	const handleMinus = (index) => {
-		console.log(index);
-		const newList = [...collectionList];
-		newList[index].quantity--;
-		if (newList[index].quantity === 0) {
-			handleDeleteItem(newList[index].item);
-		} else {
 			setCollectionList(newList);
-		}
-	};
+			if (newList[index].quantity === 0) {
+				handleDeleteItem(listItem.item);
+			}
+		};
 
-	const handleDeleteItem = (id) => {
+	const handleDeleteItem = (id, setShowSnackbar) => {
 		const newList = collectionList.filter((item) => item.item !== id);
+		setShowSnackbar("You have removed all '" + id + "'");
 		setCollectionList(newList);
 		setFormData({
 			...formData,
@@ -116,7 +109,6 @@ const CollectionForm = () => {
 					handleChange={handleChange}
 					handleQuantityChange={handleQuantityChange}
 					handleDeleteItem={handleDeleteItem}
-					handleMinus={handleMinus}
 					values={formData}
 				/>
 			);

@@ -176,6 +176,7 @@ align towards the left where needed*/
 
 .horizontalAlign {
 	display: flex;
+	justify-content: space-between;
 }
 
 /* HOME PAGE SPECIFIC: */
@@ -459,6 +460,14 @@ counter {
 .backBtn:focus {
 	background-color: transparent;
 	color: #0e540d;
+}
+
+.progressFormBtn {
+	height: 40px;
+	width: 100px;
+	border-radius: 25px;
+	margin: 2%;
+	font-size: large;
 }
 
 /* SPECIFIC TO THE DONATION FORM: */

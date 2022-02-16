@@ -4,12 +4,20 @@ make any necessary pages */
 
 import React from "react";
 
-const review = () => {
+const Review = ({ nextStep, prevStep }) => {
 	return (
 		<div>
 			<h1>review</h1>
+			<div className="horizontalAlign">
+				<button className="progressFormBtn" onClick={prevStep}>
+					Previous{" "}
+				</button>
+				<button className="progressFormBtn" onClick={nextStep}>
+					Submit{" "}
+				</button>
+			</div>
 		</div>
 	);
 };
 
-export default review;
+export default Review;

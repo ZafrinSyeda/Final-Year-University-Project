@@ -18,10 +18,15 @@ const CollectionForm = () => {
 	]);
 	const [formData, setFormData] = useState({
 		list: collectionList,
-		address: "",
+		addressLine1: "",
+		addressLine2: "",
+		townCity: "",
+		postcode: "",
 		collectionDate: "",
 		collectionTime: "",
-		name: "",
+		title: "",
+		forename: "",
+		surname: "",
 		email: "",
 		phoneNumber: "",
 	});
@@ -38,7 +43,7 @@ const CollectionForm = () => {
 
 	/* Used to change the value of a form item when it's changed within the form */
 	const handleChange = (input) => (e) => {
-		setFormData({ [input]: e.target.value });
+		setFormData({ ...formData, [input]: e.target.value });
 	};
 
 	/* Used to change the value of the quantity of an item added to the list when it's changed within the form */
@@ -113,11 +118,26 @@ const CollectionForm = () => {
 				/>
 			);
 		case 3:
-			return <TimePlace />;
+			return (
+				<TimePlace
+					nextStep={nextStep}
+					prevStep={prevStep}
+					values={formData}
+					handleChange={handleChange}
+				/>
+			);
+
 		case 4:
-			return <ContactDetails />;
+			return (
+				<ContactDetails
+					nextStep={nextStep}
+					prevStep={prevStep}
+					values={formData}
+					handleChange={handleChange}
+				/>
+			);
 		case 5:
-			return <Review />;
+			return <Review nextStep={nextStep} prevStep={prevStep} />;
 		case 6:
 			return <Success />;
 		default:

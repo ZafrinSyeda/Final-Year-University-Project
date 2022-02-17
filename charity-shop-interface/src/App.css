@@ -153,6 +153,10 @@ form hr {
 	transform: scale(1.15);
 }
 
+.container-img-xs {
+	height: 120px;
+}
+
 /* a style of button that may frequently be used in the website */
 .cshButton {
 	font-size: 18px;
@@ -309,6 +313,7 @@ and safety form */
 	height: 80%;
 }
 
+.reviewList,
 .selectList {
 	background-color: #ffffff;
 	border: 3px solid #658e4b;
@@ -468,6 +473,68 @@ counter {
 	border-radius: 25px;
 	margin: 2%;
 	font-size: large;
+}
+
+.collectionForm {
+	margin: 0% 10%;
+}
+.radioGroupLbl,
+.collectionForm input,
+.collectionForm label {
+	display: block;
+	text-align: left;
+}
+.radioGroupLbl,
+.collectionForm label {
+	font-weight: 600;
+	font-size: 18px;
+}
+
+.collectionForm input {
+	height: 35px;
+	font-size: medium;
+	margin-bottom: 5px;
+	margin-left: 30px;
+}
+
+.radioGroupLbl {
+	text-align: left;
+}
+
+.collectionForm input[type="radio"] {
+	display: inline;
+	vertical-align: middle;
+}
+
+.longInput {
+	width: 90%;
+}
+
+.reviewList {
+	text-align: left;
+	margin: 0% 5%;
+}
+
+.reviewItem {
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+.reviewItem li,
+.reviewItem p {
+	text-align: left;
+	margin: -15px 5%;
+	font-size: 18px;
+	font-family: "Montserrat", sans-serif;
+}
+
+.reviewItem li {
+	margin-bottom: 15px;
+}
+
+.successPage {
+	margin: 2% 20%;
+	padding: 5%;
+	text-align: center;
 }
 
 /* SPECIFIC TO THE DONATION FORM: */

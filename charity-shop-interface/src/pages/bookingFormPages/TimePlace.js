@@ -2,29 +2,22 @@
 enter the detail about where and when the collection should take place */
 
 import React from "react";
-import { useState } from "react";
 
 const TimePlace = ({ nextStep, prevStep, values, handleChange }) => {
-	const [collectionTime, setCollectionTime] = useState("");
-
-	const handleOptionChange = (e) => {
-		setCollectionTime(e.target.value);
-		values.collectionTime = collectionTime;
-		handleChange("collectionTime");
-	};
 	return (
 		<div className="defaultContainer">
 			<h1 className="formTitle"> Collection Address </h1>
 			<p className="subtitle">
 				Enter the address where you will be leave your donation to be collected{" "}
 			</p>
-			<form>
-				<label>
+			<form className="collectionForm">
+				<label className="collectionLbl">
 					*Address Line 1
 					<input
 						type="text"
 						id="address1"
 						name="address1"
+						className="longInput"
 						value={values.addressLine1}
 						onChange={handleChange("addressLine1")}
 					/>
@@ -35,6 +28,7 @@ const TimePlace = ({ nextStep, prevStep, values, handleChange }) => {
 						type="text"
 						id="address2"
 						name="address2"
+						className="longInput"
 						value={values.addressLine2}
 						onChange={handleChange("addressLine2")}
 					/>
@@ -45,6 +39,7 @@ const TimePlace = ({ nextStep, prevStep, values, handleChange }) => {
 						type="text"
 						id="towncity"
 						name="towncity"
+						className="longInput"
 						value={values.townCity}
 						onChange={handleChange("townCity")}
 					/>
@@ -67,7 +62,7 @@ const TimePlace = ({ nextStep, prevStep, values, handleChange }) => {
 				Please select the most convient date and time for when you would like
 				your collection to be picked up
 			</p>
-			<form>
+			<form className="collectionForm">
 				<label>
 					*Select Date
 					<input
@@ -78,24 +73,26 @@ const TimePlace = ({ nextStep, prevStep, values, handleChange }) => {
 						onChange={handleChange("collectionDate")}
 					/>
 				</label>
-				*Select Time
+				<p className="radioGroupLbl">*Select Time</p>
 				<label>
-					<input
-						type="radio"
-						name="am"
-						value="A.M. (9:00 - 12:00)"
-						checked={collectionTime === "A.M. (9:00 - 12:00)"}
-						onChange={handleOptionChange}
-					/>
-					A.M. (9:00 - 12:00)
+					<label className="radioGroup">
+						<input
+							type="radio"
+							name="am"
+							value="A.M. (9:00 - 12:00)"
+							checked={values.collectionTime === "A.M. (9:00 - 12:00)"}
+							onChange={handleChange("collectionTime")}
+						/>
+						A.M. (9:00 - 12:00)
+					</label>
 				</label>
 				<label>
 					<input
 						type="radio"
 						name="pm"
 						value="PM (12:00 - 17:00)"
-						checked={collectionTime === "PM (12:00 - 17:00)"}
-						onChange={handleOptionChange}
+						checked={values.collectionTime === "PM (12:00 - 17:00)"}
+						onChange={handleChange("collectionTime")}
 					/>
 					PM (12:00 - 17:00)
 				</label>

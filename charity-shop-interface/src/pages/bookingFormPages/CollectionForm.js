@@ -13,6 +13,8 @@ const CollectionForm = () => {
 
 	const [step, setStep] = useState(1);
 
+	const [text, setText] = useState(true);
+
 	const [collectionList, setCollectionList] = useState([
 		{ item: "", quantity: 0 },
 	]);
@@ -134,10 +136,19 @@ const CollectionForm = () => {
 					prevStep={prevStep}
 					values={formData}
 					handleChange={handleChange}
+					text={text}
+					setText={setText}
 				/>
 			);
 		case 5:
-			return <Review nextStep={nextStep} prevStep={prevStep} />;
+			return (
+				<Review
+					nextStep={nextStep}
+					prevStep={prevStep}
+					values={formData}
+					text={text}
+				/>
+			);
 		case 6:
 			return <Success />;
 		default:

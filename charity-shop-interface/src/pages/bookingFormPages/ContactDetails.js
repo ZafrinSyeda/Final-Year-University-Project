@@ -2,8 +2,17 @@
 enter contact details such as name, phone number, email */
 
 import React from "react";
+import { useState } from "react";
 
-const ContactDetails = ({ nextStep, prevStep, values, handleChange }) => {
+const ContactDetails = ({
+	nextStep,
+	prevStep,
+	values,
+	handleChange,
+	setText,
+	text,
+}) => {
+	//const [text, setText] = useState(true);
 	return (
 		<div className="defaultContainer">
 			<h1 className="formTitle"> Contact Details </h1>
@@ -11,7 +20,7 @@ const ContactDetails = ({ nextStep, prevStep, values, handleChange }) => {
 				We will just need some information about your preferred method of
 				contact{" "}
 			</p>
-			<form>
+			<form className="collectionForm">
 				<label>
 					*Title
 					<input
@@ -28,6 +37,7 @@ const ContactDetails = ({ nextStep, prevStep, values, handleChange }) => {
 						type="text"
 						id="forename"
 						name="forename"
+						className="longInput"
 						value={values.forename}
 						onChange={handleChange("forename")}
 					/>
@@ -38,9 +48,54 @@ const ContactDetails = ({ nextStep, prevStep, values, handleChange }) => {
 						type="text"
 						id="surname"
 						name="surname"
+						className="longInput"
 						value={values.surname}
 						onChange={handleChange("surname")}
 					/>
+				</label>
+				<p className="radioGroupLbl">
+					*Would you prefer to be contacted by text or email?
+				</p>
+				<label>
+					<input
+						id="textRadio"
+						type="radio"
+						name="text"
+						value="text"
+						checked={text}
+						onChange={() => setText(true)}
+					/>
+					Text
+					{text ? (
+						<input
+							type="number"
+							id="phoneNum"
+							name="amount"
+							className="longInput"
+							value={values.phoneNumber}
+							onChange={handleChange("phoneNumber")}
+						/>
+					) : null}
+				</label>
+				<label>
+					<input
+						type="radio"
+						name="email"
+						value="email"
+						checked={!text}
+						onChange={() => setText(false)}
+					/>
+					Email
+					{!text ? (
+						<input
+							type="text"
+							id="emailUsr"
+							name="email"
+							className="longInput"
+							value={values.email}
+							onChange={handleChange("email")}
+						/>
+					) : null}
 				</label>
 			</form>
 			<div className="horizontalAlign">

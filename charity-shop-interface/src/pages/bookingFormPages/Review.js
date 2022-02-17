@@ -4,10 +4,55 @@ make any necessary pages */
 
 import React from "react";
 
-const Review = ({ nextStep, prevStep }) => {
+const Review = ({ nextStep, prevStep, values, text }) => {
 	return (
-		<div>
-			<h1>review</h1>
+		<div className="defaultContainer">
+			<h1 className="formTitle"> Review</h1>
+			<p className="subtitle">
+				Review You're nearly done! Now all that's left to do is confirm the
+				information
+			</p>
+			<div className="reviewList">
+				<h2>Items to be Collected: </h2>
+				<ul className="reviewItem">
+					{values.list.slice(1).map((item) => (
+						<li key={item.item}>
+							{item.item} (Quantity: {item.quantity})
+						</li>
+					))}
+				</ul>
+				<h2>Address: </h2>
+				<div className="reviewItem">
+					<p>{values.addressLine1}, </p>
+					<p>{values.addressLine2},</p>
+					<p>{values.townCity},</p>
+					<p>{values.postcode},</p>
+				</div>
+
+				<h2>Time: </h2>
+				<div className="reviewItem">
+					<p>
+						{values.collectionDate}: {values.collectionTime}
+					</p>
+				</div>
+
+				<h2>Contact Details: </h2>
+				<div className="reviewItem">
+					<p>
+						{values.title} {values.forename} {values.surname}
+					</p>
+					{text ? (
+						<p>
+							<i>Phone Number: &nbsp;</i> {values.phoneNumber}
+						</p>
+					) : (
+						<p>
+							<i>Email: &nbsp;</i>
+							{values.email}
+						</p>
+					)}
+				</div>
+			</div>
 			<div className="horizontalAlign">
 				<button className="progressFormBtn" onClick={prevStep}>
 					Previous{" "}

@@ -47,29 +47,30 @@ const Feed = () => {
 		},
 	];
 
-	const postComments = [
+	const [postComments, setPostComment] = useState([
 		{
 			username: "Makayla Madelynn Kovačić",
 			profile_pic: profilepicture,
-			id: "makaylacomment1",
+			id: "makaylacomment",
 			message: "This is amazing!",
 		},
 		{
 			username: "Keshawn Chance",
 			profile_pic: paintingpfp,
-			id: "keshawncomment1",
+			id: "keshawncomment",
 			message: "This inspires me :)",
 		},
 		{
 			username: "Miki O'Callaghan",
 			profile_pic: personpfp,
-			id: "mikicomment1",
+			id: "mikicomment",
 			message: "WOW!!",
 		},
-	];
+	]);
 
 	const FeedPost = ({ post }) => {
 		const [showComments, setShowComments] = useState(false);
+		const [comment, setComment] = useState("");
 		const [like, setLike] = useState(false);
 		const [inspire, setInspire] = useState(false);
 
@@ -115,12 +116,27 @@ const Feed = () => {
 			);
 		};
 
+		const addComment = (e) => {
+			e.preventDefault();
+			if (comment != null) {
+				let postComment = {
+					username: "Makayla Madelynn Kovačić",
+					profile_pic: profilepicture,
+					id: "makaylacomment",
+					message: comment,
+				};
+				const newComment = [...postComments, postComment];
+				setPostComment(newComment);
+				setComment("");
+			}
+		};
+
 		const Comments = () => {
 			return (
 				<div className="postComments">
 					<h3>Comments</h3>
 
-					<div>
+					<div className="commentContainer">
 						{postComments.map((comment) => (
 							<div className="postComment" key={comment.id}>
 								<div className="profileDetails">
@@ -132,10 +148,15 @@ const Feed = () => {
 							</div>
 						))}
 					</div>
-					<form>
+
+					<form className="commentForm" onSubmit={addComment}>
 						<img src={profilepicture} className="profilePictureSm" />
-						<input type="text" />
-						<button>send</button>
+						<input
+							type="text"
+							onInput={(e) => setComment(e.currentTarget.value)}
+							value={comment}
+						/>
+						<button> send</button>
 					</form>
 					<button onClick={() => setShowComments(false)}>back</button>
 				</div>

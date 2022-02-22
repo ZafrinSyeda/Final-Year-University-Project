@@ -289,3 +289,22 @@ br {
 .showCommentBtn:hover {
 	text-decoration: underline;
 }
+
+.commentContainer {
+	max-height: 70vh;
+	overflow-y: auto;
+}
+
+.commentForm {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+}
+
+.commentForm input {
+	width: 70%;
+	padding: 10px 15px;
+	background-color: rgba(255, 255, 255, 0.932);
+	border-radius: 8px;
+}

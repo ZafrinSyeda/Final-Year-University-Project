@@ -212,6 +212,7 @@ br {
 }
 
 /*FOR THE USER'S FEED*/
+.postComments,
 .feedPost {
 	background-color: #fff;
 	border-radius: 10px;
@@ -234,15 +235,15 @@ br {
 }
 
 .profilePictureSm {
-	height: 7vh;
-	width: 7vh;
+	height: 40px;
+	width: 40px;
 	border-radius: 50px;
 	object-fit: cover;
 	margin-right: 10px;
 }
 
 .feedImg {
-	max-height: 90vh;
+	max-height: 70vh;
 	width: 90%;
 	object-fit: cover;
 }
@@ -260,4 +261,31 @@ br {
 
 .feedInteractions > *:hover {
 	color: #6c7cc0;
+}
+
+.postComments {
+	height: 100vh;
+}
+
+.postComment {
+	margin: 20px;
+}
+
+.commentContent {
+	text-align: left;
+	font-size: 18px;
+	margin: 15px 50px;
+}
+
+.showCommentBtn {
+	margin: 12px;
+	background-color: transparent;
+	border: none;
+	font-style: italic;
+	font-size: 15px;
+	color: #787878;
+}
+
+.showCommentBtn:hover {
+	text-decoration: underline;
 }

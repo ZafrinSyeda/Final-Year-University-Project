@@ -7,6 +7,9 @@ import vinylgirlpost from "../resources/vinylgirlpost.jpeg";
 import onur from "../resources/onur.jpg";
 import dressmannequin from "../resources/dressmannequin.jpeg";
 import shirtdesign from "../resources/shirtdesign.jpeg";
+import profilepicture from "../resources/profilepicture.PNG";
+import personpfp from "../resources/personpfp.jpg";
+import paintingpfp from "../resources/paintingpfp.jpg";
 /* MUI Imports */
 import ChatIcon from "@material-ui/icons/Chat";
 import FavoriteIcon from "@material-ui/icons/Favorite";
@@ -44,44 +47,102 @@ const Feed = () => {
 		},
 	];
 
+	const postComments = [
+		{
+			username: "Makayla Madelynn Kovačić",
+			profile_pic: profilepicture,
+			id: "makaylacomment1",
+			message: "This is amazing!",
+		},
+		{
+			username: "Keshawn Chance",
+			profile_pic: paintingpfp,
+			id: "keshawncomment1",
+			message: "This inspires me :)",
+		},
+		{
+			username: "Miki O'Callaghan",
+			profile_pic: personpfp,
+			id: "mikicomment1",
+			message: "WOW!!",
+		},
+	];
+
 	const FeedPost = ({ post }) => {
 		const [showComments, setShowComments] = useState(false);
 		const [like, setLike] = useState(false);
 		const [inspire, setInspire] = useState(false);
-		return (
-			<div>
-				<div className="feedPost" key={post.id}>
-					<div className="profileDetails">
-						<img src={post.profile_pic} className="profilePictureSm" />
-						{post.username}
-					</div>
 
-					<div>
-						<img src={post.post_img} className="feedImg" />
-						<h3>{post.title}</h3>
-						<p>{post.description}</p>
-						<p>View 25 Comments</p>
-					</div>
-					<div className="feedInteractions">
-						<button>
-							<ChatIcon style={{ fontSize: 33 }} />
-						</button>
-						<button onClick={() => setInspire(!inspire)}>
-							<StarIcon
-								style={{ fontSize: 33 }}
-								color={inspire ? "warning" : "default"}
-							/>
-						</button>
-						<button onClick={() => setLike(!like)}>
-							<FavoriteIcon
-								style={{ fontSize: 33 }}
-								color={like ? "error" : "default"}
-							/>
-						</button>
+		const UserPost = () => {
+			return (
+				<div>
+					<div className="feedPost" key={post.id}>
+						<div className="profileDetails">
+							<img src={post.profile_pic} className="profilePictureSm" />
+							{post.username}
+						</div>
+
+						<div>
+							<img src={post.post_img} className="feedImg" />
+							<h3>{post.title}</h3>
+							<p className="desc">{post.description}</p>
+							<button
+								className="showCommentBtn"
+								onClick={() => setShowComments(!showComments)}
+							>
+								View {postComments.length} Comments
+							</button>
+						</div>
+						<div className="feedInteractions">
+							<button onClick={() => setShowComments(!showComments)}>
+								<ChatIcon style={{ fontSize: 33 }} />
+							</button>
+							<button onClick={() => setInspire(!inspire)}>
+								<StarIcon
+									style={{ fontSize: 33 }}
+									color={inspire ? "warning" : "default"}
+								/>
+							</button>
+							<button onClick={() => setLike(!like)}>
+								<FavoriteIcon
+									style={{ fontSize: 33 }}
+									color={like ? "error" : "default"}
+								/>
+							</button>
+						</div>
 					</div>
 				</div>
-			</div>
-		);
+			);
+		};
+
+		const Comments = () => {
+			return (
+				<div className="postComments">
+					<h3>Comments</h3>
+
+					<div>
+						{postComments.map((comment) => (
+							<div className="postComment" key={comment.id}>
+								<div className="profileDetails">
+									<img src={comment.profile_pic} className="profilePictureSm" />
+									{comment.username}:<p></p>
+								</div>
+								<div className="commentContent">{comment.message}</div>
+								<hr />
+							</div>
+						))}
+					</div>
+					<form>
+						<img src={profilepicture} className="profilePictureSm" />
+						<input type="text" />
+						<button>send</button>
+					</form>
+					<button onClick={() => setShowComments(false)}>back</button>
+				</div>
+			);
+		};
+
+		return <div>{showComments ? <Comments /> : <UserPost />}</div>;
 	};
 
 	return (
@@ -91,7 +152,6 @@ const Feed = () => {
 				{friendPosts.map((post) => (
 					<FeedPost key={post.id} post={post} />
 				))}
-				;
 			</div>
 		</div>
 	);

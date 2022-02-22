@@ -173,6 +173,14 @@ form input[type="submit"]:hover {
 	font-weight: bold;
 }
 
+.desc {
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 .newPostBtn {
 	position: absolute;
 	bottom: 20px;

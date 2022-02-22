@@ -5,8 +5,8 @@ import "./App.css";
 /* Imports for the different pages that should be accessed */
 import LoginForm from "./pages/Login";
 import Profile from "./pages/Profile";
+import Feed from "./pages/Feed";
 import HeaderMenu from "./pages/components/HeaderMenu";
-import EditMenu from "./pages/components/EditMenu";
 import NewPost from "./pages/components/NewPost";
 import SideMenu from "./pages/components/SideMenu";
 
@@ -72,7 +72,7 @@ function App() {
 					<Router>
 						<SideMenu NewPost={toggleCreatePost} />
 						<Routes>
-							<Route path="/" element={<Profile />} />
+							<Route path="/" element={<Feed />} />
 							<Route path="/Profile" element={<Profile />} />
 						</Routes>
 					</Router>

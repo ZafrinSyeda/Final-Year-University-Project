@@ -12,9 +12,6 @@ import basket from "../resources/mushroom-basket.jpg";
 import profilepicture from "../resources/profilepicture.PNG";
 /* stylesheet */
 import "./Profile.css";
-/* imports from other libraries aside from React */
-import { BiArrowBack } from "react-icons/bi";
-import Masonry from "@mui/lab/Masonry";
 
 const Profile = () => {
 	/* hardcoded the details about the posts on the page */
@@ -70,59 +67,6 @@ const Profile = () => {
 	/* variable used depending on whether the user has selected one of the hobbies on the side profile
 	the value matches the hobby id, but by default it's set to 0 */
 	const [activeButton, setActiveButton] = useState(0);
-
-	/* gets the details from the hobbies const, and maps them to buttons on the side profile */
-	function HobbyButtons() {
-		return (
-			<div>
-				{hobbies.map((hobby) => (
-					<button
-						key={hobby.hobby_id}
-						onClick={() => setActiveButton(hobby.hobby_id)}
-						className={
-							/* used to change the appearance of the button when it's been selected */
-							hobby.hobby_id === activeButton
-								? "hobbyButton active"
-								: "hobbyButton"
-						}
-					>
-						{hobby.name}
-					</button>
-				))}
-			</div>
-		);
-	}
-
-	/* represents the side profile displayed on the user's profile that details their name, and hobbies*/
-	function SideProfile() {
-		return (
-			<div className="page">
-				<div className="sideProfile">
-					{activeButton != 0 ? (
-						/* when the user has selected a button, a back button should be displayed to make
-						it obvious for the user to go back to view all posts */
-						<p>
-							<button className="back" onClick={() => setActiveButton(0)}>
-								<BiArrowBack size={20} data-testid="backBtn" />
-							</button>{" "}
-						</p>
-					) : null}
-					{/* added the option to make it so that if the profile picture is clicked the 
-					user can go back to viewing all of the posts as well because the back button 
-					is a bit small */}
-					<img
-						className="profilePicture"
-						src={profilepicture}
-						alt="profile picture"
-						onClick={() => setActiveButton(0)}
-					></img>
-					<h3>Firstname Surname</h3>
-					<p>Description</p>
-					<HobbyButtons />
-				</div>
-			</div>
-		);
-	}
 
 	function UserDetails() {
 		return (

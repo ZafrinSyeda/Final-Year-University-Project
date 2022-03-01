@@ -4,8 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 /* Imports for the different pages that should be accessed */
 import LoginForm from "./pages/Login";
-import Profile from "./pages/Profile";
 import Feed from "./pages/Feed";
+import Profile from "./pages/Profile";
+import Messages from "./pages/Messages";
+import Activity from "./pages/Activity";
 import HeaderMenu from "./pages/components/HeaderMenu";
 import NewPost from "./pages/components/NewPost";
 import SideMenu from "./pages/components/SideMenu";
@@ -74,6 +76,8 @@ function App() {
 						<Routes>
 							<Route path="/" element={<Feed />} />
 							<Route path="/Profile" element={<Profile />} />
+							<Route path="/Messages" element={<Messages />} />
+							<Route path="/Activity" element={<Activity />} />
 						</Routes>
 					</Router>
 					<HeaderMenu Logout={Logout} />

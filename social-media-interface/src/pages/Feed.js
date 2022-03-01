@@ -14,6 +14,8 @@ import paintingpfp from "../resources/paintingpfp.jpg";
 import ChatIcon from "@material-ui/icons/Chat";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import StarIcon from "@mui/icons-material/Star";
+/* unique ID import */
+import { v4 as uuidv4 } from "uuid";
 
 const Feed = () => {
 	const friendPosts = [
@@ -47,28 +49,28 @@ const Feed = () => {
 		},
 	];
 
-	const [postComments, setPostComment] = useState([
-		{
-			username: "Makayla Madelynn Kovačić",
-			profile_pic: profilepicture,
-			id: "makaylacomment",
-			message: "This is amazing!",
-		},
-		{
-			username: "Keshawn Chance",
-			profile_pic: paintingpfp,
-			id: "keshawncomment",
-			message: "This inspires me :)",
-		},
-		{
-			username: "Miki O'Callaghan",
-			profile_pic: personpfp,
-			id: "mikicomment",
-			message: "WOW!!",
-		},
-	]);
-
 	const FeedPost = ({ post }) => {
+		const [postComments, setPostComment] = useState([
+			{
+				username: "Makayla Madelynn Kovačić",
+				profile_pic: profilepicture,
+				id: "makaylacomment",
+				message: "This is amazing!",
+			},
+			{
+				username: "Keshawn Chance",
+				profile_pic: paintingpfp,
+				id: "keshawncomment",
+				message: "This inspires me :)",
+			},
+			{
+				username: "Miki O'Callaghan",
+				profile_pic: personpfp,
+				id: "mikicomment",
+				message: "WOW!!",
+			},
+		]);
+
 		const [showComments, setShowComments] = useState(false);
 		const [comment, setComment] = useState("");
 		const [like, setLike] = useState(false);
@@ -118,23 +120,22 @@ const Feed = () => {
 
 		const addComment = (e) => {
 			e.preventDefault();
-			if (comment != null) {
-				let postComment = {
-					username: "Makayla Madelynn Kovačić",
-					profile_pic: profilepicture,
-					id: "makaylacomment",
-					message: comment,
-				};
-				const newComment = [...postComments, postComment];
-				setPostComment(newComment);
-				setComment("");
-			}
+			console.log("good comment");
+			let postComment = {
+				username: "Makayla Madelynn Kovačić",
+				profile_pic: profilepicture,
+				id: uuidv4(),
+				message: comment,
+			};
+			const newComment = [...postComments, postComment];
+			setPostComment(newComment);
+			setComment("");
 		};
 
 		const Comments = () => {
 			return (
 				<div className="postComments">
-					<h3>Comments</h3>
+					<h3>Comments ({postComments.length})</h3>
 
 					<div className="commentContainer">
 						{postComments.map((comment) => (
@@ -153,12 +154,19 @@ const Feed = () => {
 						<img src={profilepicture} className="profilePictureSm" />
 						<input
 							type="text"
-							onInput={(e) => setComment(e.currentTarget.value)}
+							placeholder="Enter a message"
+							onChange={(e) => setComment(e.currentTarget.value)}
 							value={comment}
+							pattern="^[a-zA-Z1-9].*"
 						/>
-						<button> send</button>
+						<button className="commentBtn" disabled={comment == ""}>
+							{" "}
+							send
+						</button>
 					</form>
-					<button onClick={() => setShowComments(false)}>back</button>
+					<button className="commentBtn" onClick={() => setShowComments(false)}>
+						Back to post
+					</button>
 				</div>
 			);
 		};

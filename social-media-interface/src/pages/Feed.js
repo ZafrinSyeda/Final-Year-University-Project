@@ -2,8 +2,9 @@ import React, { useState } from "react";
 /* stylesheet */
 import "./Profile.css";
 /* Images */
-import vinylgirlpfp from "../resources/vinylgirlpfp.jpeg";
+
 import vinylgirlpost from "../resources/vinylgirlpost.jpeg";
+import vinylgirlpfp from "../resources/vinylgirlpfp.jpeg";
 import onur from "../resources/onur.jpg";
 import dressmannequin from "../resources/dressmannequin.jpeg";
 import shirtdesign from "../resources/shirtdesign.jpeg";
@@ -157,7 +158,7 @@ const Feed = () => {
 							placeholder="Enter a message"
 							onChange={(e) => setComment(e.currentTarget.value)}
 							value={comment}
-							pattern="^[a-zA-Z1-9].*"
+							pattern="[^' ']+"
 						/>
 						<button className="commentBtn" disabled={comment == ""}>
 							{" "}

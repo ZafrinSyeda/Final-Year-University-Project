@@ -322,3 +322,35 @@ br {
 .commentBtn:hover {
 	background-color: #2c2c2c;
 }
+
+.desc,
+.messageTxt {
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* messages */
+.messageHeader {
+	display: flex;
+	justify-content: space-between;
+}
+
+.messagePreview {
+	padding: 20px;
+	margin: 1% 2%;
+}
+
+.messagePreview:hover,
+.messagePreview:focus {
+	background-color: #f0f0f0;
+	font-weight: 600;
+}
+
+.messageTxt {
+	text-align: left;
+	padding: 0px 45px;
+	font-size: 20px;
+}

@@ -13,6 +13,10 @@ h3 {
 	font-family: "Montserrat", sans-serif;
 }
 
+body {
+	background-color: #e5e5e5;
+}
+
 /* the background of the login form */
 .login {
 	display: block;
@@ -171,14 +175,6 @@ form input[type="submit"]:hover {
 	color: #6c7cc0;
 	text-decoration: none;
 	font-weight: bold;
-}
-
-.desc {
-	display: -webkit-box;
-	-webkit-line-clamp: 1;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
-	text-overflow: ellipsis;
 }
 
 .newPostBtn {

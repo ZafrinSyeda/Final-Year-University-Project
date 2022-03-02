@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ActivityComponent } from "./ActivityComponent";
+import { AddMessage } from "./components/AddMessage";
 /* stylesheet */
 import "./Profile.css";
 /*images*/
@@ -78,6 +79,17 @@ const Messages = () => {
 			<div>
 				<button onClick={() => setIndividualMessage("")}>back</button>
 				<h2>{individualMessage}</h2>
+				{conversation.map((message) => (
+					<div>
+						<img src={message.profile_pic} className="profilePictureSm" />
+						<div>{message.message}</div>
+					</div>
+				))}
+				<AddMessage
+					type={"message"}
+					messages={conversation}
+					setMessage={setConversation}
+				/>
 			</div>
 		);
 	};

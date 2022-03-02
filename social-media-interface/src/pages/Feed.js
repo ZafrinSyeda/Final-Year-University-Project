@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { AddMessage } from "./components/AddMessage";
 /* stylesheet */
 import "./Profile.css";
 /* Images */
@@ -15,8 +16,6 @@ import paintingpfp from "../resources/paintingpfp.jpg";
 import ChatIcon from "@material-ui/icons/Chat";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import StarIcon from "@mui/icons-material/Star";
-/* unique ID import */
-import { v4 as uuidv4 } from "uuid";
 
 const Feed = () => {
 	const friendPosts = [
@@ -73,7 +72,6 @@ const Feed = () => {
 		]);
 
 		const [showComments, setShowComments] = useState(false);
-		const [comment, setComment] = useState("");
 		const [like, setLike] = useState(false);
 		const [inspire, setInspire] = useState(false);
 
@@ -119,20 +117,6 @@ const Feed = () => {
 			);
 		};
 
-		const addComment = (e) => {
-			e.preventDefault();
-			console.log("good comment");
-			let postComment = {
-				username: "Makayla Madelynn Kovačić",
-				profile_pic: profilepicture,
-				id: uuidv4(),
-				message: comment,
-			};
-			const newComment = [...postComments, postComment];
-			setPostComment(newComment);
-			setComment("");
-		};
-
 		const Comments = () => {
 			return (
 				<div className="postComments">
@@ -151,20 +135,11 @@ const Feed = () => {
 						))}
 					</div>
 
-					<form className="commentForm" onSubmit={addComment}>
-						<img src={profilepicture} className="profilePictureSm" />
-						<input
-							type="text"
-							placeholder="Enter a message"
-							onChange={(e) => setComment(e.currentTarget.value)}
-							value={comment}
-							pattern="[^' ']+"
-						/>
-						<button className="commentBtn" disabled={comment == ""}>
-							{" "}
-							send
-						</button>
-					</form>
+					<AddMessage
+						type={"comment"}
+						messages={postComments}
+						setMessage={setPostComment}
+					/>
 					<button className="commentBtn" onClick={() => setShowComments(false)}>
 						Back to post
 					</button>

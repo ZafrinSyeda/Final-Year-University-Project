@@ -1,4 +1,6 @@
 import React from "react";
+/* unique ID import */
+import { v4 as uuidv4 } from "uuid";
 
 export const ActivityComponent = ({ activity, setIndividualMessage }) => {
 	function activityDetail(activityType) {
@@ -34,7 +36,7 @@ export const ActivityComponent = ({ activity, setIndividualMessage }) => {
 	return (
 		<div>
 			{sortedActivity.map((activity) => (
-				<div key={activity.username}>
+				<div key={uuidv4()}>
 					<div
 						className="messagePreview"
 						onClick={

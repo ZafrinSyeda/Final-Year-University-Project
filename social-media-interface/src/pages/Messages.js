@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ActivityComponent } from "./ActivityComponent";
 /* stylesheet */
 import "./Profile.css";
 /*images*/
@@ -38,12 +39,14 @@ const Messages = () => {
 
 	const messengerDetail = [
 		{
+			type: "message",
 			username: "Celestina Benedetti",
 			profile_pic: vinylgirlpfp,
 			recent_message: conversation[conversation.length - 1].message,
 			date: conversation[conversation.length - 1].date,
 		},
 		{
+			type: "message",
 			username: "Onur Stanton",
 			profile_pic: onur,
 			recent_message:
@@ -51,12 +54,14 @@ const Messages = () => {
 			date: "2022-02-25T12:11:00Z",
 		},
 		{
+			type: "message",
 			username: "Keshawn Chance",
 			profile_pic: paintingpfp,
 			recent_message: "OMG NO WAY!!",
 			date: "2022-02-11T15:11:50Z",
 		},
 		{
+			type: "message",
 			username: "Miki O'Callaghan",
 			profile_pic: personpfp,
 			recent_message: "(╯✧▽✧)╯",
@@ -67,11 +72,6 @@ const Messages = () => {
 	const [individualMessage, setIndividualMessage] = useState("");
 
 	/* Sorts the messages in reverse chronological order so the most recently sent one appears first */
-	let sortedMessages = messengerDetail
-		.sort((a, b) => {
-			return new Date(a.date).getTime() - new Date(b.date).getTime();
-		})
-		.reverse();
 
 	const SingleConversation = () => {
 		return (
@@ -87,26 +87,10 @@ const Messages = () => {
 		return (
 			<div>
 				<h1>Messages</h1>
-				{sortedMessages.map((message) => (
-					<div key={message.username}>
-						<div
-							className="messagePreview"
-							onClick={() => setIndividualMessage(message.username)}
-						>
-							<div className="messageHeader">
-								<div className="profileDetails">
-									<img src={message.profile_pic} className="profilePictureSm" />
-									{message.username}
-								</div>
-								<div>
-									{new Date(message.date).toISOString().substring(5, 10)}
-								</div>
-							</div>
-							<div className="messageTxt">{message.recent_message} </div>
-						</div>
-						<hr />
-					</div>
-				))}
+				<ActivityComponent
+					activity={messengerDetail}
+					setIndividualMessage={setIndividualMessage}
+				/>
 				;
 			</div>
 		);

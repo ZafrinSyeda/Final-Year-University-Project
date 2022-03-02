@@ -234,6 +234,11 @@ br {
 	text-decoration: underline;
 }
 
+.profileDetails div {
+	margin-left: 5px;
+	font-style: normal;
+}
+
 .profilePictureSm {
 	height: 40px;
 	width: 40px;

@@ -359,3 +359,51 @@ br {
 	padding: 0px 45px;
 	font-size: 20px;
 }
+
+.convo {
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+.recievedMsg div,
+.sentMsg div {
+	margin: 15px;
+	border-radius: 10px;
+}
+
+.recievedMsg {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.recievedMsg div {
+	padding: 10px;
+	background-color: #ffb4d1;
+	margin-right: 25%;
+}
+
+.sentMsg {
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 50px;
+}
+
+.sentMsg div {
+	padding: 10px;
+	background-color: #95b7e0;
+	margin-left: 25%;
+}
+
+.addMessage {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding-left: 10%;
+}
+
+.convoContent {
+	max-height: 75vh;
+	overflow-y: scroll;
+	padding: 50px;
+}

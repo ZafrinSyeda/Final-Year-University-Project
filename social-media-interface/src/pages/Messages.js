@@ -72,24 +72,33 @@ const Messages = () => {
 
 	const [individualMessage, setIndividualMessage] = useState("");
 
-	/* Sorts the messages in reverse chronological order so the most recently sent one appears first */
-
 	const SingleConversation = () => {
 		return (
-			<div>
+			<div className="convo">
 				<button onClick={() => setIndividualMessage("")}>back</button>
 				<h2>{individualMessage}</h2>
-				{conversation.map((message) => (
-					<div>
-						<img src={message.profile_pic} className="profilePictureSm" />
-						<div>{message.message}</div>
-					</div>
-				))}
-				<AddMessage
-					type={"message"}
-					messages={conversation}
-					setMessage={setConversation}
-				/>
+				<div className="convoContent">
+					{conversation.map((message) =>
+						message.type === "recieve" ? (
+							<div className="recievedMsg">
+								<img src={message.profile_pic} className="profilePictureSm" />
+								<div>{message.message}</div>
+							</div>
+						) : (
+							<div className="sentMsg">
+								<div>{message.message}</div>
+								<img src={message.profile_pic} className="profilePictureSm" />
+							</div>
+						)
+					)}
+				</div>
+				<div className="addMessage">
+					<AddMessage
+						type={"message"}
+						messages={conversation}
+						setMessage={setConversation}
+					/>
+				</div>
 			</div>
 		);
 	};

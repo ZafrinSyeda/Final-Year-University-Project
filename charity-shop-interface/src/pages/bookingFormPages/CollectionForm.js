@@ -12,6 +12,16 @@ const CollectionForm = () => {
 	/* Represents the information that will be stored for the form */
 
 	const [step, setStep] = useState(1);
+	const [maxStep, setMaxStep] = useState(1);
+	const [complete, setComplete] = useState([false, false, false, false, false]);
+
+	const stepNames = [
+		"Health and Safety",
+		"Select Items",
+		"Collection Address and Time",
+		"Contact Details",
+		"Review",
+	];
 
 	const [text, setText] = useState(true);
 
@@ -35,7 +45,12 @@ const CollectionForm = () => {
 
 	/* The function to be used by the 'next' button when moving to the next page in a form */
 	const nextStep = () => {
+		let newComplete = [...complete];
+		newComplete[step - 1] = true;
+		setComplete(newComplete);
 		setStep(step + 1);
+		if (step > maxStep) setMaxStep(step);
+		console.log(maxStep);
 	};
 
 	/* The function to be used by the 'previous' button when moving to the previous page in a form */
@@ -87,7 +102,7 @@ const CollectionForm = () => {
 
 			setCollectionList(newList);
 			if (newList[index].quantity === 0) {
-				handleDeleteItem(listItem.item);
+				handleDeleteItem(listItem.item, setShowSnackbar);
 			}
 		};
 
@@ -101,52 +116,107 @@ const CollectionForm = () => {
 		});
 	};
 
+	const ProgressBtns = (isReview) => {
+		return (
+			<div className="horizontalAlign">
+				<button className="progressFormBtn" onClick={prevStep}>
+					Previous{" "}
+				</button>
+				{isReview ? (
+					<button className="submitFormBtn" onClick={nextStep}>
+						SUBMIT{" "}
+					</button>
+				) : (
+					<button className="progressFormBtn" onClick={nextStep}>
+						Next{" "}
+					</button>
+				)}
+			</div>
+		);
+	};
+
+	const ProgressBar = () => {
+		return (
+			<div>
+				{stepNames.map((stepName, index) => (
+					<div className="progressBar">
+						<div
+							className={
+								step - 1 === index
+									? "currentStep"
+									: complete[index]
+									? "completeStep"
+									: "incompleteStep"
+							}
+						>
+							{step - 1 === index
+								? ""
+								: complete[index]
+								? "✔"
+								: index === maxStep - 1
+								? "..."
+								: ""}
+							{maxStep >= index ? console.log("jg " + index + maxStep) : null}
+						</div>
+						<button
+							className="progressLink"
+							onClick={() => setStep(index + 1)}
+							disabled={maxStep < index}
+						>
+							{stepName}
+						</button>
+					</div>
+				))}
+			</div>
+		);
+	};
+
 	{
 		/* Depending on what stage of the form the user is in, they will be presented with a 
 		different page of the form */
 	}
 	switch (step) {
 		case 1:
-			return <HealthSafety nextStep={nextStep} />;
+			return <HealthSafety nextStep={nextStep} ProgressBar={ProgressBar} />;
 		case 2:
 			return (
 				<ItemSelect
-					nextStep={nextStep}
-					prevStep={prevStep}
+					ProgressBar={ProgressBar}
 					handleChange={handleChange}
 					handleQuantityChange={handleQuantityChange}
 					handleDeleteItem={handleDeleteItem}
 					values={formData}
+					ProgressBtns={ProgressBtns}
 				/>
 			);
 		case 3:
 			return (
 				<TimePlace
-					nextStep={nextStep}
-					prevStep={prevStep}
+					ProgressBar={ProgressBar}
 					values={formData}
 					handleChange={handleChange}
+					ProgressBtns={ProgressBtns}
 				/>
 			);
 
 		case 4:
 			return (
 				<ContactDetails
-					nextStep={nextStep}
-					prevStep={prevStep}
+					ProgressBar={ProgressBar}
 					values={formData}
 					handleChange={handleChange}
 					text={text}
 					setText={setText}
+					ProgressBtns={ProgressBtns}
 				/>
 			);
 		case 5:
 			return (
 				<Review
-					nextStep={nextStep}
-					prevStep={prevStep}
+					ProgressBar={ProgressBar}
 					values={formData}
 					text={text}
+					ProgressBtns={ProgressBtns}
 				/>
 			);
 		case 6:

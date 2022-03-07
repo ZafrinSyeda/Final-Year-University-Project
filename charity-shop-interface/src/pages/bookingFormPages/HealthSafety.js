@@ -7,7 +7,7 @@ import React from "react";
 import forbiddenItems from "../../resources/forbidden_items.json";
 import { useState } from "react";
 
-function HealthSafety({ nextStep }) {
+function HealthSafety({ nextStep, ProgressBar }) {
 	/* Represents the value that is being written into the search bar */
 	const [searchTerm, setSearchTerm] = useState("");
 	/* Represents the message that will tell users whether the item that they're searching for
@@ -27,6 +27,7 @@ function HealthSafety({ nextStep }) {
 	return (
 		<div>
 			<div className="defaultContainer">
+				<ProgressBar />
 				{/* Provides the relevant health and safety information */}
 				<h1 className="formTitle">Health and Safety</h1>
 				<p>

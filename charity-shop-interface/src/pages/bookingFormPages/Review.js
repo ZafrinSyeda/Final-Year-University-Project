@@ -4,9 +4,10 @@ make any necessary pages */
 
 import React from "react";
 
-const Review = ({ nextStep, prevStep, values, text }) => {
+const Review = ({ values, text, ProgressBtns, ProgressBar }) => {
 	return (
 		<div className="defaultContainer">
+			<ProgressBar />
 			<h1 className="formTitle"> Review</h1>
 			<p className="subtitle">
 				Review You're nearly done! Now all that's left to do is confirm the
@@ -53,14 +54,7 @@ const Review = ({ nextStep, prevStep, values, text }) => {
 					)}
 				</div>
 			</div>
-			<div className="horizontalAlign">
-				<button className="progressFormBtn" onClick={prevStep}>
-					Previous{" "}
-				</button>
-				<button className="progressFormBtn" onClick={nextStep}>
-					Submit{" "}
-				</button>
-			</div>
+			{ProgressBtns(true)}
 		</div>
 	);
 };

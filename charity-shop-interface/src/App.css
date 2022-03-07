@@ -467,12 +467,18 @@ counter {
 	color: #0e540d;
 }
 
+.submitFormBtn,
 .progressFormBtn {
 	height: 40px;
 	width: 100px;
 	border-radius: 25px;
 	margin: 2%;
 	font-size: large;
+}
+
+.submitFormBtn {
+	font-weight: 700;
+	border-radius: 5px;
 }
 
 .collectionForm {
@@ -535,6 +541,55 @@ counter {
 	margin: 2% 20%;
 	padding: 5%;
 	text-align: center;
+}
+
+.progressBar {
+	display: inline-block;
+	width: 20%;
+	padding: 0 20px;
+	padding-top: 30px;
+}
+
+.progressLink {
+	background-color: transparent;
+	color: #444444;
+}
+
+.progressLink:hover {
+	background-color: transparent;
+	text-decoration: underline;
+}
+
+.progressLink:disabled {
+	pointer-events: none;
+}
+
+.currentStep,
+.completeStep,
+.incompleteStep {
+	height: 50px;
+	width: 50px;
+	border-radius: 50px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	vertical-align: middle;
+	color: #fff;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.currentStep {
+	background-color: #0e540d;
+}
+
+.completeStep {
+	background-color: #80c476;
+}
+
+.incompleteStep {
+	background-color: #676767;
 }
 
 /* SPECIFIC TO THE DONATION FORM: */

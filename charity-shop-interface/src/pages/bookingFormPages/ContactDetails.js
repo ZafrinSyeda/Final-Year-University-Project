@@ -5,16 +5,17 @@ import React from "react";
 import { useState } from "react";
 
 const ContactDetails = ({
-	nextStep,
-	prevStep,
 	values,
 	handleChange,
 	setText,
 	text,
+	ProgressBtns,
+	ProgressBar,
 }) => {
 	//const [text, setText] = useState(true);
 	return (
 		<div className="defaultContainer">
+			<ProgressBar />
 			<h1 className="formTitle"> Contact Details </h1>
 			<p className="subtitle">
 				We will just need some information about your preferred method of
@@ -98,14 +99,7 @@ const ContactDetails = ({
 					) : null}
 				</label>
 			</form>
-			<div className="horizontalAlign">
-				<button className="progressFormBtn" onClick={prevStep}>
-					Previous{" "}
-				</button>
-				<button className="progressFormBtn" onClick={nextStep}>
-					Next{" "}
-				</button>
-			</div>
+			{ProgressBtns(false)}
 		</div>
 	);
 };

@@ -3,9 +3,10 @@ enter the detail about where and when the collection should take place */
 
 import React from "react";
 
-const TimePlace = ({ nextStep, prevStep, values, handleChange }) => {
+const TimePlace = ({ values, handleChange, ProgressBtns, ProgressBar }) => {
 	return (
 		<div className="defaultContainer">
+			<ProgressBar />
 			<h1 className="formTitle"> Collection Address </h1>
 			<p className="subtitle">
 				Enter the address where you will be leave your donation to be collected{" "}
@@ -97,14 +98,7 @@ const TimePlace = ({ nextStep, prevStep, values, handleChange }) => {
 					PM (12:00 - 17:00)
 				</label>
 			</form>
-			<div className="horizontalAlign">
-				<button className="progressFormBtn" onClick={prevStep}>
-					Previous{" "}
-				</button>
-				<button className="progressFormBtn" onClick={nextStep}>
-					Next{" "}
-				</button>
-			</div>
+			{ProgressBtns(false)}
 		</div>
 	);
 };

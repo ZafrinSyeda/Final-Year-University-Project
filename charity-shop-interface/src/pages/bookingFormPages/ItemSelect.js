@@ -8,11 +8,11 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Snackbar from "@mui/material/Snackbar";
 
 const ItemSelect = ({
-	nextStep,
-	prevStep,
 	values,
 	handleQuantityChange,
 	handleDeleteItem,
+	ProgressBtns,
+	ProgressBar,
 }) => {
 	const [viewList, setViewList] = useState(true);
 	const [viewItemList, setViewItemList] = useState("");
@@ -248,6 +248,7 @@ const ItemSelect = ({
 
 	return (
 		<div className="defaultContainer">
+			<ProgressBar />
 			<h1 className="formTitle">Select Items </h1>
 			<p className="subtitle">
 				Select the items you will be donating and review your list
@@ -279,14 +280,7 @@ const ItemSelect = ({
 			<div className="selectList">
 				{viewList ? <ShowList /> : <ItemSelectionController />}
 			</div>
-			<div className="horizontalAlign">
-				<button className="progressFormBtn" onClick={prevStep}>
-					Previous{" "}
-				</button>
-				<button className="progressFormBtn" onClick={nextStep}>
-					Next{" "}
-				</button>
-			</div>
+			{ProgressBtns(false)}
 			<Snackbar
 				open={showSnackbar != ""}
 				autoHideDuration={6000}

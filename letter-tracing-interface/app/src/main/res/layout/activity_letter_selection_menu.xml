@@ -1,229 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/titlebackground"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
 
-    <ScrollView
+    <TextView
+        android:id="@+id/menu_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Select a Letter"
+        android:textSize="40sp"
+        app:fontFamily="@font/baloo"
+        android:gravity="center"
+
+        ></TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/letterSelectRecycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent">
+        android:layout_height="match_parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/menu_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="0dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:text="Select a Letter"
-                android:textSize="55sp"
-                app:fontFamily="@font/baloo"
-                android:gravity="center"
-
-                ></TextView>
-
-            <androidx.gridlayout.widget.GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:padding="0dp"
-                app:alignmentMode="alignMargins"
-                app:columnCount="2"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/menu_title"
-                app:rowCount="4">
-
-                <!-- Card View for the Letter A -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardA"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="10dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:layout_columnWeight="1"
-                    app:layout_rowWeight="1">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/letter_a_btn" />
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-                <!-- Card View for the Letter B -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardB"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="10dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:layout_columnWeight="1"
-                    app:layout_rowWeight="1">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/letter_b_btn" />
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-                <!-- Card View for the Letter C -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardC"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="10dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:layout_columnWeight="1"
-                    app:layout_rowWeight="1">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/letter_c_btn" />
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-                <!-- Card View for the Letter D -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardD"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="10dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:layout_columnWeight="1"
-                    app:layout_rowWeight="1">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/letter_d_btn" />
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-                <!-- Card View for the Letter E -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardE"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="10dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:layout_columnWeight="1"
-                    app:layout_rowWeight="1">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/letter_e_btn" />
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-                <!-- Card View for the Letter F -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardF"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="10dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:layout_columnWeight="1"
-                    app:layout_rowWeight="1">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/letter_f_btn" />
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-                </androidx.gridlayout.widget.GridLayout>
-
-        </LinearLayout>
-
-
-    </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

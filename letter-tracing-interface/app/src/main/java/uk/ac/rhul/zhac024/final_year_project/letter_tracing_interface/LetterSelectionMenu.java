@@ -33,58 +33,9 @@ public class LetterSelectionMenu extends BaseActivity  {
         letterList = new ArrayList<>();
         adapter = new LetterAdapter(letterList, this);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
-        //RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         letterSelectRecycler.setLayoutManager(gridLayoutManager);
-        //letterSelectRecycler.setHasFixedSize(true);
         letterSelectRecycler.setAdapter(adapter);
-
         prepareLetters();
-
-        /*cardA = findViewById(R.id.cardA);
-        cardB = findViewById(R.id.cardB);
-        cardC = findViewById(R.id.cardC);
-        cardD = findViewById(R.id.cardD);
-        cardE = findViewById(R.id.cardE);
-        cardF = findViewById(R.id.cardF);
-
-        cardA.setOnClickListener(this);
-        cardB.setOnClickListener(this);
-        cardC.setOnClickListener(this);
-        cardD.setOnClickListener(this);
-        cardE.setOnClickListener(this);
-        cardF.setOnClickListener(this);*
-
-    }
-
-    @Override
-    public void onClick(View view) {
-
-        Intent intent = new Intent(this, LetterWriting.class);
-        Bundle traceBackgrounds = new Bundle();
-
-        switch(view.getId()) {
-            case R.id.cardA:
-                learn_a = MediaPlayer.create(this, R.raw.learn_a);
-                learn_a.start();
-                traceBackgrounds.putInt("upperCaseLetter", R.drawable.a_upper_case);
-                traceBackgrounds.putInt("lowerCaseLetter", R.drawable.a_lower_case);
-                break;
-            case R.id.cardB:
-                learn_b = MediaPlayer.create(this, R.raw.learn_b);
-                learn_b.start();
-                traceBackgrounds.putInt("upperCaseLetter", R.drawable.b_upper_case);
-                traceBackgrounds.putInt("lowerCaseLetter", R.drawable.b_lower_case);
-                break;
-            default:
-                unavailable = MediaPlayer.create(this, R.raw.unavailable);
-                unavailable.start();
-                return;
-        }
-        intent.putExtras(traceBackgrounds);
-        startActivity(intent);
-    }
- */
-
     }
 
     private void prepareLetters() {
@@ -101,8 +52,30 @@ public class LetterSelectionMenu extends BaseActivity  {
                 R.drawable.letter_f_btn,
         };
 
+        int[] upperCase = new int[] {
+                R.drawable.a_upper_case, R.drawable.b_upper_case,
+        };
+
+        int[] lowerCase = new int[] {
+                R.drawable.a_lower_case, R.drawable.b_lower_case,
+        };
+
+        int[] header = new int[] {
+                R.drawable.a_is_for, R.drawable.b_is_for,
+        };
+
+        int[] sounds = new int[] {
+                R.raw.learn_a, R.raw.learn_b, R.raw.unavailable
+        };
+
         for (int i = 0; i < letters.length; i++) {
-            Letter l = new Letter(letters[i], letterImages[i]);
+            Letter l;
+            if (i < upperCase.length) {
+
+                l = new Letter(letters[i], letterImages[i], upperCase[i], lowerCase[i], header[i], sounds[i]);
+            } else {
+                 l = new Letter(letters[i], letterImages[i], sounds[sounds.length - 1]);
+            }
             letterList.add(l);
         }
     }

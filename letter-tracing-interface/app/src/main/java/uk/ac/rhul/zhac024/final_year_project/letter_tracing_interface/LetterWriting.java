@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class LetterWriting extends BaseActivity implements View.OnClickListener {
@@ -13,22 +14,27 @@ public class LetterWriting extends BaseActivity implements View.OnClickListener 
     private TraceView traceViewUpperCase, traceViewLowerCase;
     private Button eraserBtn, penBtn, finishBtn, clearBtn;
     private MediaPlayer success;
+    private ImageView headerImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_letter_writing);
-        Bundle traceBackgrounds = getIntent().getExtras();
-        int upperCaseLetter = traceBackgrounds.getInt("upperCaseLetter");
-        int lowerCaseLetter = traceBackgrounds.getInt("lowerCaseLetter");
+        Bundle traceElements = getIntent().getExtras();
+        int upperCaseLetter = traceElements.getInt("upperCaseLetter");
+        int lowerCaseLetter = traceElements.getInt("lowerCaseLetter");
+        int header = traceElements.getInt("header");
         traceViewUpperCase = (TraceView) findViewById(R.id.traceViewUpperCase);
         traceViewLowerCase = (TraceView) findViewById(R.id.traceViewLowerCase);
+        headerImg = (ImageView) findViewById(R.id.learnLetterImg);
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         traceViewUpperCase.init(metrics);
         traceViewLowerCase.init(metrics);
         traceViewUpperCase.setBackground(getResources().getDrawable(upperCaseLetter));
         traceViewLowerCase.setBackground(getResources().getDrawable(lowerCaseLetter));
+        headerImg.setImageDrawable(getResources().getDrawable(header));
+
 
         eraserBtn = (Button) findViewById(R.id.eraserBtn);
         penBtn = (Button) findViewById(R.id.penBtn);

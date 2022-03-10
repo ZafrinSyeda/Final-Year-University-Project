@@ -218,67 +218,8 @@
                             android:src="@drawable/letter_f_btn" />
 
                     </LinearLayout>
-
                 </com.google.android.material.card.MaterialCardView>
-                <!-- Card View for the Letter G -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardG"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="10dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:layout_columnWeight="1"
-                    app:layout_rowWeight="1">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/letter_a_btn" />
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-                <!-- Card View for the Letter G -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardH"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="10dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:layout_columnWeight="1"
-                    app:layout_rowWeight="1">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/letter_a_btn" />
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-
-            </androidx.gridlayout.widget.GridLayout>
+                </androidx.gridlayout.widget.GridLayout>
 
         </LinearLayout>
 

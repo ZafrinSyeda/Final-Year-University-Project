@@ -18,14 +18,17 @@ public class LetterWriting extends BaseActivity implements View.OnClickListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_letter_writing);
+        Bundle traceBackgrounds = getIntent().getExtras();
+        int upperCaseLetter = traceBackgrounds.getInt("upperCaseLetter");
+        int lowerCaseLetter = traceBackgrounds.getInt("lowerCaseLetter");
         traceViewUpperCase = (TraceView) findViewById(R.id.traceViewUpperCase);
         traceViewLowerCase = (TraceView) findViewById(R.id.traceViewLowerCase);
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         traceViewUpperCase.init(metrics);
         traceViewLowerCase.init(metrics);
-        traceViewUpperCase.setBackground(getResources().getDrawable(R.drawable.a_upper_case));
-        traceViewLowerCase.setBackground(getResources().getDrawable(R.drawable.a_lower_case));
+        traceViewUpperCase.setBackground(getResources().getDrawable(upperCaseLetter));
+        traceViewLowerCase.setBackground(getResources().getDrawable(lowerCaseLetter));
 
         eraserBtn = (Button) findViewById(R.id.eraserBtn);
         penBtn = (Button) findViewById(R.id.penBtn);

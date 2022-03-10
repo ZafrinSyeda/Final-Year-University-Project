@@ -20,14 +20,12 @@ public class LetterSelectionMenu extends BaseActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_letter_selection_menu);
 
-        cardA = (CardView) findViewById(R.id.cardA);
-        cardB = (CardView) findViewById(R.id.cardB);
-        cardC = (CardView) findViewById(R.id.cardC);
-        cardD = (CardView) findViewById(R.id.cardD);
-        cardE = (CardView) findViewById(R.id.cardE);
-        cardF = (CardView) findViewById(R.id.cardF);
-        cardG = (CardView) findViewById(R.id.cardG);
-        cardH = (CardView) findViewById(R.id.cardH);
+        cardA = findViewById(R.id.cardA);
+        cardB = findViewById(R.id.cardB);
+        cardC = findViewById(R.id.cardC);
+        cardD = findViewById(R.id.cardD);
+        cardE = findViewById(R.id.cardE);
+        cardF = findViewById(R.id.cardF);
 
         cardA.setOnClickListener(this);
         cardB.setOnClickListener(this);
@@ -35,32 +33,36 @@ public class LetterSelectionMenu extends BaseActivity implements View.OnClickLis
         cardD.setOnClickListener(this);
         cardE.setOnClickListener(this);
         cardF.setOnClickListener(this);
-        cardG.setOnClickListener(this);
-        cardH.setOnClickListener(this);
+
     }
 
     @Override
     public void onClick(View view) {
 
+        Intent intent = new Intent(this, LetterWriting.class);
+        Bundle traceBackgrounds = new Bundle();
+
         switch(view.getId()) {
             case R.id.cardA:
                 learn_a = MediaPlayer.create(this, R.raw.learn_a);
                 learn_a.start();
-                openLetterA();
+                traceBackgrounds.putInt("upperCaseLetter", R.drawable.a_upper_case);
+                traceBackgrounds.putInt("lowerCaseLetter", R.drawable.a_lower_case);
                 break;
             case R.id.cardB:
                 learn_b = MediaPlayer.create(this, R.raw.learn_b);
                 learn_b.start();
+                traceBackgrounds.putInt("upperCaseLetter", R.drawable.b_upper_case);
+                traceBackgrounds.putInt("lowerCaseLetter", R.drawable.b_lower_case);
                 break;
             default:
                 unavailable = MediaPlayer.create(this, R.raw.unavailable);
                 unavailable.start();
-                break;
+                return;
         }
-    }
-
-    private void openLetterA() {
-        Intent intent = new Intent(this, LetterWriting.class);
+        intent.putExtras(traceBackgrounds);
         startActivity(intent);
     }
+
+
 }

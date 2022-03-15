@@ -53,8 +53,9 @@
 
                 <ImageButton
                     android:id="@+id/penBtn"
-                    android:layout_width="100dp"
-                    android:layout_height="55dp"
+                    android:layout_width="150dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.35"
                     android:background="@color/colorPrimary"
                     android:contentDescription="@string/penTxt"
                     android:padding="2dp"
@@ -67,8 +68,9 @@
 
                 <ImageButton
                     android:id="@+id/eraserBtn"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
+                    android:layout_width="150dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.35"
                     android:background="@color/colorPrimary"
                     android:contentDescription="@string/eraserTxt"
                     android:padding="5dp"
@@ -82,8 +84,9 @@
 
                 <ImageButton
                     android:id="@+id/finishBtn"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
+                    android:layout_width="150dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.35"
                     android:background="@color/colorPrimary"
                     android:contentDescription="@string/finishTxt"
                     android:padding="5dp"
@@ -97,8 +100,9 @@
 
                 <ImageButton
                     android:id="@+id/clearBtn"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
+                    android:layout_width="150dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.35"
                     android:background="@color/colorPrimary"
                     android:contentDescription="@string/clearTxt"
                     android:padding="5dp"
@@ -111,9 +115,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.75" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </LinearLayout>
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

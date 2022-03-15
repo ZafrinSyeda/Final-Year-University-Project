@@ -13,6 +13,7 @@
         android:layout_width="99dp"
         android:layout_height="97dp"
         android:clickable="true"
+        android:focusable="true"
         app:backgroundTint="@color/colorPrimary"
         app:fabCustomSize="100dp"
         app:fabSize="normal"
@@ -23,10 +24,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.534"
         app:maxImageSize="70dp"
-        app:srcCompat="@android:drawable/ic_media_play" />
+        app:srcCompat="@android:drawable/ic_media_play"
+        android:contentDescription="@string/startBtnDesc"/>
 
     <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/titletext"
+        android:id="@+id/catwave"
         android:layout_width="261dp"
         android:layout_height="397dp"
         android:src="@drawable/catwave"
@@ -34,10 +36,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/startButton"
-        app:layout_constraintVertical_bias="0.576" />
+        app:layout_constraintVertical_bias="0.576"
+        android:contentDescription="@string/catWaveDesc"/>
 
     <ImageView
-        android:id="@+id/catwave"
+        android:id="@+id/textTitle"
         android:layout_width="361dp"
         android:layout_height="332dp"
         app:layout_constraintBottom_toTopOf="@+id/startButton"
@@ -45,6 +48,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/titletext" />
+        app:srcCompat="@drawable/titletext"
+        android:contentDescription="@string/titleDesc" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

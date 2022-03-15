@@ -26,7 +26,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/letter_a_btn" />
+                android:src="@drawable/letter_a_btn"
+                android:contentDescription="@string/selectionImgDesc" />
 
         </LinearLayout>
 

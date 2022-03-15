@@ -1,5 +1,21 @@
 <resources>
     <string name="app_name">letter-tracing-interface</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="selectionTxt"> Select a Letter </string>
+    <string name="validationTitleTxt"> For Grown Ups Only!</string>
+    <string name="ageValidationTxt"> Prove that you\'re not a child by entering your year of birth:</string>
+    <string name="confirmTxt">Confirm</string>
+    <string name="settingsTxt">Settings</string>
+    <string name="soundTxt">Sound</string>
+    <string name="penTxt"> Pen </string>
+    <string name="eraserTxt"> Eraser </string>
+    <string name="finishTxt"> Finish </string>
+    <string name="clearTxt"> Clear </string>
+
+    <string name="titleDesc">Title of the app which is \'Let\'s Learn Letters\'</string>
+    <string name="startBtnDesc">To go to the letter selection menu to learn letters individually</string>
+    <string name="validationHint">enter the year you were born</string>
+    <string name="closeSettingsDesc">Closes the settings view being displayed</string>
+    <string name="catWaveDesc">A cartoon cat waving their arms below the start button</string>
+    <string name="menuImgDesc"> contains an image of a letter that can denotes the letter to be learned</string>
+    <string name="selectionImgDesc">menu item to learn the letter</string>
 </resources>

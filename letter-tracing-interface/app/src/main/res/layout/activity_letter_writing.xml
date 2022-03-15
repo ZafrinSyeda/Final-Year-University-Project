@@ -22,7 +22,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/a_is_for" />
+            app:srcCompat="@drawable/a_is_for"
+            android:contentDescription="@string/menuImgDesc"
+        />
 
         <uk.ac.rhul.zhac024.final_year_project.letter_tracing_interface.TraceView
             android:id="@+id/traceViewUpperCase"
@@ -46,7 +48,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height= "0dp"
                 android:layout_weight="1">
 
                 <Button
@@ -54,7 +56,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Pen"
+                    android:text="@string/penTxt"
                     android:textSize="24sp"
                     app:layout_constraintBottom_toTopOf="@+id/finishBtn"
                     app:layout_constraintEnd_toStartOf="@+id/eraserBtn"
@@ -66,7 +68,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Eraser"
+                    android:text="@string/eraserTxt"
                     android:textSize="24sp"
                     app:layout_constraintBottom_toTopOf="@+id/clearBtn"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +81,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Finish"
+                    android:text="@string/finishTxt"
                     android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/clearBtn"
@@ -92,7 +94,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Clear"
+                    android:text="@string/clearTxt"
                     android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

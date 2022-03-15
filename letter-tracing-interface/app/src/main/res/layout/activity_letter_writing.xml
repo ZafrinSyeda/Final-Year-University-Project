@@ -51,51 +51,59 @@
                 android:layout_height= "0dp"
                 android:layout_weight="1">
 
-                <Button
+                <ImageButton
                     android:id="@+id/penBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/penTxt"
-                    android:textSize="24sp"
+                    android:layout_width="100dp"
+                    android:layout_height="55dp"
+                    android:background="@color/colorPrimary"
+                    android:contentDescription="@string/penTxt"
+                    android:padding="2dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/pencil"
                     app:layout_constraintBottom_toTopOf="@+id/finishBtn"
                     app:layout_constraintEnd_toStartOf="@+id/eraserBtn"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/eraserBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/eraserTxt"
-                    android:textSize="24sp"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:background="@color/colorPrimary"
+                    android:contentDescription="@string/eraserTxt"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/erase"
                     app:layout_constraintBottom_toTopOf="@+id/clearBtn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.74"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/finishBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/finishTxt"
-                    android:textSize="24sp"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:background="@color/colorPrimary"
+                    android:contentDescription="@string/finishTxt"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/finish"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/clearBtn"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.75" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/clearBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/clearTxt"
-                    android:textSize="24sp"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:background="@color/colorPrimary"
+                    android:contentDescription="@string/clearTxt"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/clear"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.72"

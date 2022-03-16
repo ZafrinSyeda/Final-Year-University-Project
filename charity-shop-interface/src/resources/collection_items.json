@@ -1,5 +1,9 @@
 [
 	{
+		"type": "Bags/ Boxes of clothes and other smaller items",
+		"items": ["Bags", "Boxes"]
+	},
+	{
 		"type": "Electricals",
 		"items": [
 			"Televisions",

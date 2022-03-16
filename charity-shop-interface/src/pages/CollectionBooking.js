@@ -39,9 +39,7 @@ const CollectionBooking = () => {
 					</p>
 					{/* The button will send a user to the beginning of the collection form */}
 					<Link to="/book-collection/collection-form">
-						<button className="startBooking">
-							Click here to start your booking
-						</button>
+						<button className="startBooking">Start your booking</button>
 					</Link>
 					<p> </p>
 					<p>Or scroll below to learn more about the booking process...</p>

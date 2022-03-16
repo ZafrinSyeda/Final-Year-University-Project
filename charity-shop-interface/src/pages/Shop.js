@@ -25,56 +25,109 @@ const Shop = () => {
 			<h1>Shop by Category</h1>
 			<div className="threeContainer">
 				<div className="containerItem">
-					<img className="container-img-sm" src={clothes} alt="clothes"></img>
-					<p>Clothes</p>
+					<button className="shopBtn" aria-label="browse clothes">
+						<img
+							className="container-img-sm"
+							src={clothes}
+							alt="clothes icon"
+						></img>
+						<p>Clothes</p>
+					</button>
 				</div>
 				<div className="containerItem">
-					<img
-						className="container-img-sm"
-						src={furniture}
-						alt="furniture"
-					></img>
-					<p>Furniture</p>
+					<button className="shopBtn" aria-label="browse furniture">
+						<img
+							className="container-img-sm"
+							src={furniture}
+							alt="furniture icon"
+						></img>
+						<p>Furniture</p>
+					</button>
 				</div>
 				<div className="containerItem">
-					<img
-						className="container-img-sm"
-						src={electricals}
-						alt="electrical goods"
-					></img>
-					<p>Electricals</p>
+					<button className="shopBtn" aria-label="browse electricals">
+						<img
+							className="container-img-sm"
+							src={electricals}
+							alt="electricals icon"
+						></img>
+						<p>Electricals</p>
+					</button>
 				</div>
 				<div className="containerItem">
-					<img className="container-img-sm" src={books} alt="books"></img>
-					<p>Books</p>
+					<button className="shopBtn" aria-label="browse books">
+						<img className="container-img-sm" src={books} alt="book icon"></img>
+						<p>Books</p>
+					</button>
 				</div>
 				<div className="containerItem">
-					<img className="container-img-sm" src={media} alt="media"></img>
-					<p>Media</p>
+					<button className="shopBtn" aria-label="browse media">
+						<img
+							className="container-img-sm"
+							src={media}
+							alt="media icon"
+						></img>
+						<p>Media</p>
+					</button>
 				</div>
 				<div className="containerItem">
-					<img className="container-img-sm" src={toys} alt="toys"></img>
-					<p>Toys</p>
+					<button className="shopBtn" aria-label="browse toys">
+						<img className="container-img-sm" src={toys} alt="toy icon"></img>
+						<p>Toys</p>
+					</button>
 				</div>
 				<div className="containerItem">
-					<img className="container-img-sm" src={other} alt="other"></img>
-					<p>Other</p>
+					<button className="shopBtn" aria-label="browse other goods">
+						<img
+							className="container-img-sm"
+							src={other}
+							alt="other icon"
+						></img>
+						<p>Other</p>
+					</button>
 				</div>
 			</div>
 			{/* Allows users to shop by a specific charity by selecting one of the div items*/}
 			<h1>Shop by Charity</h1>
 			<div className="threeContainer">
 				<div className="containerItem">
-					<img className="container-img-sm" src={charity1} alt="charity1"></img>
-					<p>Charity 1</p>
+					<button
+						className="shopBtn"
+						aria-label="browse goods where all proceeds go to charity1"
+					>
+						<img
+							className="container-img-sm"
+							src={charity1}
+							alt="charity1 logo"
+						></img>
+						<p>Charity 1</p>
+					</button>
 				</div>
 				<div className="containerItem">
-					<img className="container-img-sm" src={charity2} alt="charity2"></img>
-					<p>Charity 2</p>
+					<button
+						className="shopBtn"
+						aria-label="browse goods where all proceeds go to charity2"
+					>
+						<img
+							className="container-img-sm"
+							src={charity2}
+							alt="charity2 logo"
+						></img>
+						<p>Charity 2</p>
+					</button>
 				</div>
 				<div className="containerItem">
-					<img className="container-img-sm" src={charity3} alt="charity3"></img>
-					<p>Charity 3</p>
+					<button
+						className="shopBtn"
+						aria-label="browse goods where all proceeds go to charity2"
+					>
+						<img
+							className="container-img-sm"
+							src={charity3}
+							alt="charity3 logo"
+						></img>
+						<p>Charity 3</p>
+					</button>
 				</div>
 			</div>
 		</div>

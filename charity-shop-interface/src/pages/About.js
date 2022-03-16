@@ -25,21 +25,36 @@ const about = () => {
 			<h1 className="leftH1">Our Partner Charities</h1>
 			<div className="threeContainer">
 				<div className="containerItem">
-					<img className="container-img" src={charity1} alt="charity1"></img>
+					<img
+						className="container-img"
+						src={charity1}
+						alt="charity1 logo"
+						aria-label="charity1 logo"
+					></img>
 					<p>
 						<b>Charity 1 </b>
 					</p>
 					<p className="description">description</p>
 				</div>
 				<div className="containerItem">
-					<img className="container-img" src={charity2} alt="charity2"></img>
+					<img
+						className="container-img"
+						src={charity2}
+						alt="charity2"
+						aria-label="charity2 logo"
+					></img>
 					<p>
 						<b>Charity 2 </b>
 					</p>
 					<p className="description">description</p>
 				</div>
 				<div className="containerItem">
-					<img className="container-img" src={charity3} alt="charity3"></img>
+					<img
+						className="container-img"
+						src={charity3}
+						alt="charity3"
+						aria-label="charity3 logo"
+					></img>
 					<p>
 						<b>Charity 3 </b>
 					</p>

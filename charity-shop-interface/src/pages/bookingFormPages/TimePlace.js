@@ -75,18 +75,18 @@ const TimePlace = ({ values, handleChange, ProgressBtns, ProgressBar }) => {
 					/>
 				</label>
 				<p className="radioGroupLbl">*Select Time</p>
-				<label>
-					<label className="radioGroup">
-						<input
-							type="radio"
-							name="am"
-							value="A.M. (9:00 - 12:00)"
-							checked={values.collectionTime === "A.M. (9:00 - 12:00)"}
-							onChange={handleChange("collectionTime")}
-						/>
-						A.M. (9:00 - 12:00)
-					</label>
+
+				<label className="radioGroup">
+					<input
+						type="radio"
+						name="am"
+						value="A.M. (9:00 - 12:00)"
+						checked={values.collectionTime === "A.M. (9:00 - 12:00)"}
+						onChange={handleChange("collectionTime")}
+					/>
+					A.M. (9:00 - 12:00)
 				</label>
+
 				<label>
 					<input
 						type="radio"

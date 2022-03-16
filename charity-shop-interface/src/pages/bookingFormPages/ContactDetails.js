@@ -95,6 +95,7 @@ const ContactDetails = ({
 							className="longInput"
 							value={values.email}
 							onChange={handleChange("email")}
+							aria-labelledby="Enter Email Address"
 						/>
 					) : null}
 				</label>

@@ -243,13 +243,23 @@ align towards the left where needed*/
 	text-align: center;
 }
 
+.shopBtn {
+	background-color: transparent;
+	color: #111;
+	font-weight: 700;
+}
+.shopBtn:hover {
+	background-color: transparent;
+}
+
 /* This button should stand out a bit more on the page as it is likely a button people 
 will look for when they click onto collection booking from the menu */
 .startBooking {
 	font-size: 25px;
 	padding: 10px;
 	font-weight: bold;
-	width: 50%;
+	width: 200px;
+	border-radius: 10px;
 }
 
 .formTitle {
@@ -287,19 +297,21 @@ and safety form */
 	font-size: 18px;
 	font-style: italic;
 	font-weight: bold;
+	border-radius: 10px;
 }
 
 /* if the user can donate an item the box is green */
 .itemWarnGood {
-	color: #ffffff;
-	background-color: #529447;
-	border: 1px solid #0e540d;
+	color: #0e540d;
+	border: 3px solid #0e540d;
+	background-color: #d9ffd3;
 }
 
 /* if the user can't donate an item the box is red */
 .itemWarnBad {
-	color: #ffffff;
-	background-color: #d64b4b;
+	color: #940d0d;
+	border: 3px solid #940d0d;
+	background-color: #ffb8b8;
 }
 
 .instructions {
@@ -410,7 +422,7 @@ and safety form */
 	flex-wrap: nowrap;
 	align-items: center;
 	color: #fff;
-	background-color: #529447;
+	background-color: #3e6328;
 	margin: -40px;
 	margin-bottom: 1px;
 	padding: 5%;
@@ -424,13 +436,13 @@ and safety form */
 .selectRadio:focus + label,
 .selectRadio:hover + label,
 .selectRadio:checked + label {
-	background-color: #658e4b;
+	background-color: #2c5812;
 	color: #fff;
 	text-decoration: underline;
 }
 
 counter {
-	background-color: #0e540d;
+	background-color: #012400;
 	color: #fff;
 	border-radius: 50%;
 	padding: 0px 7px;
@@ -581,11 +593,11 @@ counter {
 }
 
 .currentStep {
-	background-color: #0e540d;
+	background-color: #80c476;
 }
 
 .completeStep {
-	background-color: #80c476;
+	background-color: #0e540d;
 }
 
 .incompleteStep {

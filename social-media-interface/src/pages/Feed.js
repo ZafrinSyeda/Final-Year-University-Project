@@ -80,32 +80,46 @@ const Feed = () => {
 				<div>
 					<div className="feedPost" key={post.id}>
 						<div className="profileDetails">
-							<img src={post.profile_pic} className="profilePictureSm" />
+							<img
+								src={post.profile_pic}
+								className="profilePictureSm"
+								alt="profile picture"
+							/>
 							{post.username}
 						</div>
 
 						<div>
-							<img src={post.post_img} className="feedImg" />
-							<h3>{post.title}</h3>
+							<img src={post.post_img} className="feedImg" alt="post" />
+							<h2>{post.title}</h2>
 							<p className="desc">{post.description}</p>
 							<button
 								className="showCommentBtn"
 								onClick={() => setShowComments(!showComments)}
+								aria-label="show comments"
 							>
 								View {postComments.length} Comments
 							</button>
 						</div>
 						<div className="feedInteractions">
-							<button onClick={() => setShowComments(!showComments)}>
+							<button
+								onClick={() => setShowComments(!showComments)}
+								aria-label="show comments"
+							>
 								<ChatIcon style={{ fontSize: 33 }} />
 							</button>
-							<button onClick={() => setInspire(!inspire)}>
+							<button
+								onClick={() => setInspire(!inspire)}
+								aria-label="this post inspires me"
+							>
 								<StarIcon
 									style={{ fontSize: 33 }}
 									color={inspire ? "warning" : "default"}
 								/>
 							</button>
-							<button onClick={() => setLike(!like)}>
+							<button
+								onClick={() => setLike(!like)}
+								aria-label="I like this post"
+							>
 								<FavoriteIcon
 									style={{ fontSize: 33 }}
 									color={like ? "error" : "default"}
@@ -120,13 +134,17 @@ const Feed = () => {
 		const Comments = () => {
 			return (
 				<div className="postComments">
-					<h3>Comments ({postComments.length})</h3>
+					<h2>Comments ({postComments.length})</h2>
 
 					<div className="commentContainer">
 						{postComments.map((comment) => (
 							<div className="postComment" key={comment.id}>
 								<div className="profileDetails">
-									<img src={comment.profile_pic} className="profilePictureSm" />
+									<img
+										src={comment.profile_pic}
+										className="profilePictureSm"
+										alt="profile picture"
+									/>
 									{comment.username}:<p></p>
 								</div>
 								<div className="commentContent">{comment.message}</div>

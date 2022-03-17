@@ -29,7 +29,7 @@ const Home = () => {
 					</div>
 				</div>
 				<p>
-					We are very excited to introduce Charity 2, as one our newest
+					We are very excited to introduce Charity 2, as one of our newest
 					charities that we will be supporting here at Charity Shop Helper! It
 					is a wonderful charity that specialises in cat rescue!
 				</p>

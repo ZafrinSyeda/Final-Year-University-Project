@@ -37,17 +37,22 @@ export const ActivityComponent = ({ activity, setIndividualMessage }) => {
 		<div>
 			{sortedActivity.map((activity) => (
 				<div key={uuidv4()}>
-					<div
+					<button
 						className="messagePreview"
 						onClick={
 							setIndividualMessage != null
 								? () => setIndividualMessage(activity.username)
 								: null
 						}
+						tabIndex="0"
 					>
 						<div className="messageHeader">
 							<div className="profileDetails">
-								<img src={activity.profile_pic} className="profilePictureSm" />
+								<img
+									src={activity.profile_pic}
+									className="profilePictureSm"
+									alt="profile picture"
+								/>
 								{activity.username}
 
 								{activityDetail(activity.type)}
@@ -60,7 +65,7 @@ export const ActivityComponent = ({ activity, setIndividualMessage }) => {
 							{" "}
 							{messageBody(activity.type, activity)}{" "}
 						</div>
-					</div>
+					</button>
 					<hr />
 				</div>
 			))}

@@ -32,37 +32,16 @@ will terminate something*/
 	background-color: #c92929;
 }
 
-/* the edit button that is used from an BoxIcon import*/
-.header .edit {
-	background-color: transparent;
-	color: #7f7f7f;
-}
-
 /* the buttons become more opaque on hover */
 .header button:hover {
 	opacity: 100%;
 }
 
-/* the button that the user can select to change the colour scheme */
-.header .themeButton {
-	display: inline-block;
-	height: 20px;
-	width: 20px;
-	border-radius: 50%;
-}
-
-.header .themeButton:hover {
-	border: 1px solid #fff;
-}
-
-/* the button to change the theme to a monochrome theme */
-.header .monochromeBtn {
-	background-color: #111;
-	opacity: 1;
-	border: 1px solid #fff;
-}
-
-/* the button to change it to a brown theme */
-.header .coffeeshopBtn {
-	background-color: #9f7369;
+@media (max-width: 700px) {
+	/*makes login form wider*/
+	.header {
+		position: fixed;
+		top: 0;
+		right: 0;
+	}
 }

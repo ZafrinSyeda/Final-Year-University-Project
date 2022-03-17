@@ -75,19 +75,29 @@ const Messages = () => {
 	const SingleConversation = () => {
 		return (
 			<div className="convo">
-				<button onClick={() => setIndividualMessage("")}>back</button>
+				<button onClick={() => setIndividualMessage("")} className="commentBtn">
+					Back
+				</button>
 				<h2>{individualMessage}</h2>
 				<div className="convoContent">
 					{conversation.map((message) =>
 						message.type === "recieve" ? (
 							<div className="recievedMsg">
-								<img src={message.profile_pic} className="profilePictureSm" />
+								<img
+									src={message.profile_pic}
+									className="profilePictureSm"
+									alt="reciever's profile picture"
+								/>
 								<div>{message.message}</div>
 							</div>
 						) : (
 							<div className="sentMsg">
 								<div>{message.message}</div>
-								<img src={message.profile_pic} className="profilePictureSm" />
+								<img
+									src={message.profile_pic}
+									className="profilePictureSm"
+									alt="your profile picture"
+								/>
 							</div>
 						)
 					)}
@@ -112,7 +122,6 @@ const Messages = () => {
 					activity={messengerDetail}
 					setIndividualMessage={setIndividualMessage}
 				/>
-				;
 			</div>
 		);
 	};

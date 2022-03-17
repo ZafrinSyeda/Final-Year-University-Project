@@ -51,18 +51,33 @@ const CollectionBooking = () => {
 
 				<div className="threeContainer">
 					<div className="containerItem">
-						<img className="container-img" src={boxes} alt="box"></img>
+						<img
+							className="container-img"
+							src={boxes}
+							alt="box"
+							aria-hidden
+						></img>
 						<p>1. You’ll tell us what you want to be collected </p>
 					</div>
 					<div className="containerItem">
-						<img className="container-img" src={calendar} alt="calendar"></img>
+						<img
+							className="container-img"
+							src={calendar}
+							alt="calendar"
+							aria-hidden
+						></img>
 						<p>
 							2. You’ll tell us when and where to collect your donation, and
 							give us some contact details
 						</p>
 					</div>
 					<div className="containerItem">
-						<img className="container-img" src={truck} alt="truck"></img>
+						<img
+							className="container-img"
+							src={truck}
+							alt="truck"
+							aria-hidden
+						></img>
 						<p>
 							3. We will send someone to collect your donation to send to our
 							charity shop

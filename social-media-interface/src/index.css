@@ -7,6 +7,10 @@
 	font-family: "Source Sans Pro", sans-serif;
 }
 
+html {
+	height: 100%;
+}
+
 h1,
 h2,
 h3 {
@@ -36,7 +40,7 @@ body {
 .loginForm {
 	position: relative;
 	margin: auto;
-	width: 550px;
+	width: 50%;
 	padding: 2%;
 	top: 50%;
 	transform: translate(0, -50%);
@@ -48,7 +52,7 @@ body {
 }
 
 .loginLogo {
-	width: 300px;
+	width: 40%;
 }
 
 /* used for each section within the form */
@@ -72,7 +76,7 @@ form .formGroup label {
 
 /* the label changes colour to highlight that it is being written to */
 form .formGroup:focus-within label {
-	color: #f46c9d;
+	color: #c42e65;
 }
 
 /* the input box of the form */
@@ -91,29 +95,34 @@ form input[type="submit"] {
 	font-weight: bold;
 	padding: 10px;
 	border-radius: 8px;
-	background-color: #f46c9d;
+	background-color: #ff317c;
 	color: #fff;
 	transition: all 0.3s ease-in;
 }
 form input[type="submit"]:hover {
-	background-color: #ffb4d1;
+	background-color: #ff8cb8;
 }
 
 /* used to represent an error message when the user enters the wrong username or password*/
 .error {
-	color: #df0f00;
-	background-color: #ffbaba;
+	color: #910a00;
+	background-color: #ffcaca;
 	font-style: italic;
 	font-size: 15px;
+	font-weight: 700;
 	border: 1px solid;
+	border-radius: 10px;
 	padding: 10px;
-	max-width: 400px;
+	margin: 20px;
+	width: 80%;
+	text-align: center;
 	display: inline-block;
 }
 
 .pageTemplate {
 	background-color: #e5e5e5;
 	display: flex;
+	position: relative;
 }
 
 .page {
@@ -126,7 +135,8 @@ form input[type="submit"]:hover {
 
 .sideMenu {
 	position: fixed;
-	height: 100%;
+	min-height: 100vh;
+	max-height: 100vh;
 	width: 120px;
 	background-color: #fff;
 	color: black;
@@ -145,7 +155,7 @@ form input[type="submit"]:hover {
 }
 
 .hamburger {
-	color: #787878;
+	color: #444444;
 	border: none;
 	background-color: transparent;
 }
@@ -167,12 +177,12 @@ form input[type="submit"]:hover {
 }
 
 .inactive {
-	color: #787878;
+	color: #444444;
 	text-decoration: none;
 }
 .active,
 .inactive:hover {
-	color: #6c7cc0;
+	color: #4b5ca5;
 	text-decoration: none;
 	font-weight: bold;
 }
@@ -182,11 +192,24 @@ form input[type="submit"]:hover {
 	bottom: 20px;
 	left: 35px;
 	justify-content: center;
-	color: #787878;
+	color: #444444;
 	border: none;
 	background-color: transparent;
 }
 
 .newPostBtn:active {
-	color: #6c7cc0;
+	color: #4b5ca5;
+}
+
+/* allows responsive layout for mobile screens */
+@media (max-width: 700px) {
+	/*makes login form wider*/
+	.loginForm {
+		width: 90%;
+	}
+
+	.page {
+		width: 100%;
+		padding: 30px 20px;
+	}
 }

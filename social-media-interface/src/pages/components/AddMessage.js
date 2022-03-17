@@ -39,12 +39,17 @@ export const AddMessage = ({ type, messages, setMessage }) => {
 	};
 	return (
 		<form className="commentForm" onSubmit={addComment}>
-			<img src={profilepicture} className="profilePictureSm" />
+			<img
+				src={profilepicture}
+				className="profilePictureSm"
+				alt="your profile picture"
+			/>
 			<input
 				type="text"
 				placeholder="Enter a message"
 				onChange={(e) => setComment(e.currentTarget.value)}
 				value={comment}
+				aria-label="write a message"
 			/>
 			<button className="commentBtn" disabled={comment == ""}>
 				{" "}

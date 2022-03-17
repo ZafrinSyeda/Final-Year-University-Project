@@ -44,7 +44,8 @@
 	font-weight: lighter;
 }
 
-.postPreview:hover .titleOverlay {
+.postPreview:hover .titleOverlay,
+.postPreview:focus .titleOverlay {
 	opacity: 1;
 }
 
@@ -217,7 +218,7 @@ br {
 	background-color: #fff;
 	border-radius: 10px;
 	padding: 2% 5%;
-	margin: 2% 5%;
+	margin: 5%;
 }
 
 .profileDetails {
@@ -230,7 +231,7 @@ br {
 }
 .profileDetails:hover {
 	font-weight: 600;
-	color: #6c7cc0;
+	color: #4b5ca5;
 	text-decoration: underline;
 }
 
@@ -259,7 +260,7 @@ br {
 
 .feedInteractions > * {
 	margin-left: 10px;
-	color: #787878;
+	color: #444444;
 	border: none;
 	background-color: transparent;
 }
@@ -288,7 +289,7 @@ br {
 	border: none;
 	font-style: italic;
 	font-size: 15px;
-	color: #787878;
+	color: #444444;
 }
 
 .showCommentBtn:hover {
@@ -316,7 +317,7 @@ br {
 
 .commentBtn {
 	border: 1px solid;
-	background-color: #787878;
+	background-color: #444444;
 	color: #f0f0f0;
 	padding: 5px;
 	margin: 5px;
@@ -325,7 +326,7 @@ br {
 }
 
 .commentBtn:hover {
-	background-color: #2c2c2c;
+	background-color: #787878;
 }
 
 .desc,
@@ -346,6 +347,9 @@ br {
 .messagePreview {
 	padding: 20px;
 	margin: 1% 2%;
+	background-color: transparent;
+	border: none;
+	width: 100%;
 }
 
 .messagePreview:hover,
@@ -406,4 +410,16 @@ br {
 	max-height: 75vh;
 	overflow-y: scroll;
 	padding: 50px;
+}
+
+@media (max-width: 700px) {
+	/*makes login form wider*/
+	.convoContent {
+		padding: 0px;
+		padding-left: 10px;
+	}
+
+	.sentMsg {
+		padding-right: 10px;
+	}
 }

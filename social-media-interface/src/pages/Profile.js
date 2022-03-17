@@ -18,10 +18,10 @@ const Profile = () => {
 	const [posts, setPosts] = useState([
 		{
 			id: 1,
-			title: "post 1",
+			title: "more mushrooms!!",
 			post_img: basket,
 			date: "01 / 04 / 2021",
-			description: "desc",
+			description: "some mushrooms I found on a walk this morning!",
 			hobby_id: 3,
 		},
 		{
@@ -35,7 +35,7 @@ const Profile = () => {
 		},
 		{
 			id: 3,
-			title: "post 3",
+			title: "prepare for crab.",
 			post_img: crab,
 			date: "09 / 03 / 2021",
 			description: "desc",
@@ -43,7 +43,7 @@ const Profile = () => {
 		},
 		{
 			id: 4,
-			title: "post 4",
+			title: "very cool sword",
 			post_img: hsword,
 			date: "28 / 02 / 2021",
 			description: "desc",

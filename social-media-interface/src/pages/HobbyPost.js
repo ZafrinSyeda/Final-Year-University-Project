@@ -10,8 +10,12 @@ export const HobbyPost = (props) => {
 			{/* a MUI import that allows for the posts to be displayed in a masonry view */}
 			<Masonry columns={{ sm: 1, md: 2 }} spacing={5}>
 				{posts.map((post) => (
-					<div className="postPreview" key={post.id}>
-						<img src={post.post_img} className="postImg" />
+					<div className="postPreview" key={post.id} tabIndex="0">
+						<img
+							src={post.post_img}
+							className="postImg"
+							alt={post.description}
+						/>
 						<div className="titleOverlay">
 							<p>{post.title}</p>
 						</div>

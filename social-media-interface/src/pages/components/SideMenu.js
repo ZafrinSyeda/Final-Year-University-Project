@@ -9,7 +9,7 @@ import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const SideMenu = ({ NewPost }) => {
-	const [menuOpen, setMenuOpen] = useState(false);
+	const [menuOpen, setMenuOpen] = useState(true);
 
 	const toggleMenu = () => {
 		setMenuOpen(!menuOpen);
@@ -18,7 +18,11 @@ const SideMenu = ({ NewPost }) => {
 	function ToggleVisibilityBtn() {
 		return (
 			<div>
-				<button onClick={toggleMenu} className="hamburger">
+				<button
+					onClick={toggleMenu}
+					className="hamburger"
+					aria-label="show menu"
+				>
 					<MenuIcon style={{ fontSize: 40 }} />
 				</button>
 			</div>

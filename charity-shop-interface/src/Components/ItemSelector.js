@@ -81,7 +81,7 @@ export const ItemSelector = ({
 							listItem,
 							setShowSnackbar
 						)}
-						aria-label="reduce quantity of item"
+						aria-label="increase quantity of item"
 					>
 						+
 					</button>

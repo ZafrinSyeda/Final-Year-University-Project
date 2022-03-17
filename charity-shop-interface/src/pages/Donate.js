@@ -106,10 +106,16 @@ const Donate = () => {
 			<p>Help out by donating to a charity of your choice</p>
 			<form className="donateForm" onSubmit={handleSubmit}>
 				{/* Will present the error message if no item has been selected on form submission */}
-				{errors.all ? <div className="formError">{errors.all}</div> : null}
+				{errors.all ? (
+					<div className="formError" aria-invalid>
+						{errors.all}
+					</div>
+				) : null}
 				{/* Will present the error message if no charity has been selected on form submission */}
 				{errors.charity ? (
-					<div className="formError">{errors.charity}</div>
+					<div className="formError" aria-invalid>
+						{errors.charity}
+					</div>
 				) : null}
 				<p>
 					<b>Choose which Charity you will be donating to: </b>
@@ -124,13 +130,14 @@ const Donate = () => {
 								id="charity1"
 								name="charity"
 								onChange={handleChange}
+								aria-required
 							/>
 							<img
 								className="container-img-sm"
 								src={charity1}
 								alt="charity1"
 							></img>
-							<label for="charity1">Charity #1</label>
+							<p aria-label="donate to charity 1">Charity #1</p>
 						</label>
 					</div>
 					<div className="containerItem">
@@ -147,7 +154,7 @@ const Donate = () => {
 								src={charity2}
 								alt="charity2"
 							></img>
-							<label for="charity2">Charity #2</label>
+							<p aria-label="donate to charity 2">Charity #2</p>
 						</label>
 					</div>
 					<div className="containerItem">
@@ -164,7 +171,7 @@ const Donate = () => {
 								src={charity3}
 								alt="charity3"
 							></img>
-							<label for="charity3">Charity #3</label>
+							<p aria-label="donate to charity 3">Charity #3</p>
 						</label>
 					</div>
 				</div>
@@ -173,25 +180,28 @@ const Donate = () => {
 				{/* Will present the error message if no donation frequency has been selected on 
 				form submission */}
 				{errors.frequency ? (
-					<div className="formError">{errors.frequency}</div>
+					<div className="formError" aria-invalid>
+						{errors.frequency}
+					</div>
 				) : null}
 				<b>How often would you like to donate? </b>
 				<div className="threeContainer">
 					{/* Represents the radio buttons that are used to select the frequency of donation */}
 					<div className="containerItem">
-						<label className="donateRadio">
+						<div className="donateRadio">
 							<input
 								type="radio"
 								value="Monthly"
 								id="monthly"
 								name="frequency"
 								onChange={handleChange}
+								aria-required
 							/>{" "}
 							<label for="monthly">Monthly</label>
-						</label>
+						</div>
 					</div>
 					<div className="containerItem">
-						<label className="donateRadio">
+						<div className="donateRadio">
 							<input
 								type="radio"
 								value="Single"
@@ -200,20 +210,22 @@ const Donate = () => {
 								onChange={handleChange}
 							/>{" "}
 							<label for="single">Single</label>
-						</label>
+						</div>
 					</div>
 				</div>
 
 				{/* Will present the error message if no amount of money has been chosen
 				 on form submission */}
 				{errors.amount ? (
-					<div className="formError">{errors.amount}</div>
+					<div className="formError" aria-invalid>
+						{errors.amount}
+					</div>
 				) : null}
 				<b>How much would you like to donate? </b>
 				{/* Represents the radio buttons that are used to select the donation amount */}
 				<div className="threeContainer">
 					<div className="containerItem">
-						<label className="donateRadio">
+						<div className="donateRadio">
 							<input
 								type="radio"
 								value="£5.00"
@@ -221,12 +233,13 @@ const Donate = () => {
 								name="amount"
 								onClick={selectDefault}
 								onChange={handleChange}
+								aria-required
 							/>{" "}
 							<label for="five">£5.00</label>
-						</label>
+						</div>
 					</div>
 					<div className="containerItem">
-						<label className="donateRadio">
+						<div className="donateRadio">
 							<input
 								type="radio"
 								value="£10.00"
@@ -236,10 +249,10 @@ const Donate = () => {
 								onChange={handleChange}
 							/>{" "}
 							<label for="ten">£10.00</label>
-						</label>
+						</div>
 					</div>
 					<div className="containerItem">
-						<label className="donateRadio">
+						<div className="donateRadio">
 							<input
 								type="radio"
 								value="£20.00"
@@ -249,12 +262,12 @@ const Donate = () => {
 								onChange={handleChange}
 							/>{" "}
 							<label for="twenty">£20.00</label>
-						</label>
+						</div>
 					</div>
 				</div>
 				{/* If this radio button is selected, it will present the user with a text box where
 				they can enter their own choice of money to donate */}
-				<label className="donateRadio">
+				<div className="donateRadio">
 					{/* if the user clicks on the other button, but doesn't enter anything in the textbox,
 					it should reset the amount value to nothing again */}
 					<input
@@ -275,9 +288,10 @@ const Donate = () => {
 							name="amount"
 							onChange={handleChange}
 							data-testid="otherAmount"
+							aria-label="enter the amount of money you would like to donate"
 						/>
 					) : null}
-				</label>
+				</div>
 				{/* Submits the form */}
 				<input type="submit" name="donate" value="Donate"></input>
 			</form>

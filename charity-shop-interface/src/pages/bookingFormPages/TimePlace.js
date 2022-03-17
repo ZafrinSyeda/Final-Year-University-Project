@@ -21,6 +21,8 @@ const TimePlace = ({ values, handleChange, ProgressBtns, ProgressBar }) => {
 						className="longInput"
 						value={values.addressLine1}
 						onChange={handleChange("addressLine1")}
+						required
+						aria-required
 					/>
 				</label>
 				<label>
@@ -32,6 +34,8 @@ const TimePlace = ({ values, handleChange, ProgressBtns, ProgressBar }) => {
 						className="longInput"
 						value={values.addressLine2}
 						onChange={handleChange("addressLine2")}
+						required
+						aria-required
 					/>
 				</label>
 				<label>
@@ -43,6 +47,8 @@ const TimePlace = ({ values, handleChange, ProgressBtns, ProgressBar }) => {
 						className="longInput"
 						value={values.townCity}
 						onChange={handleChange("townCity")}
+						required
+						aria-required
 					/>
 				</label>
 				<label>
@@ -53,6 +59,8 @@ const TimePlace = ({ values, handleChange, ProgressBtns, ProgressBar }) => {
 						name="postcode"
 						value={values.postcode}
 						onChange={handleChange("postcode")}
+						required
+						aria-required
 					/>
 				</label>
 			</form>
@@ -72,6 +80,8 @@ const TimePlace = ({ values, handleChange, ProgressBtns, ProgressBar }) => {
 						name="collectiondate"
 						value={values.collectionDate}
 						onChange={handleChange("collectionDate")}
+						required
+						aria-required
 					/>
 				</label>
 				<p className="radioGroupLbl">*Select Time</p>
@@ -79,10 +89,11 @@ const TimePlace = ({ values, handleChange, ProgressBtns, ProgressBar }) => {
 				<label className="radioGroup">
 					<input
 						type="radio"
-						name="am"
+						name="chooseTime"
 						value="A.M. (9:00 - 12:00)"
 						checked={values.collectionTime === "A.M. (9:00 - 12:00)"}
 						onChange={handleChange("collectionTime")}
+						required
 					/>
 					A.M. (9:00 - 12:00)
 				</label>
@@ -90,7 +101,7 @@ const TimePlace = ({ values, handleChange, ProgressBtns, ProgressBar }) => {
 				<label>
 					<input
 						type="radio"
-						name="pm"
+						name="chooseTime"
 						value="PM (12:00 - 17:00)"
 						checked={values.collectionTime === "PM (12:00 - 17:00)"}
 						onChange={handleChange("collectionTime")}

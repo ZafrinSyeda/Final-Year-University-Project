@@ -30,6 +30,8 @@ const ContactDetails = ({
 						name="title"
 						value={values.title}
 						onChange={handleChange("title")}
+						required
+						aria-required
 					/>
 				</label>
 				<label>
@@ -41,6 +43,8 @@ const ContactDetails = ({
 						className="longInput"
 						value={values.forename}
 						onChange={handleChange("forename")}
+						required
+						aria-required
 					/>
 				</label>
 				<label>
@@ -52,41 +56,51 @@ const ContactDetails = ({
 						className="longInput"
 						value={values.surname}
 						onChange={handleChange("surname")}
+						required
+						aria-required
 					/>
 				</label>
 				<p className="radioGroupLbl">
 					*Would you prefer to be contacted by text or email?
 				</p>
-				<label>
-					<input
-						id="textRadio"
-						type="radio"
-						name="text"
-						value="text"
-						checked={text}
-						onChange={() => setText(true)}
-					/>
-					Text
+				<div role="radiogroup">
+					<div role="radio" className="collectionRadio">
+						<input
+							id="textRadio"
+							type="radio"
+							name="contactType"
+							value="text"
+							checked={text}
+							onChange={() => setText(true)}
+							required
+							aria-label="select this and enter your phone number below, if you would prefer being contacted by email move to the next option after the text box"
+						/>
+						<label for="textRadio">Text</label>
+					</div>
 					{text ? (
 						<input
 							type="number"
 							id="phoneNum"
-							name="amount"
+							name="phoneNum"
 							className="longInput"
 							value={values.phoneNumber}
 							onChange={handleChange("phoneNumber")}
+							aria-label="enter phone number"
 						/>
 					) : null}
-				</label>
-				<label>
-					<input
-						type="radio"
-						name="email"
-						value="email"
-						checked={!text}
-						onChange={() => setText(false)}
-					/>
-					Email
+
+					<div role="radio" className="collectionRadio">
+						<input
+							id="emailRadio"
+							type="radio"
+							name="contactType"
+							value="email"
+							checked={!text}
+							onChange={() => setText(false)}
+							aria-label="select this and enter your email below, if you would prefer being contacted by text move back to the previous option"
+						/>
+						<label for="emailRadio">Email</label>
+					</div>
 					{!text ? (
 						<input
 							type="text"
@@ -95,10 +109,10 @@ const ContactDetails = ({
 							className="longInput"
 							value={values.email}
 							onChange={handleChange("email")}
-							aria-labelledby="Enter Email Address"
+							aria-label="enter email address"
 						/>
 					) : null}
-				</label>
+				</div>
 			</form>
 			{ProgressBtns(false)}
 		</div>

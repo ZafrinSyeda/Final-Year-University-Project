@@ -22,7 +22,7 @@ function Login({ Login, error }) {
 			<div className="loginForm">
 				<img src={logo} alt="hobbyshare logo" className="loginLogo" />
 				{/* the error message would be displayed at the top of the screen */}
-				{error != "" ? <div className="error">{error}</div> : ""}
+				{error !== "" ? <div className="error">{error}</div> : ""}
 				<div className="formGroup">
 					<label htmlFor="username">Username: </label>
 					{/* entering any information in the form will update the details const for 

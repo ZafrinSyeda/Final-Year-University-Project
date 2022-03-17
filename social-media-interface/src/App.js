@@ -23,8 +23,6 @@ function App() {
 	const [user, setUser] = useState({ username: "" });
 	/* Used to set the validation error if the username or password is incorrect */
 	const [error, setError] = useState("");
-	/* Variable that is set when the user wants to edit the user page or not */
-	const [edit, setEdit] = useState(false);
 	/* Variable that is set when the user wants to add a new post to their profile */
 	const [createPost, setCreatePost] = useState(false);
 
@@ -33,8 +31,8 @@ function App() {
 		console.log(details);
 
 		if (
-			details.username == userDetails.username &&
-			details.password == userDetails.password
+			details.username === userDetails.username &&
+			details.password === userDetails.password
 		) {
 			/* if the username and password matches the hardcoded versions, the user can login in */
 			setUser({
@@ -52,12 +50,6 @@ function App() {
 	/* when the user logs out their user changes, and they will be set back to the login screen */
 	const Logout = () => {
 		setUser({ username: "" });
-	};
-
-	/* toggled to be true or false depending on whether the user wants to edit their profile page or
-	not */
-	const toggleEditPage = () => {
-		setEdit(!edit);
 	};
 
 	/* toggled to be true or false depending on whether the user wants to add a new post or not */

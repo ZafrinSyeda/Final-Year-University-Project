@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 // using icons from the material UI library
 import CottageIcon from "@mui/icons-material/Cottage";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
@@ -41,7 +41,7 @@ const SideMenu = ({ NewPost }) => {
 						<li>
 							<NavLink
 								className="inactive"
-								activeClassName="active"
+								activeclassname="active"
 								exact
 								to="/"
 							>
@@ -52,7 +52,7 @@ const SideMenu = ({ NewPost }) => {
 						<li>
 							<NavLink
 								className="inactive"
-								activeClassName="active"
+								activeclassname="active"
 								exact
 								to="/Profile"
 							>
@@ -63,7 +63,7 @@ const SideMenu = ({ NewPost }) => {
 						<li>
 							<NavLink
 								className="inactive"
-								activeClassName="active"
+								activeclassname="active"
 								exact
 								to="/Messages"
 							>
@@ -74,7 +74,7 @@ const SideMenu = ({ NewPost }) => {
 						<li>
 							<NavLink
 								className="inactive"
-								activeClassName="active"
+								activeclassname="active"
 								exact
 								to="/Activity"
 							>

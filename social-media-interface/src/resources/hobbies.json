@@ -1,0 +1,11 @@
+[
+	{
+		"hobby_id": 1,
+		"name": "Antique Sword Collecting"
+	},
+	{
+		"hobby_id": 2,
+		"name": "Watercolouring"
+	},
+	{ "hobby_id": 3, "name": "Mushroom Foraging" }
+]

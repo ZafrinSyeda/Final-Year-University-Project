@@ -98,8 +98,8 @@
 /* the background of the new post overlay, which makes the background slightly transparent in 
 opacity */
 .popup-outer {
-	padding-left: 350px;
-	padding-top: 100px;
+	padding-left: 10%;
+	padding-top: 5%;
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -141,7 +141,7 @@ opacity */
 
 /* the input text boxes used in the form - they shouldnt span the length of the entire form*/
 .upload form input[type="text"] {
-	width: 300px;
+	width: 50%;
 	font-size: 18px;
 }
 
@@ -421,5 +421,36 @@ br {
 
 	.sentMsg {
 		padding-right: 10px;
+	}
+
+	.popup-outer {
+		position: fixed;
+		padding: 0%;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+
+	/* the stylings of the upload form itself, which is made scrollable */
+	.upload {
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background-color: #fff;
+		opacity: 1;
+		overflow: auto;
+		position: relative;
+		border-radius: 0px;
+	}
+
+	.cancel {
+		left: 0px;
+		right: 100%;
+	}
+
+	.upload form input[type="text"] {
+		width: 75%;
+		font-size: 18px;
 	}
 }

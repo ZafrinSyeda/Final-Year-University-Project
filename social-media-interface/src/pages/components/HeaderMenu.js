@@ -1,9 +1,7 @@
-/* represents the header menu at the top of the page where users can log out, or edit their page
-or add a new post */
+/* represents the header menu at the top of the page where users can log out */
 
 import React from "react";
 import "./Header.css";
-import { BiEdit } from "react-icons/bi";
 
 /* Logout: the function in order to log the user out 
 EditPage: the function used in order to open the edit page menu

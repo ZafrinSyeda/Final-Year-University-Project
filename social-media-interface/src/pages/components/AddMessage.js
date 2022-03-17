@@ -51,7 +51,7 @@ export const AddMessage = ({ type, messages, setMessage }) => {
 				value={comment}
 				aria-label="write a message"
 			/>
-			<button className="commentBtn" disabled={comment == ""}>
+			<button className="commentBtn" disabled={comment === ""}>
 				{" "}
 				send
 			</button>

@@ -10,12 +10,13 @@ import vsword from "../resources/vertical-sword.jpg";
 import crab from "../resources/crab_watercolour.jpg";
 import basket from "../resources/mushroom-basket.jpg";
 import profilepicture from "../resources/profilepicture.PNG";
+import hobbies from "../resources/hobbies.json";
 /* stylesheet */
 import "./Profile.css";
 
 const Profile = () => {
 	/* hardcoded the details about the posts on the page */
-	const [posts, setPosts] = useState([
+	const [posts] = useState([
 		{
 			id: 1,
 			title: "more mushrooms!!",
@@ -49,19 +50,6 @@ const Profile = () => {
 			description: "desc",
 			hobby_id: 1,
 		},
-	]);
-
-	/* hardcoded the user's various hobbies */
-	const [hobbies, setHobby] = useState([
-		{
-			hobby_id: 1,
-			name: "Antique Sword Collecting",
-		},
-		{
-			hobby_id: 2,
-			name: "Watercolouring",
-		},
-		{ hobby_id: 3, name: "Mushroom Foraging" },
 	]);
 
 	/* variable used depending on whether the user has selected one of the hobbies on the side profile

@@ -6,38 +6,14 @@ import { render, screen, fireEvent } from "@testing-library/react";
 
 // for now the test will use hardcoded data to check if it's valid
 // testing if clicking a button will present the right information
-it("should only show the posts of a specific hobby when a button on the user's profile is clicked", () => {
+it("should only show the posts of a specific hobby when a specific select option is clicked", () => {
 	render(<Profile />);
-	const hobbyButton = screen.getByRole("button", {
-		name: "Antique Sword Collecting",
+	/*the user should not see any post with the alt text which is the image description of a post 
+	which is of the hobby type 'sword collecting' */
+	const swordImage = screen.getByAltText("sword");
+	// target aims for the hobby with the key '2' - which is watercolouring
+	fireEvent.change(screen.getByLabelText("Displaying:"), {
+		target: { value: 2 },
 	});
-	// before the user presses the button, post 3 which is for a different hobby does appear on screen
-	const nonexistentText = screen.getByText("post 3");
-	fireEvent.click(hobbyButton);
-	// after clicking the button it should no longer be present
-	expect(nonexistentText).not.toBeInTheDocument();
-});
-
-it("should allow the user to go back to the original profile page after selecting a hobby if they click the back button", () => {
-	render(<Profile />);
-	const hobbyButton = screen.getByRole("button", {
-		name: "Antique Sword Collecting",
-	});
-	fireEvent.click(hobbyButton);
-	const backButton = screen.getByTestId("backBtn");
-	fireEvent.click(backButton);
-	const existentText = screen.getByText("post 3");
-	expect(existentText).toBeInTheDocument();
-});
-
-it("should allow the user to go back to the original profile page after selecting a hobby if they click the user profile picture", () => {
-	render(<Profile />);
-	const hobbyButton = screen.getByRole("button", {
-		name: "Antique Sword Collecting",
-	});
-	fireEvent.click(hobbyButton);
-	const profilePicture = screen.getByAltText("profile picture");
-	fireEvent.click(profilePicture);
-	const existentText = screen.getByText("post 3");
-	expect(existentText).toBeInTheDocument();
+	expect(swordImage).not.toBeInTheDocument();
 });

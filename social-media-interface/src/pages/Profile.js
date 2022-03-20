@@ -39,7 +39,7 @@ const Profile = () => {
 			title: "prepare for crab.",
 			post_img: crab,
 			date: "09 / 03 / 2021",
-			description: "desc",
+			description: "painting of a crab",
 			hobby_id: 2,
 		},
 		{
@@ -47,7 +47,7 @@ const Profile = () => {
 			title: "very cool sword",
 			post_img: hsword,
 			date: "28 / 02 / 2021",
-			description: "desc",
+			description: "sword",
 			hobby_id: 1,
 		},
 	]);

@@ -21,10 +21,10 @@ public class LetterSelectionMenu extends BaseActivity  {
         requires feeding data into the adapter */
         RecyclerView letterSelectRecycler = (RecyclerView) findViewById(R.id.letterSelectRecycler);
         letterList = new ArrayList<>();
-        LetterAdapter adapter = new LetterAdapter(letterList, this);
         // presents the recycler view items in a grid format made up of 2 items per row
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
         letterSelectRecycler.setLayoutManager(gridLayoutManager);
+        LetterAdapter adapter = new LetterAdapter(letterList, this);
         letterSelectRecycler.setAdapter(adapter);
         // sets up the elements that make up the list of each letters
         prepareLetters();

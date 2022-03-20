@@ -48,14 +48,14 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height= "0dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
                 android:layout_weight="1">
 
                 <ImageButton
                     android:id="@+id/penBtn"
                     android:layout_width="150dp"
-                    android:layout_height="0dp"
-                    app:layout_constraintHeight_percent="0.35"
+                    android:layout_height="64dp"
                     android:background="@color/colorPrimary"
                     android:contentDescription="@string/penTxt"
                     android:padding="2dp"
@@ -63,14 +63,14 @@
                     android:src="@drawable/pencil"
                     app:layout_constraintBottom_toTopOf="@+id/finishBtn"
                     app:layout_constraintEnd_toStartOf="@+id/eraserBtn"
+                    app:layout_constraintHeight_percent="0.35"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageButton
                     android:id="@+id/eraserBtn"
                     android:layout_width="150dp"
-                    android:layout_height="0dp"
-                    app:layout_constraintHeight_percent="0.35"
+                    android:layout_height="64dp"
                     android:background="@color/colorPrimary"
                     android:contentDescription="@string/eraserTxt"
                     android:padding="5dp"
@@ -78,15 +78,14 @@
                     android:src="@drawable/erase"
                     app:layout_constraintBottom_toTopOf="@+id/clearBtn"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.74"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintHeight_percent="0.35"
+                    app:layout_constraintStart_toEndOf="@+id/penBtn"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageButton
                     android:id="@+id/finishBtn"
                     android:layout_width="150dp"
-                    android:layout_height="0dp"
-                    app:layout_constraintHeight_percent="0.35"
+                    android:layout_height="64dp"
                     android:background="@color/colorPrimary"
                     android:contentDescription="@string/finishTxt"
                     android:padding="5dp"
@@ -94,15 +93,14 @@
                     android:src="@drawable/finish"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/clearBtn"
+                    app:layout_constraintHeight_percent="0.35"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.75" />
+                    app:layout_constraintTop_toBottomOf="@+id/penBtn" />
 
                 <ImageButton
                     android:id="@+id/clearBtn"
                     android:layout_width="150dp"
-                    android:layout_height="0dp"
-                    app:layout_constraintHeight_percent="0.35"
+                    android:layout_height="64dp"
                     android:background="@color/colorPrimary"
                     android:contentDescription="@string/clearTxt"
                     android:padding="5dp"
@@ -110,10 +108,9 @@
                     android:src="@drawable/clear"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.72"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.75" />
+                    app:layout_constraintHeight_percent="0.35"
+                    app:layout_constraintStart_toEndOf="@+id/finishBtn"
+                    app:layout_constraintTop_toBottomOf="@+id/eraserBtn" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </LinearLayout>

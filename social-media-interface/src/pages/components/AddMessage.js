@@ -8,6 +8,10 @@ export const AddMessage = ({ type, messages, setMessage }) => {
 
 	const addComment = (e) => {
 		e.preventDefault();
+		/* removes trailing and leading whitespaces - to not accept strings of that nature */
+		if (comment.trim() == "") {
+			return;
+		}
 		var postComment;
 		switch (type) {
 			case "comment":

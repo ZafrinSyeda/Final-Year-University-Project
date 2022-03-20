@@ -373,6 +373,8 @@ br {
 .sentMsg div {
 	margin: 15px;
 	border-radius: 10px;
+	max-width: 60%;
+	word-wrap: break-word;
 }
 
 .recievedMsg {

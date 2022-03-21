@@ -390,7 +390,8 @@ and safety form */
 
 .toggleRadio {
 	height: 40px;
-	width: 335px;
+	max-width: 335px;
+	max-width: 375px;
 	border: 1px solid #0e540d;
 	border-radius: 10px;
 	overflow: hidden;

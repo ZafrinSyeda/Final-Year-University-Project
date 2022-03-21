@@ -1,12 +1,16 @@
 // testing the interactive elements of the health and safety page of the collection booking form
 
-import HealthSafety from "../pages/bookingFormPages/HealthSafety";
+import App from "../App";
 import "@testing-library/jest-dom/extend-expect";
 import userEvent from "@testing-library/user-event";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 
 it("should not show an item that doesn't begin with certain letters when the user types in the search bar", () => {
-	render(<HealthSafety />);
+	/* Since rendering booking form pages requires props it may be easier to navigate from the application as a whole
+	to the health and safety page*/
+	render(<App />);
+	fireEvent.click(screen.getByText("Book a Collection"));
+	fireEvent.click(screen.getByText("Start your booking"));
 	/* the search term will begin with the letters 'kni' so 'inflatable toys' should not be present on the screen
     as it should be filtered out */
 	const filteredItem = screen.getByText("Inflatable toys");
@@ -16,7 +20,9 @@ it("should not show an item that doesn't begin with certain letters when the use
 });
 
 it("should show an item that does begin with certain letters when the user types in the search bar", () => {
-	render(<HealthSafety />);
+	render(<App />);
+	fireEvent.click(screen.getByText("Book a Collection"));
+	fireEvent.click(screen.getByText("Start your booking"));
 	// gets a word that does begin with the search term
 	const filteredItem = screen.getByText("Knives");
 	const searchComponent = screen.getByLabelText(/Search for an item/i);
@@ -25,7 +31,9 @@ it("should show an item that does begin with certain letters when the user types
 });
 
 it("should warn the user if an item that they're searching for may be forbidden", () => {
-	render(<HealthSafety />);
+	render(<App />);
+	fireEvent.click(screen.getByText("Book a Collection"));
+	fireEvent.click(screen.getByText("Start your booking"));
 	const searchComponent = screen.getByLabelText(/Search for an item/i);
 	userEvent.type(searchComponent, "kni");
 	const warningComponent = screen.getByText(
@@ -35,7 +43,9 @@ it("should warn the user if an item that they're searching for may be forbidden"
 });
 
 it("should tell the user if an item that they're searching is likely not forbidden", () => {
-	render(<HealthSafety />);
+	render(<App />);
+	fireEvent.click(screen.getByText("Book a Collection"));
+	fireEvent.click(screen.getByText("Start your booking"));
 	const searchComponent = screen.getByLabelText(/Search for an item/i);
 	userEvent.type(searchComponent, "hammer");
 	const warningComponent = screen.getByText(

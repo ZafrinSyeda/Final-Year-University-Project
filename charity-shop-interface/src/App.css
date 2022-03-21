@@ -178,6 +178,7 @@ align towards the left where needed*/
 	font-style: italic;
 }
 
+/* allows for div items to be displayed on one horizontal line */
 .horizontalAlign {
 	display: flex;
 	justify-content: space-between;
@@ -314,6 +315,7 @@ and safety form */
 	background-color: #ffb8b8;
 }
 
+/* Displays the instructions for each page within the form */
 .instructions {
 	font-size: 22px;
 	color: #676767;
@@ -325,6 +327,7 @@ and safety form */
 	height: 80%;
 }
 
+/* select list is a container that presents that holds most of the components within the itemSelector*/
 .reviewList,
 .selectList {
 	background-color: #ffffff;
@@ -337,11 +340,14 @@ and safety form */
 	overflow-x: hidden;
 }
 
+/* represents the body for list of items a user wants to donate */
 .collectList {
 	font-size: 20px;
 	padding: 10px;
 	margin: 10px 5%;
 }
+
+/* represents a single item within the list of item the user wants to donate */
 .collectListItem {
 	display: flex;
 	justify-content: space-between;
@@ -349,6 +355,7 @@ and safety form */
 	margin: 5% 5% 0% 5%;
 }
 
+/* used for the increment and decrement buttons on the quantity field */
 .quantityBtn {
 	width: 30px;
 	font-size: 23px;
@@ -365,6 +372,7 @@ and safety form */
 	background-color: #ececec;
 }
 
+/* used for the input box to allow users to enter the quantity of items */
 .quantityInput {
 	font-size: 20px;
 	width: 50px;
@@ -373,6 +381,7 @@ and safety form */
 	border-radius: 5px;
 }
 
+/* button used to delete an item from the user's list, represented as a bin icon */
 .deleteBtn {
 	color: #0e540d;
 	background-color: transparent;
@@ -383,11 +392,13 @@ and safety form */
 	background-color: transparent;
 }
 
+/* represents the list of items the user wants to donate */
 .filledList {
 	max-height: 80vh;
 	overflow: auto;
 }
 
+/* allows the user to toggle between selecting an item or viewing list */
 .toggleRadio {
 	height: 40px;
 	max-width: 335px;
@@ -402,6 +413,7 @@ and safety form */
 	font-size: 16px;
 }
 
+/* represents what each radio button within toggleRadio looks like*/
 .selectRadio {
 	opacity: 0;
 	width: 1px;
@@ -418,6 +430,7 @@ and safety form */
 	transition: all 0.3s ease-in-out;
 }
 
+/* when an item category is selected, the category title is displayed at the top of the div*/
 .selectionHeading {
 	display: flex;
 	flex-wrap: nowrap;
@@ -442,7 +455,8 @@ and safety form */
 	text-decoration: underline;
 }
 
-counter {
+/* Used to display the number of items in a list in a round circle */
+.counter {
 	background-color: #012400;
 	color: #fff;
 	border-radius: 50%;
@@ -452,6 +466,8 @@ counter {
 	text-decoration: none;
 }
 
+/* represents a button that displays a category of items that the user can select to choose an item from that 
+category*/
 .itemTypeBtn {
 	height: 28vh;
 	width: 30vh;
@@ -470,6 +486,7 @@ counter {
 	background-color: #529447;
 }
 
+/*button used to go back from a selected category, represented as an arrow icon*/
 .backBtn {
 	background-color: transparent;
 }

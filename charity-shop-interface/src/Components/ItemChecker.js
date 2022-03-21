@@ -1,6 +1,12 @@
 import React from "react";
 import { useState } from "react";
 
+/**
+ * A component used in the health and safety portion of the booking form to allow users to search and
+ * filter if an item they wish to donate is on the list of items that charities cannot typically take in
+ *
+ * props used: 'itemList' which represents the list of items
+ */
 export const ItemChecker = ({ itemList }) => {
 	/* Represents the value that is being written into the search bar */
 	const [searchTerm, setSearchTerm] = useState("");

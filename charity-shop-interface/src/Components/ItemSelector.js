@@ -1,23 +1,39 @@
 import React, { useState } from "react";
+/* material UI icons used  */
 import DeleteIcon from "@mui/icons-material/Delete";
-import collectionItems from "../resources/collection_items.json";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+/* list of items the user can add to their list */
+import collectionItems from "../resources/collection_items.json";
 
+/**
+ * A component used by the item select page of the booking form that allows the user to
+ * toggle between adding items from a list of items to a list of items they wish to donate, and
+ * a view of the list of items they wish to donate
+ *
+ * props used:
+ * items: represents the list of items that can be added to their list
+ * handleQuantityChange: used to manage the user's list if the number of a particular item is changed
+ * handleDeleteItem: used to manage the user's list if the number of a particular item is deleted
+ * setShowSnackbar: if an item's status changes, a snackbar is displayed on the screen to show the user
+ */
 export const ItemSelector = ({
 	items,
 	handleQuantityChange,
 	handleDeleteItem,
 	setShowSnackbar,
 }) => {
+	/* Boolean value used to toggle between showing the user's their list or the list of items to donate */
 	const [viewList, setViewList] = useState(true);
-	const [viewItemList, setViewItemList] = useState("");
+	/* Used to set the type of item the user wishes to donate */
+	const [itemType, setItemType] = useState("");
 
-	function getIndex(itemName) {
-		/* goes through the list to find the item name under the collection list that matches the item name 
+	/* goes through the list to find the item name under the collection list that matches the item name 
 		being looked for and returns the index if found*/
+	function getIndex(itemName) {
 		return items.findIndex((arr) => arr.item === itemName);
 	}
 
+	/* Displays user's list when there are no items in their list of items to donate */
 	function EmptyList() {
 		return (
 			<div className="instructions">
@@ -30,17 +46,24 @@ export const ItemSelector = ({
 		);
 	}
 
+	/* Shows the user the total number of items in their list */
 	function TotalQuantity() {
+		/* .reduce allows for summing up all the array items under quantity, with 0 as the initial value  */
 		const total = items.reduce(
 			(totalQuantity, list) => (totalQuantity = totalQuantity + list.quantity),
 			0
 		);
-		return <counter>{total}</counter>;
+		return <b className="counter">{total}</b>;
 	}
 
-	const QuantitySection = (item) => {
+	/* Used to represent a quantity field component that is used within the item selector */
+	const QuantityField = (item) => {
+		/* checks to see if the item exists within the user's list already or if it's a new item */
 		let index = getIndex(item);
+		/* creates an array index for items that are not yet in the user's list to be presented with a
+		quantity of 0  */
 		let listItem = { item: item, quantity: 0 };
+		/* if the item is on the list, it makes use of the array entry for the list item  */
 		if (index !== -1) {
 			listItem = items[index];
 		}
@@ -48,8 +71,9 @@ export const ItemSelector = ({
 			<div>
 				<div>
 					<button
+						/* Used to decrement the quantity unless the quantity is 0 or less */
 						className="quantityBtn"
-						disabled={listItem.quantity === 0}
+						disabled={listItem.quantity <= 0}
 						onClick={handleQuantityChange(
 							getIndex(item),
 							"minus",
@@ -61,6 +85,7 @@ export const ItemSelector = ({
 						-
 					</button>
 					<input
+						/* Used to manually change the quantity with input */
 						className="quantityInput"
 						type="numeric"
 						name="quantity"
@@ -74,6 +99,7 @@ export const ItemSelector = ({
 						aria-label="view and enter the quantity of the item"
 					></input>
 					<button
+						/* Used to increase the quantity */
 						className="quantityBtn"
 						onClick={handleQuantityChange(
 							getIndex(item),
@@ -90,15 +116,19 @@ export const ItemSelector = ({
 		);
 	};
 
+	/* Shows the user's list once it has at least one item and allows users to adjust the quantity
+	or delete items from the list */
 	function FilledList() {
 		return (
 			<div className="filledList">
+				{/* /* goes through all the items in the list besides the first one 
+				which exists to set the layout of a list item */}
 				{items.slice(1).map((item) => (
 					<div className="collectList">
 						<div className="collectListItem" key={item.item}>
 							{item.item}
 							<div className="horizontalAlign">
-								{QuantitySection(item.item)}
+								{QuantityField(item.item)}
 								<button
 									className="deleteBtn"
 									onClick={() => handleDeleteItem(item.item, setShowSnackbar)}
@@ -114,7 +144,10 @@ export const ItemSelector = ({
 		);
 	}
 
+	/* Controls what is displayed when the user selects the option to view their list */
 	function ShowList() {
+		/* if the user previously selected to view a specific item type it will reset that */
+		setItemType("");
 		return (
 			<div>
 				<h1>My List:</h1>
@@ -126,14 +159,14 @@ export const ItemSelector = ({
 		);
 	}
 
+	/* Controls what is displayed when the user wants to select an item to add to their list */
 	function ItemSelectionController() {
 		return (
-			<div>
-				{viewItemList === "" ? <ItemTypeSelection /> : <ItemSelection />}
-			</div>
+			<div>{itemType === "" ? <ItemTypeSelection /> : <ItemSelection />}</div>
 		);
 	}
 
+	/* Presents users with a list of categories for items to donate */
 	function ItemTypeSelection() {
 		return (
 			<div>
@@ -146,7 +179,7 @@ export const ItemSelector = ({
 						<div key={key} className="containerLi">
 							<button
 								className="itemTypeBtn"
-								onClick={() => setViewItemList(val.type)}
+								onClick={() => setItemType(val.type)}
 							>
 								{val.type}{" "}
 							</button>
@@ -158,6 +191,7 @@ export const ItemSelector = ({
 		);
 	}
 
+	/* Presents users with a list of items they can add to their list to donate */
 	function ItemSelection() {
 		return (
 			<div>
@@ -165,28 +199,29 @@ export const ItemSelector = ({
 					<button
 						button
 						className="backBtn"
-						onClick={() => setViewItemList("")}
-						aria-label="go back to previous view"
+						onClick={() => setItemType("")}
+						aria-label="go back to select category view"
 					>
 						<ArrowBackIcon />
 					</button>
-					<h2>{viewItemList}</h2>
+					<h2>{itemType}</h2>
 				</div>
+				{/* subtitle differs based on the type of item being selected */}
 				<p className="subtitle">
-					{viewItemList === "Bags/ Boxes of clothes and other smaller items"
+					{itemType === "Bags/ Boxes of clothes and other smaller items"
 						? "For smaller items such as clothes, books, toys, CDs, accessories, and other miscalleneous items, we can only collect them if they are placed in a labelled box/ bag at your collection point. The label must say “Charity Shop Helper Collection”"
 						: "⚠ Before adding any item to your list, please ensure it has a fire safety label if it originally came with one, and that it is in selling condition ⚠"}
 				</p>
 				<div className="collectList">
 					{collectionItems
-						.filter((listItem) => listItem.type === viewItemList)
+						.filter((listItem) => listItem.type === itemType)
 						.map((val, key) => (
 							<div key={key}>
 								{val.items.map((item) => (
 									<div>
 										<div className="collectListItem">
 											{item}
-											{QuantitySection(item)}
+											{QuantityField(item)}
 										</div>
 										<hr />
 									</div>
@@ -200,9 +235,10 @@ export const ItemSelector = ({
 
 	return (
 		<div>
+			{/* allows users to toggle between selecting an item to donate and viewing list */}
 			<div
 				className="toggleRadio"
-				aria-label="toggle between selecting an item from a list of items and viewing your list of added items "
+				aria-label="toggle between selecting an item from a list of items you can donate, and viewing your list of added items "
 			>
 				<input
 					type="radio"
@@ -214,7 +250,7 @@ export const ItemSelector = ({
 					checked={viewList === false}
 					aria-label="select items from a list"
 				/>{" "}
-				<label for="selectItems">Select Items</label>
+				<label htmlFor="selectItems">Select Items</label>
 				<input
 					type="radio"
 					value="View List"
@@ -225,7 +261,7 @@ export const ItemSelector = ({
 					checked={viewList === true}
 					aria-label="view your selected items"
 				/>{" "}
-				<label for="viewList">
+				<label htmlFor="viewList">
 					View List <TotalQuantity />
 				</label>
 			</div>

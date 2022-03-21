@@ -63,14 +63,13 @@ const ContactDetails = ({
 					*Would you prefer to be contacted by text or email?
 				</p>
 				<div role="radiogroup">
-					<div role="radio" className="collectionRadio">
+					<div role="radio" className="collectionRadio" aria-checked={text}>
 						<input
 							id="textRadio"
 							type="radio"
 							name="contactType"
 							value="text"
 							checked={text}
-							aria-checked={text}
 							onChange={() => setText(true)}
 							required
 							aria-label="select this and enter your phone number below, if you would prefer being contacted by email move to the next option after the text box"
@@ -89,14 +88,13 @@ const ContactDetails = ({
 						/>
 					) : null}
 
-					<div role="radio" className="collectionRadio">
+					<div role="radio" className="collectionRadio" aria-checked={!text}>
 						<input
 							id="emailRadio"
 							type="radio"
 							name="contactType"
 							value="email"
 							checked={!text}
-							aria-checked={!text}
 							onChange={() => setText(false)}
 							aria-label="select this and enter your email below, if you would prefer being contacted by text move back to the previous option"
 						/>

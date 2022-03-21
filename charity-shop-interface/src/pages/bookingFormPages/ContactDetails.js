@@ -1,8 +1,7 @@
-/* For the multi-page collection booking form, this page will represent where the user will 
-enter contact details such as name, phone number, email */
-
 import React from "react";
 
+/* For the multi-page collection booking form, this page will represent where the user will 
+enter contact details such as name, phone number, email */
 const ContactDetails = ({
 	values,
 	handleChange,
@@ -11,7 +10,6 @@ const ContactDetails = ({
 	ProgressBtns,
 	ProgressBar,
 }) => {
-	//const [text, setText] = useState(true);
 	return (
 		<div className="defaultContainer">
 			<ProgressBar />
@@ -21,6 +19,7 @@ const ContactDetails = ({
 				contact{" "}
 			</p>
 			<form className="collectionForm">
+				{/* form element to let the user enter their title */}
 				<label>
 					*Title
 					<input
@@ -33,6 +32,7 @@ const ContactDetails = ({
 						aria-required
 					/>
 				</label>
+				{/* form element to let the user enter their first name */}
 				<label>
 					*Forename
 					<input
@@ -46,6 +46,7 @@ const ContactDetails = ({
 						aria-required
 					/>
 				</label>
+				{/* form element to let the user enter their surname */}
 				<label>
 					*Surname
 					<input
@@ -59,6 +60,8 @@ const ContactDetails = ({
 						aria-required
 					/>
 				</label>
+				{/* form element to let the user enter their email or text based on a radio button 
+				they toggle between */}
 				<p className="radioGroupLbl">
 					*Would you prefer to be contacted by text or email?
 				</p>

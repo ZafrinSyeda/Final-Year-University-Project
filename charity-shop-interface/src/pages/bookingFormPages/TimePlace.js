@@ -1,8 +1,7 @@
-/* For the multi-page collection booking form, this page will represent where the user will 
-enter the detail about where and when the collection should take place */
-
 import React from "react";
 
+/* For the multi-page collection booking form, this page will represent where the user will 
+enter the detail about where and when the collection should take place */
 const TimePlace = ({ values, handleChange, ProgressBtns, ProgressBar }) => {
 	return (
 		<div className="defaultContainer">
@@ -11,6 +10,7 @@ const TimePlace = ({ values, handleChange, ProgressBtns, ProgressBar }) => {
 			<p className="subtitle">
 				Enter the address where you will be leave your donation to be collected{" "}
 			</p>
+			{/* allows users to enter their address details */}
 			<form className="collectionForm">
 				<label className="collectionLbl">
 					*Address Line 1
@@ -71,6 +71,7 @@ const TimePlace = ({ values, handleChange, ProgressBtns, ProgressBar }) => {
 				Please select the most convient date and time for when you would like
 				your collection to be picked up
 			</p>
+			{/* allows users to select the date and time they want to have their collection */}
 			<form className="collectionForm">
 				<label>
 					*Select Date

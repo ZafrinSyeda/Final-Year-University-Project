@@ -1,9 +1,9 @@
-/* For the multi-page collection booking form, this page will be displayed to the user once they have 
-confirmed everything */
-
 import React from "react";
+/* image of a calendar  */
 import calendarConfirm from "../../resources/calendarConfirm.png";
 
+/* For the multi-page collection booking form, this page will be displayed to the user once they have 
+confirmed everything */
 const success = () => {
 	return (
 		<div className="successPage">

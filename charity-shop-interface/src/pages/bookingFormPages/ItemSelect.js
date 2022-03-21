@@ -1,10 +1,10 @@
-/* For the multi-page collection booking form, this page will represent where the user will 
-select or enter the items that they would like to be collected */
-
 import React, { useState } from "react";
 import { ItemSelector } from "../../Components/ItemSelector";
+/* material UI component to represent a snackbar that is displayed */
 import Snackbar from "@mui/material/Snackbar";
 
+/* For the multi-page collection booking form, this page will represent where the user will 
+select or enter the items that they would like to be collected */
 const ItemSelect = ({
 	values,
 	handleQuantityChange,
@@ -12,8 +12,10 @@ const ItemSelect = ({
 	ProgressBtns,
 	ProgressBar,
 }) => {
+	/* used to set the text to be displayed inside the snackbar */
 	const [showSnackbar, setShowSnackbar] = useState("");
 
+	/* used to close the snackbar  */
 	const handleCloseSnackbar = (event, reason) => {
 		if ("clickaway" === reason) return;
 		setShowSnackbar("");
@@ -26,6 +28,7 @@ const ItemSelect = ({
 			<p className="subtitle">
 				Select the items you will be donating and review your list
 			</p>
+			{/* uses the itemselector component */}
 			<ItemSelector
 				items={values.list}
 				handleQuantityChange={handleQuantityChange}
@@ -33,6 +36,7 @@ const ItemSelect = ({
 				setShowSnackbar={setShowSnackbar}
 			/>
 			{ProgressBtns(false)}
+			{/* represents the MUI snackbar */}
 			<Snackbar
 				open={showSnackbar !== ""}
 				autoHideDuration={6000}

@@ -263,6 +263,7 @@ will look for when they click onto collection booking from the menu */
 	border-radius: 10px;
 }
 
+/* represents the title heading of each page in the collection booking form */
 .formTitle {
 	font-size: 35px;
 	text-align: left;
@@ -327,7 +328,8 @@ and safety form */
 	height: 80%;
 }
 
-/* select list is a container that presents that holds most of the components within the itemSelector*/
+/* review list is container that holds the review items */
+/* select list is a container that holds most of the components within the itemSelector*/
 .reviewList,
 .selectList {
 	background-color: #ffffff;
@@ -497,6 +499,7 @@ category*/
 	color: #0e540d;
 }
 
+/* buttons to traverse the multi page collection booking form */
 .submitFormBtn,
 .progressFormBtn {
 	height: 40px;
@@ -511,9 +514,14 @@ category*/
 	border-radius: 5px;
 }
 
+/* the container that holds a form within the collection booking form */
 .collectionForm {
 	margin: 0% 10%;
 }
+
+/* radioGroupLbl = the label for a radio group */
+/* represents the input boxes and labels in the collection booking form */
+/* collectionRadio = represents a radio button within the collection booking form */
 .radioGroupLbl,
 .collectionForm input,
 .collectionForm label,
@@ -544,6 +552,7 @@ category*/
 	vertical-align: middle;
 }
 
+/* represents a longer input box */
 .longInput {
 	width: 90%;
 }
@@ -553,6 +562,7 @@ category*/
 	margin: 0% 5%;
 }
 
+/* represents each item within the review list */
 .reviewItem {
 	margin-bottom: 15px;
 	margin-top: 15px;
@@ -564,17 +574,18 @@ category*/
 	font-size: 18px;
 	font-family: "Montserrat", sans-serif;
 }
-
 .reviewItem li {
 	margin-bottom: 15px;
 }
 
+/* represents the container for the page the user reaches after successfully completing the collecion booking form */
 .successPage {
 	margin: 2% 20%;
 	padding: 5%;
 	text-align: center;
 }
 
+/* the container for the progress bar */
 .progressBar {
 	display: inline-block;
 	width: 20%;
@@ -596,6 +607,7 @@ category*/
 	pointer-events: none;
 }
 
+/* each used in the progress bar to denote what the step the user is in */
 .currentStep,
 .completeStep,
 .incompleteStep {
@@ -688,6 +700,7 @@ category*/
 	border: 2px solid #529447;
 }
 
+/* radio button on the donation page*/
 .donateRadio {
 	display: flex;
 	align-items: center;
@@ -720,6 +733,7 @@ category*/
 	background-color: #80c476;
 }
 
+/* represents the error message displayed */
 .formError {
 	justify-content: center;
 	color: #940d0d;

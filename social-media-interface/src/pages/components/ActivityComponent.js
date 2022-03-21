@@ -51,7 +51,7 @@ export const ActivityComponent = ({ activity, setIndividualMessage }) => {
 								<img
 									src={activity.profile_pic}
 									className="profilePictureSm"
-									alt="profile picture"
+									alt={activity.username}
 								/>
 								{activity.username}
 

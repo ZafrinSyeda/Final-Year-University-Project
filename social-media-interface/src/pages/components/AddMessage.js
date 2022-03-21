@@ -9,7 +9,7 @@ export const AddMessage = ({ type, messages, setMessage }) => {
 	const addComment = (e) => {
 		e.preventDefault();
 		/* removes trailing and leading whitespaces - to not accept strings of that nature */
-		if (comment.trim() == "") {
+		if (comment.trim() === "") {
 			return;
 		}
 		var postComment;
@@ -46,7 +46,7 @@ export const AddMessage = ({ type, messages, setMessage }) => {
 			<img
 				src={profilepicture}
 				className="profilePictureSm"
-				alt="your profile picture"
+				alt="your profile"
 			/>
 			<input
 				type="text"

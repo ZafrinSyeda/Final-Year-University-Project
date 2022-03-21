@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ActivityComponent } from "./ActivityComponent";
+import { ActivityComponent } from "./components/ActivityComponent";
 import { AddMessage } from "./components/AddMessage";
 /* stylesheet */
 import "./Profile.css";
@@ -86,7 +86,7 @@ const Messages = () => {
 								<img
 									src={message.profile_pic}
 									className="profilePictureSm"
-									alt="reciever's profile picture"
+									alt="reciever"
 								/>
 								<div>{message.message}</div>
 							</div>
@@ -96,7 +96,7 @@ const Messages = () => {
 								<img
 									src={message.profile_pic}
 									className="profilePictureSm"
-									alt="your profile picture"
+									alt="your profile"
 								/>
 							</div>
 						)

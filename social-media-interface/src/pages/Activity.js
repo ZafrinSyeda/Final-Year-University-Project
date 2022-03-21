@@ -1,5 +1,5 @@
 import React from "react";
-import { ActivityComponent } from "./ActivityComponent";
+import { ActivityComponent } from "./components/ActivityComponent";
 import vinylgirlpfp from "../resources/vinylgirlpfp.jpeg";
 import onur from "../resources/onur.jpg";
 import personpfp from "../resources/personpfp.jpg";

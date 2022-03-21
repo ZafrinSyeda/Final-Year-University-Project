@@ -83,7 +83,7 @@ const Feed = () => {
 							<img
 								src={post.profile_pic}
 								className="profilePictureSm"
-								alt="profile picture"
+								alt={post.username}
 							/>
 							{post.username}
 						</div>
@@ -143,7 +143,7 @@ const Feed = () => {
 									<img
 										src={comment.profile_pic}
 										className="profilePictureSm"
-										alt="profile picture"
+										alt={comment.username}
 									/>
 									{comment.username}:<p></p>
 								</div>

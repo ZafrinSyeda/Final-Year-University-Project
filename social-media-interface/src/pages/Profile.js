@@ -63,7 +63,7 @@ const Profile = () => {
 					<img
 						className="profilePicture"
 						src={profilepicture}
-						alt="profile picture"
+						alt={"your profile"}
 						onClick={() => setActiveButton(0)}
 					></img>
 					<div className="profileDetail">

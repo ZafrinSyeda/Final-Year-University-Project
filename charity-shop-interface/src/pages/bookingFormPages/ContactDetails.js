@@ -2,7 +2,6 @@
 enter contact details such as name, phone number, email */
 
 import React from "react";
-import { useState } from "react";
 
 const ContactDetails = ({
 	values,
@@ -71,6 +70,7 @@ const ContactDetails = ({
 							name="contactType"
 							value="text"
 							checked={text}
+							aria-checked={text}
 							onChange={() => setText(true)}
 							required
 							aria-label="select this and enter your phone number below, if you would prefer being contacted by email move to the next option after the text box"
@@ -96,6 +96,7 @@ const ContactDetails = ({
 							name="contactType"
 							value="email"
 							checked={!text}
+							aria-checked={!text}
 							onChange={() => setText(false)}
 							aria-label="select this and enter your email below, if you would prefer being contacted by text move back to the previous option"
 						/>

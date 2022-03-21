@@ -13,16 +13,16 @@ const Navbar = () => {
 					<Logo src={banner} alt="website banner"></Logo>
 				</NavLink>
 				<NavMenu>
-					<NavLink to="/about" activeStyle>
+					<NavLink to="/about">
 						<h3>About Us</h3>
 					</NavLink>
-					<NavLink to="/shop" activeStyle>
+					<NavLink to="/shop">
 						<h3>Shop</h3>
 					</NavLink>
-					<NavLink to="/book-collection" activeStyle>
+					<NavLink to="/book-collection">
 						<h3>Book a Collection</h3>
 					</NavLink>
-					<NavLink to="/make-donation" activeStyle>
+					<NavLink to="/make-donation">
 						<h3>Make a Donation</h3>
 					</NavLink>
 				</NavMenu>

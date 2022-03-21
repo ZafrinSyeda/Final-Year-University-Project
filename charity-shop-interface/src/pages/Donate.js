@@ -71,7 +71,7 @@ const Donate = () => {
 				isn't a number, or a float followed by only 2 decimal points, and it can include the £ at the 
 				front) */
 		} else if (
-			!/^(\£?\d{1,3}(?:,?\d{3})*(?:\.\d{2})?|\.\d{2})?$/.test(values.amount)
+			!/^(£?\d{1,3}(?:,?\d{3})*(?:\.\d{2})?|\.\d{2})?$/.test(values.amount)
 		) {
 			setErrors({ ...errors, amount: "Please enter a valid amount" });
 			window.scrollTo({ top: 600, behavior: "smooth" });
@@ -130,7 +130,6 @@ const Donate = () => {
 								id="charity1"
 								name="charity"
 								onChange={handleChange}
-								aria-required
 							/>
 							<img
 								className="container-img-sm"
@@ -195,9 +194,8 @@ const Donate = () => {
 								id="monthly"
 								name="frequency"
 								onChange={handleChange}
-								aria-required
 							/>{" "}
-							<label for="monthly">Monthly</label>
+							<label htmlFor="monthly">Monthly</label>
 						</div>
 					</div>
 					<div className="containerItem">
@@ -209,7 +207,7 @@ const Donate = () => {
 								name="frequency"
 								onChange={handleChange}
 							/>{" "}
-							<label for="single">Single</label>
+							<label htmlFor="single">Single</label>
 						</div>
 					</div>
 				</div>
@@ -233,9 +231,8 @@ const Donate = () => {
 								name="amount"
 								onClick={selectDefault}
 								onChange={handleChange}
-								aria-required
 							/>{" "}
-							<label for="five">£5.00</label>
+							<label htmlFor="five">£5.00</label>
 						</div>
 					</div>
 					<div className="containerItem">
@@ -248,7 +245,7 @@ const Donate = () => {
 								onClick={selectDefault}
 								onChange={handleChange}
 							/>{" "}
-							<label for="ten">£10.00</label>
+							<label htmlFor="ten">£10.00</label>
 						</div>
 					</div>
 					<div className="containerItem">
@@ -261,7 +258,7 @@ const Donate = () => {
 								onClick={selectDefault}
 								onChange={handleChange}
 							/>{" "}
-							<label for="twenty">£20.00</label>
+							<label htmlFor="twenty">£20.00</label>
 						</div>
 					</div>
 				</div>
@@ -278,7 +275,7 @@ const Donate = () => {
 						onClick={enterAmount}
 						onChange={handleChange}
 					/>
-					<label for="other" className="labelTextbox">
+					<label htmlFor="other" className="labelTextbox">
 						<b>Enter an amount instead: </b>
 					</label>
 					{showTextbox ? (

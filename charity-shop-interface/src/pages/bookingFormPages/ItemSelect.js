@@ -15,7 +15,7 @@ const ItemSelect = ({
 	const [showSnackbar, setShowSnackbar] = useState("");
 
 	const handleCloseSnackbar = (event, reason) => {
-		if ("clickaway" == reason) return;
+		if ("clickaway" === reason) return;
 		setShowSnackbar("");
 	};
 
@@ -34,7 +34,7 @@ const ItemSelect = ({
 			/>
 			{ProgressBtns(false)}
 			<Snackbar
-				open={showSnackbar != ""}
+				open={showSnackbar !== ""}
 				autoHideDuration={6000}
 				onClose={handleCloseSnackbar}
 				message={showSnackbar}

@@ -49,8 +49,7 @@ const CollectionForm = () => {
 		newComplete[step - 1] = true;
 		setComplete(newComplete);
 		setStep(step + 1);
-		if (step > maxStep) setMaxStep(step);
-		console.log(maxStep);
+		if (step >= maxStep) setMaxStep(step);
 	};
 
 	/* The function to be used by the 'previous' button when moving to the previous page in a form */
@@ -153,10 +152,9 @@ const CollectionForm = () => {
 								? ""
 								: complete[index]
 								? "✔"
-								: index === maxStep - 1
+								: index === maxStep
 								? "..."
 								: ""}
-							{maxStep >= index ? console.log("jg " + index + maxStep) : null}
 						</div>
 						<button
 							className="progressLink"
@@ -171,10 +169,9 @@ const CollectionForm = () => {
 		);
 	};
 
-	{
-		/* Depending on what stage of the form the user is in, they will be presented with a 
+	/* Depending on what stage of the form the user is in, they will be presented with a 
 		different page of the form */
-	}
+
 	switch (step) {
 		case 1:
 			return <HealthSafety nextStep={nextStep} ProgressBar={ProgressBar} />;

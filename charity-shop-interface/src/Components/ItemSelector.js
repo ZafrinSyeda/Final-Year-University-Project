@@ -41,7 +41,7 @@ export const ItemSelector = ({
 	const QuantitySection = (item) => {
 		let index = getIndex(item);
 		let listItem = { item: item, quantity: 0 };
-		if (index != -1) {
+		if (index !== -1) {
 			listItem = items[index];
 		}
 		return (

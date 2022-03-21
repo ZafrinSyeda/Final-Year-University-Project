@@ -81,13 +81,12 @@ export const ItemChecker = ({ itemList }) => {
 						<ul>
 							{val.items
 								.filter((item) => {
-									{
-										/* If there is no text in the search bar, all of the items
-										should be presented on screen, if the search bar matches one of the 
-										items it should present only those items, otherwise includesItem is 
-										decremented by 1 to show that one less item could be forbidden*/
-									}
-									if (searchTerm == "") {
+									/* If there is no text in the search bar, all of the items
+									should be presented on screen, if the search bar matches one of the 
+									items it should present only those items, otherwise includesItem is 
+									decremented by 1 to show that one less item could be forbidden*/
+
+									if (searchTerm === "") {
 										return item;
 									} else if (
 										item.toLowerCase().includes(searchTerm.toLowerCase())
@@ -95,6 +94,7 @@ export const ItemChecker = ({ itemList }) => {
 										return item;
 									} else {
 										includesItem = includesItem - 1;
+										return null;
 									}
 								})
 								.map((item, index) => (

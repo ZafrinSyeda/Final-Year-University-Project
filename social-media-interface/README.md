@@ -7,4 +7,4 @@ To be able to view the interface and interact with it within a browser, the file
 In order to run the tests that were created for this interface, the command 'npm test' should be ran, and then 'a' should be entered in order to run all of the tests. 
 
 All images used are free to use stock images, asides from 'profilepicture.png' which was created by me. 
-Asides from React, the 'styled-components' library was used, and the 'material-ui' framework for React. Dependencies are more explicity explained in the package.json file.  
+Asides from React, the 'material-ui' framework for React was used. Dependencies are more explicity explained in the package.json file.  

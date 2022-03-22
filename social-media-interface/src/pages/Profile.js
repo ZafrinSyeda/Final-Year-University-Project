@@ -1,7 +1,7 @@
 /* React imports  */
 import React, { useState } from "react";
 /* reusable components being used */
-import { HobbyPost } from "./HobbyPost";
+import { HobbyPost } from "./components/HobbyPost";
 /* images being used on the page */
 import hsword from "../resources/horizontal-sword.jpg";
 import vsword from "../resources/vertical-sword.jpg";

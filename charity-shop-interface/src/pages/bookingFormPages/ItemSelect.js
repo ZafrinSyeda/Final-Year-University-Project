@@ -4,7 +4,14 @@ import { ItemSelector } from "../../Components/ItemSelector";
 import Snackbar from "@mui/material/Snackbar";
 
 /* For the multi-page collection booking form, this page will represent where the user will 
-select or enter the items that they would like to be collected */
+select or enter the items that they would like to be collected
+
+props used: 
+values: the saved values entered into the form 
+handleQuantityChange: deals with changing quantity of an item in the collection list
+handleDeleteItem: deals with deleting an item from the collection list
+progressBtns: used to move to the next or previous page of the form 
+progressBar: shows the user their progress in the form */
 const ItemSelect = ({
 	values,
 	handleQuantityChange,

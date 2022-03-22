@@ -1,7 +1,15 @@
 import React from "react";
 
-/* For the multi-page collection booking form, this page will represent where the user will 
-enter contact details such as name, phone number, email */
+/** For the multi-page collection booking form, this page will represent where the user will 
+enter contact details such as name, phone number, email 
+
+props used: 
+values: the saved values entered into the form 
+handleChange: deals with changing one of the values 
+setText: sets the preferred method of contact to either texting (true) or email (false)
+progressBtns: used to move to the next or previous page of the form 
+progressBar: shows the user their progress in the form 
+*/
 const ContactDetails = ({
 	values,
 	handleChange,

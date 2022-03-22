@@ -1,8 +1,14 @@
 import React from "react";
 
-/* For the multi-page collection booking form, this page will represent the final page where the user
+/** For the multi-page collection booking form, this page will represent the final page where the user
 will confirm their form choices and be able to look at their detail in summary to allow them to 
-make any necessary pages */
+make any necessary pages
+
+props used: 
+values: the saved values entered into the form 
+text: the preferred method of contact to either texting (true) or email (false)
+progressBtns: used to move to the next or previous page of the form 
+progressBar: shows the user their progress in the form */
 const Review = ({ values, text, ProgressBtns, ProgressBar }) => {
 	return (
 		<div className="defaultContainer">

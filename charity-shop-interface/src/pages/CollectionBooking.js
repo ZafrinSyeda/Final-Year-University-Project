@@ -3,7 +3,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
-
+/* images used */
 import background from "../resources/booking_bg.jpg";
 import calendar from "../resources/calendar.png";
 import truck from "../resources/truck.png";

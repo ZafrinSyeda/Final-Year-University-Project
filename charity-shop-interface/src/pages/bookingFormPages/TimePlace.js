@@ -1,7 +1,14 @@
 import React from "react";
 
-/* For the multi-page collection booking form, this page will represent where the user will 
-enter the detail about where and when the collection should take place */
+/** For the multi-page collection booking form, this page will represent where the user will 
+enter the detail about where and when the collection should take place
+
+props used: 
+values: the saved values entered into the form 
+handleChange: deals with changing one of the values 
+progressBtns: used to move to the next or previous page of the form 
+progressBar: shows the user their progress in the form 
+*/
 const TimePlace = ({ values, handleChange, ProgressBtns, ProgressBar }) => {
 	return (
 		<div className="defaultContainer">

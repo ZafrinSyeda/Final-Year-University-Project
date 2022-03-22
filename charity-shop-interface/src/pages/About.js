@@ -1,6 +1,7 @@
 /* This page is to represent the 'about us' page where a user can find out more about the company
  and the partner charities */
 import React from "react";
+/* images used */
 import charity1 from "../resources/charity1.png";
 import charity2 from "../resources/charity2.png";
 import charity3 from "../resources/charity3.png";

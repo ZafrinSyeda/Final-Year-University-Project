@@ -1,12 +1,15 @@
-/* For the multi-page collection booking form, this page will be shown at the start that clarifies 
-some health and safety information about the items being donated, and allows users to understand 
-whether their item is eligble for collection or not */
-
 import React from "react";
 /* A JSON file to show a few of the items that cannot be taken in for health and safety reasons */
 import forbiddenItems from "../../resources/forbidden_items.json";
 import { ItemChecker } from "../../Components/ItemChecker";
 
+/**  For the multi-page collection booking form, this page will be shown at the start that clarifies 
+some health and safety information about the items being donated, and allows users to understand 
+whether their item is eligble for collection or not 
+
+props used: 
+nextStep: takes user to the next page in the form
+progressBar: shows the user their progress in the form */
 function HealthSafety({ nextStep, ProgressBar }) {
 	return (
 		<div>

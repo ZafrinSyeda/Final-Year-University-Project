@@ -8,13 +8,18 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import MenuIcon from "@mui/icons-material/Menu";
 
+/** represents the navigation menu displayed on the side of the screen
+ *
+ * NewPost: sets whether the new post modal is open or not
+ */
 const SideMenu = ({ NewPost }) => {
+	/* boolean to represnt if the menu is open or closed */
 	const [menuOpen, setMenuOpen] = useState(true);
-
+	/* toggles the boolean value if the menu is opened ot closed */
 	const toggleMenu = () => {
 		setMenuOpen(!menuOpen);
 	};
-
+	/* hamburger mention functionality to open or close the menu */
 	function ToggleVisibilityBtn() {
 		return (
 			<div>
@@ -31,14 +36,17 @@ const SideMenu = ({ NewPost }) => {
 
 	return (
 		<div>
+			{/* view of the menu when it's hidden */}
 			<div className={`menuHidden ${menuOpen ? "" : "hideMenu"}`}>
 				<ToggleVisibilityBtn />
 			</div>
+			{/* view of the menu when it's being displayed */}
 			<div className={`sideMenu ${menuOpen ? " showMenu" : ""}`}>
 				<div className="menuItems">
 					<ToggleVisibilityBtn />
 					<ul>
 						<li>
+							{/* takes the user to view their feed */}
 							<NavLink
 								className="inactive"
 								activeclassname="active"
@@ -50,6 +58,7 @@ const SideMenu = ({ NewPost }) => {
 							</NavLink>
 						</li>
 						<li>
+							{/* takes the user to view their profile */}
 							<NavLink
 								className="inactive"
 								activeclassname="active"
@@ -61,6 +70,7 @@ const SideMenu = ({ NewPost }) => {
 							</NavLink>
 						</li>
 						<li>
+							{/* takes the user to view their messages */}
 							<NavLink
 								className="inactive"
 								activeclassname="active"
@@ -72,6 +82,7 @@ const SideMenu = ({ NewPost }) => {
 							</NavLink>
 						</li>
 						<li>
+							{/* takes the user to view their activity */}
 							<NavLink
 								className="inactive"
 								activeclassname="active"
@@ -83,6 +94,7 @@ const SideMenu = ({ NewPost }) => {
 							</NavLink>
 						</li>
 					</ul>
+					{/* opens the new post mobal */}
 					<button className="newPostBtn" onClick={NewPost}>
 						<AddCircleOutlineIcon style={{ fontSize: 50 }} />
 						<p>New Post</p>

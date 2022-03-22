@@ -1,10 +1,16 @@
-/* used to add a new post to the user's profile */
-
 import React from "react";
+/* stylesheet */
 import "../Profile.css";
+/* MUI icon to allow for a cross */
 import { BiX } from "react-icons/bi";
+/* list of the user's hobbies */
 import hobbies from "../../resources/hobbies.json";
 
+/** modal to add a new post to the user's profile
+ *
+ * props used:
+ * Close: boolean value for whether the new post moal is open or not
+ */
 export default function NewPost({ Close }) {
 	return (
 		<div className="popup-outer">

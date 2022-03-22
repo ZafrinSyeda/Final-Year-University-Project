@@ -221,6 +221,7 @@ br {
 	margin: 5%;
 }
 
+/* used to show the username profile picture and name */
 .profileDetails {
 	text-align: left;
 	display: flex;
@@ -240,6 +241,7 @@ br {
 	font-style: normal;
 }
 
+/* smaller view of a profile picture */
 .profilePictureSm {
 	height: 40px;
 	width: 40px;
@@ -301,6 +303,7 @@ br {
 	overflow-y: auto;
 }
 
+/* holds the body of the section that allows users to enter a comment/ message */
 .commentForm {
 	display: flex;
 	align-items: center;
@@ -315,6 +318,7 @@ br {
 	border-radius: 8px;
 }
 
+/* button to send a message/ comment */
 .commentBtn {
 	border: 1px solid;
 	background-color: #444444;
@@ -329,6 +333,8 @@ br {
 	background-color: #787878;
 }
 
+/* allows text to not overflow and being hidden behind an ellipsis for messages/ comments in the activity
+or post descriptions*/
 .desc,
 .messageTxt {
 	display: -webkit-box;
@@ -338,12 +344,13 @@ br {
 	text-overflow: ellipsis;
 }
 
-/* messages */
+/* used to present the meta information in an activity component */
 .messageHeader {
 	display: flex;
 	justify-content: space-between;
 }
 
+/* used to represent the body of an activity which is represented within a button */
 .messagePreview {
 	padding: 20px;
 	margin: 1% 2%;

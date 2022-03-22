@@ -154,12 +154,14 @@ form input[type="submit"]:hover {
 	padding: 0%;
 }
 
+/* represents the button to open or close the hamburger menu*/
 .hamburger {
 	color: #444444;
 	border: none;
 	background-color: transparent;
 }
 
+/* body of the side menu when it's hidden */
 .menuHidden {
 	margin-top: 20px;
 	margin-left: 40px;
@@ -167,6 +169,7 @@ form input[type="submit"]:hover {
 	top: 0;
 }
 
+/* holds all of the items within the menu */
 .menuItems {
 	margin: 20px;
 }
@@ -176,10 +179,12 @@ form input[type="submit"]:hover {
 	padding-top: 20px;
 }
 
+/* menu item that the user is not on*/
 .inactive {
 	color: #444444;
 	text-decoration: none;
 }
+/* menu item that the user is on / the user is interacting with*/
 .active,
 .inactive:hover {
 	color: #4b5ca5;
@@ -187,6 +192,7 @@ form input[type="submit"]:hover {
 	font-weight: bold;
 }
 
+/* button to add a new post that's always placed at the very bottom of the user's screen */
 .newPostBtn {
 	position: absolute;
 	bottom: 20px;

@@ -163,6 +163,7 @@ br {
 	padding: 5%;
 }
 
+/* used to hold the user's details on their profile */
 .userCard {
 	background-color: #fff;
 	width: 100%;
@@ -173,7 +174,7 @@ br {
 	margin-top: 80px;
 }
 
-/* the profile picture is a fixed size, and also rounded in shape*/
+/* the profile picture is a fixed size, and also rounded in shape and is displayed above the card*/
 .profilePicture {
 	height: 120px;
 	width: 120px;
@@ -184,6 +185,7 @@ br {
 	position: absolute;
 }
 
+/* holds the user's username and description on their profile */
 .profileDetail {
 	position: absolute;
 	bottom: 0;
@@ -192,6 +194,7 @@ br {
 	width: 100%;
 }
 
+/* holds the hobby filter menu */
 .hobbyMenu {
 	width: 100%;
 	height: 60px;
@@ -204,6 +207,7 @@ br {
 	color: #fff;
 }
 
+/* the drop down menu to allow users to select a hobby to filter by */
 .hobbyDropdown select {
 	border: none;
 	background-color: #2c2c2c;
@@ -212,7 +216,7 @@ br {
 	font-size: 18px;
 }
 
-/*FOR THE USER'S FEED*/
+/*for the user's feed*/
 .postComments,
 .feedPost {
 	background-color: #fff;
@@ -250,6 +254,7 @@ br {
 	margin-right: 10px;
 }
 
+/* represents the image of a user's post on the user's feed */
 .feedImg {
 	max-height: 70vh;
 	width: 90%;
@@ -260,6 +265,7 @@ br {
 	text-align: right;
 }
 
+/* the buttons displayed at the bottom of a feed post */
 .feedInteractions > * {
 	margin-left: 10px;
 	color: #444444;
@@ -271,20 +277,24 @@ br {
 	color: #6c7cc0;
 }
 
+/* body for the div when the user views a user's comments on a post on their feed */
 .postComments {
 	height: 100vh;
 }
 
+/* body for each comment on the user's feed */
 .postComment {
 	margin: 20px;
 }
 
+/* holds the message of the comment */
 .commentContent {
 	text-align: left;
 	font-size: 18px;
 	margin: 15px 50px;
 }
 
+/* text based button to show the post comments */
 .showCommentBtn {
 	margin: 12px;
 	background-color: transparent;
@@ -298,6 +308,7 @@ br {
 	text-decoration: underline;
 }
 
+/* container that holds a specific comment */
 .commentContainer {
 	max-height: 70vh;
 	overflow-y: auto;
@@ -371,11 +382,13 @@ or post descriptions*/
 	font-size: 20px;
 }
 
+/* holds the body of view when a message conversation is being displayed */
 .convo {
 	min-height: 100vh;
 	overflow: hidden;
 }
 
+/* holds the message bubble for a message in a conversation */
 .recievedMsg div,
 .sentMsg div {
 	margin: 15px;
@@ -384,6 +397,7 @@ or post descriptions*/
 	word-wrap: break-word;
 }
 
+/* represents the message that the user has recieved*/
 .recievedMsg {
 	display: flex;
 	justify-content: flex-start;
@@ -395,6 +409,7 @@ or post descriptions*/
 	margin-right: 25%;
 }
 
+/* represents the message that the user has sent*/
 .sentMsg {
 	display: flex;
 	justify-content: flex-end;
@@ -415,14 +430,16 @@ or post descriptions*/
 	padding-left: 10%;
 }
 
+/* holds the conversation between users */
 .convoContent {
 	max-height: 75vh;
 	overflow-y: scroll;
 	padding: 50px;
 }
 
+/* media query for smaller screens - i.e. tablets and phones */
 @media (max-width: 700px) {
-	/*makes login form wider*/
+	/*makes message form fill the screen*/
 	.convoContent {
 		padding: 0px;
 		padding-left: 10px;
@@ -453,6 +470,7 @@ or post descriptions*/
 		border-radius: 0px;
 	}
 
+	/* moves it from the right to left so the user doesn't accidently log out*/
 	.cancel {
 		left: 0px;
 		right: 100%;

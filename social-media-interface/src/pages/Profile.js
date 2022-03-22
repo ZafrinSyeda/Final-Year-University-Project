@@ -1,5 +1,3 @@
-/* This page represents what the user can view of their own page where they can post about their hobbies */
-
 /* React imports  */
 import React, { useState } from "react";
 /* reusable components being used */
@@ -10,10 +8,12 @@ import vsword from "../resources/vertical-sword.jpg";
 import crab from "../resources/crab_watercolour.jpg";
 import basket from "../resources/mushroom-basket.jpg";
 import profilepicture from "../resources/profilepicture.PNG";
+/* list of the user's hobbies */
 import hobbies from "../resources/hobbies.json";
 /* stylesheet */
 import "./Profile.css";
 
+/* This page represents what the user can view of their own page where they can post about their hobbies */
 const Profile = () => {
 	/* hardcoded the details about the posts on the page */
 	const [posts] = useState([
@@ -52,10 +52,11 @@ const Profile = () => {
 		},
 	]);
 
-	/* variable used depending on whether the user has selected one of the hobbies on the side profile
+	/* variable used depending on whether the user has selected one of the hobbies on the drop down
 	the value matches the hobby id, but by default it's set to 0 */
 	const [activeButton, setActiveButton] = useState(0);
 
+	/* displays the user's details such as username, profile picture, and description */
 	function UserDetails() {
 		return (
 			<div>
@@ -64,7 +65,6 @@ const Profile = () => {
 						className="profilePicture"
 						src={profilepicture}
 						alt={"your profile"}
-						onClick={() => setActiveButton(0)}
 					></img>
 					<div className="profileDetail">
 						<h3>Makayla Madelynn Kovačić</h3>
@@ -78,13 +78,16 @@ const Profile = () => {
 		);
 	}
 
+	/* holds the hobby that the user has selected from the drop down menu */
 	const [selectedValue, setSelectedValue] = useState("");
 
+	/* used to handle a selection to the drop down menu of hobbies */
 	const handleChange = (event) => {
 		setActiveButton(parseInt(event.target.value));
 		setSelectedValue(event.target.value);
 	};
 
+	/* drop down hobby list that allows the user to filter hobbies */
 	function HobbyMenu() {
 		return (
 			<div className="hobbyMenu">
@@ -99,6 +102,7 @@ const Profile = () => {
 						onChange={handleChange}
 					>
 						{" "}
+						{/* if no option is selected it shows 'All' */}
 						<option value="0"> All </option>
 						{hobbies.map((hobby) => (
 							<option
@@ -120,10 +124,10 @@ const Profile = () => {
 		return <HobbyPost posts={posts} />;
 	}
 
-	/* the display of a post when just one hobby has been selected from the side profile menu */
-	function HobbySelect({ hobby }) {
+	/* the display of a post when just one hobby has been selected from the drop down menu */
+	function HobbySelect() {
 		return (
-			<div className="selectedHobby">
+			<div>
 				{/* the post id should match those of the button that has been selected */}
 				<HobbyPost
 					posts={posts.filter((posts) => posts.hobby_id === activeButton)}
@@ -139,7 +143,6 @@ const Profile = () => {
 			<div className="container">
 				{/* displays either all posts or posts of a specific hobby, depending on what
 				button has been selected */}
-
 				{activeButton !== 0 ? <HobbySelect /> : <AllPosts />}
 			</div>
 		</div>

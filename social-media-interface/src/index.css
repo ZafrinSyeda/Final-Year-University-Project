@@ -125,6 +125,7 @@ form input[type="submit"]:hover {
 	position: relative;
 }
 
+/* used to hold the body of each of the pages */
 .page {
 	padding: 30px;
 	padding-right: 0px;

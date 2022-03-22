@@ -1,7 +1,8 @@
-/* Used to display the user's posts when it's filtered  */
 import React from "react";
+/* MUI component to show masonry views */
 import Masonry from "@mui/lab/Masonry";
 
+/* Used to display the user's posts when it's filtered  */
 export const HobbyPost = (props) => {
 	/* takes the posts as a prop from where the component is being called */
 	const posts = props.posts;

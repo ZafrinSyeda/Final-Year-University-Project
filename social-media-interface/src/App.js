@@ -28,8 +28,6 @@ function App() {
 
 	/* Used when the user is logging in, takes details from the login form */
 	const Login = (details) => {
-		console.log(details);
-
 		if (
 			details.username === userDetails.username &&
 			details.password === userDetails.password
@@ -65,6 +63,7 @@ function App() {
 				<div className="pageTemplate">
 					<Router>
 						<SideMenu NewPost={toggleCreatePost} />
+						{/* allows the user to navigate to different pages */}
 						<Routes>
 							<Route path="/" element={<Feed />} />
 							<Route path="/Profile" element={<Profile />} />

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+/* used to represent the individual message components when in the activity-like view  */
 import { ActivityComponent } from "./components/ActivityComponent";
+/* allows users to send a comment on a post */
 import { AddMessage } from "./components/AddMessage";
 /* stylesheet */
 import "./Profile.css";
@@ -10,6 +12,7 @@ import personpfp from "../resources/personpfp.jpg";
 import paintingpfp from "../resources/paintingpfp.jpg";
 import profilepicture from "../resources/profilepicture.PNG";
 
+/* list to hold the details of the user's message */
 const Messages = () => {
 	const [conversation, setConversation] = useState([
 		{
@@ -70,16 +73,22 @@ const Messages = () => {
 		},
 	];
 
+	/* allows user to show the messages between the user and an individual if it's set to the 
+	individual's username */
 	const [individualMessage, setIndividualMessage] = useState("");
 
+	/* shows the messages between the user and an individual */
 	const SingleConversation = () => {
 		return (
 			<div className="convo">
+				{/* goes back to the activity-like view of the messages */}
 				<button onClick={() => setIndividualMessage("")} className="commentBtn">
 					Back
 				</button>
 				<h2>{individualMessage}</h2>
 				<div className="convoContent">
+					{/* displays message on the left or right depending on whether the user is the 
+					sender or the reciever of the message */}
 					{conversation.map((message) =>
 						message.type === "recieve" ? (
 							<div className="recievedMsg">
@@ -102,6 +111,7 @@ const Messages = () => {
 						)
 					)}
 				</div>
+				{/* allows the user to add a message in a textbox */}
 				<div className="addMessage">
 					<AddMessage
 						type={"message"}
@@ -113,11 +123,12 @@ const Messages = () => {
 		);
 	};
 
+	/* shows the activity-like section displaying the messages the user had */
 	const AllMessages = () => {
-		console.log(individualMessage);
 		return (
 			<div>
 				<h1>Messages</h1>
+				{/* presents the message details in the form of an activity component */}
 				<ActivityComponent
 					activity={messengerDetail}
 					setIndividualMessage={setIndividualMessage}
@@ -128,6 +139,7 @@ const Messages = () => {
 
 	return (
 		<div className="page">
+			{/* only shows the messages when one user has been selected */}
 			{individualMessage === "Celestina Benedetti" ? (
 				<SingleConversation />
 			) : (

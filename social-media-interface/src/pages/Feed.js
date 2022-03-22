@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+/* allows users to send a comment on a post */
 import { AddMessage } from "./components/AddMessage";
 /* stylesheet */
 import "./Profile.css";
 /* Images */
-
 import vinylgirlpost from "../resources/vinylgirlpost.jpeg";
 import vinylgirlpfp from "../resources/vinylgirlpfp.jpeg";
 import onur from "../resources/onur.jpg";
@@ -17,7 +17,9 @@ import ChatIcon from "@material-ui/icons/Chat";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import StarIcon from "@mui/icons-material/Star";
 
+/* displays the posts that the user's followers posts */
 const Feed = () => {
+	/* list to hold the details of the user's follower's posts */
 	const friendPosts = [
 		{
 			username: "Celestina Benedetti",
@@ -49,6 +51,7 @@ const Feed = () => {
 		},
 	];
 
+	/* the comments displayed on a post -- in the interest of scope each post has the same comments */
 	const FeedPost = ({ post }) => {
 		const [postComments, setPostComment] = useState([
 			{
@@ -71,10 +74,14 @@ const Feed = () => {
 			},
 		]);
 
+		/* boolean for if the user is viewing a post's comments */
 		const [showComments, setShowComments] = useState(false);
+		/* boolean for if the user has liked a post */
 		const [like, setLike] = useState(false);
+		/* boolean for if the user is inspired by a post */
 		const [inspire, setInspire] = useState(false);
 
+		/* displays the contents of a user's post */
 		const UserPost = () => {
 			return (
 				<div>
@@ -87,11 +94,11 @@ const Feed = () => {
 							/>
 							{post.username}
 						</div>
-
 						<div>
 							<img src={post.post_img} className="feedImg" alt="post" />
 							<h2>{post.title}</h2>
 							<p className="desc">{post.description}</p>
+							{/* gives users 2 ways of accessing the comments */}
 							<button
 								className="showCommentBtn"
 								onClick={() => setShowComments(!showComments)}
@@ -100,6 +107,7 @@ const Feed = () => {
 								View {postComments.length} Comments
 							</button>
 						</div>
+						{/* buttons displayed at the bottom of the post to allow the user to interact with the post */}
 						<div className="feedInteractions">
 							<button
 								onClick={() => setShowComments(!showComments)}
@@ -131,11 +139,11 @@ const Feed = () => {
 			);
 		};
 
+		/* displays the comments of a user's post */
 		const Comments = () => {
 			return (
 				<div className="postComments">
 					<h2>Comments ({postComments.length})</h2>
-
 					<div className="commentContainer">
 						{postComments.map((comment) => (
 							<div className="postComment" key={comment.id}>
@@ -158,6 +166,7 @@ const Feed = () => {
 						messages={postComments}
 						setMessage={setPostComment}
 					/>
+					{/* goes back to view the user's post */}
 					<button className="commentBtn" onClick={() => setShowComments(false)}>
 						Back to post
 					</button>
@@ -172,6 +181,7 @@ const Feed = () => {
 		<div className="page">
 			<div className="container">
 				<h1>My Feed</h1>
+				{/* maps all the posts from the list in the format of a feedpost */}
 				{friendPosts.map((post) => (
 					<FeedPost key={post.id} post={post} />
 				))}

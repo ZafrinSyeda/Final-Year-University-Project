@@ -1,11 +1,14 @@
 import React from "react";
+/* used to represent the individual activity components in the activity  */
 import { ActivityComponent } from "./components/ActivityComponent";
+/* images used */
 import vinylgirlpfp from "../resources/vinylgirlpfp.jpeg";
 import onur from "../resources/onur.jpg";
 import personpfp from "../resources/personpfp.jpg";
 import paintingpfp from "../resources/paintingpfp.jpg";
 
 const Activity = () => {
+	/* array with the details of the nature of the user's activity */
 	const activityDetail = [
 		{
 			type: "like",
@@ -47,6 +50,7 @@ const Activity = () => {
 		},
 	];
 
+	/* presents each of the activity details within an activity component */
 	return (
 		<div className="page">
 			<h1>Activity</h1>

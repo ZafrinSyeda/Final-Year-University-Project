@@ -43,7 +43,6 @@ export const ItemChecker = ({ itemList }) => {
 						/* If includes item is set to 0, it means that the search term contains no items that 
 							are also within the forbidden item list */
 						if (includesItem === 0) {
-							console.log(includesItem);
 							setItemWarn(
 								"it looks like we will most likely be able to take in this item!"
 							);
@@ -51,7 +50,6 @@ export const ItemChecker = ({ itemList }) => {
 							/* When includes item isn't 0 it means there is at least 1 item in the input 
 								text box that matches a forbidden item */
 						} else if (includesItem < itemNum) {
-							console.log(includesItem);
 							setItemWarn(
 								"⚠️ sorry! we may not be able to take in this item - please check below"
 							);

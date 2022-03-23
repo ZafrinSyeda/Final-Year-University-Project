@@ -46,13 +46,11 @@
 		"type": "Bedroom",
 		"items": [
 			"Beds",
-			"Mattresses",
 			"Wardrobes",
 			"Chest of Drawers",
 			"Bedside Tables",
 			"Dressing Tables",
 			"Bookcases",
-			"Cots",
 			"Mirrors"
 		]
 	},

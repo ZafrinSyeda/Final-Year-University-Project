@@ -458,11 +458,22 @@ or post descriptions*/
 		background-color: rgba(0, 0, 0, 0.5);
 	}
 
+	/* ensures the comments will not fill the screen */
+	.postComments {
+		height: 70vh;
+	}
+
+	.commentContainer {
+		max-height: 50vh;
+		overflow-y: auto;
+	}
+
 	/* the stylings of the upload form itself, which is made scrollable */
 	.upload {
 		top: 0;
 		height: 100%;
 		width: 100%;
+		padding-top: 50%;
 		background-color: #fff;
 		opacity: 1;
 		overflow: auto;

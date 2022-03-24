@@ -15,5 +15,5 @@ it("should only show the posts of a specific hobby when a specific select option
 	fireEvent.change(screen.getByLabelText("Displaying:"), {
 		target: { value: 2 },
 	});
-	expect(swordImage).not.toBeInTheDocument();
+	expect(swordImage).not.toBeInTheDocument();	
 });

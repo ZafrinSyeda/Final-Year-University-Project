@@ -2,7 +2,7 @@ This is one of the interfaces designed for the final year HCI project. The idea 
 
 In order to run this interface, Node.js needs to be installed. 
 
-To be able to view the interface and interact with it within a browser, this folder must be navigated to within a terminal, and the command 'npm build' followed by 'npm start' should be run. Open [http://localhost:3000](http://localhost:3000) to view it in the browser. 
+To be able to view the interface and interact with it within a browser, this folder must be navigated to within a terminal, and the command 'npm install' followed by 'npm start' should be run. Open [http://localhost:3000](http://localhost:3000) to view it in the browser. 
 
 Once open a login page will be displayed, the username is 'UserA' and the password is 'password123' in order to login. 
 

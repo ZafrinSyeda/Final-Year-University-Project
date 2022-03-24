@@ -2,7 +2,7 @@ This is one of the interfaces designed for the final year HCI project. The idea 
 
 In order to run this interface, Node.js needs to be installed. 
 
-To be able to view the interface and interact with it within a browser, the file must be opened, and the command 'npm start' should be run. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+TTo be able to view the interface and interact with it within a browser, this folder must be navigated to within a terminal, and the command 'npm build' followed by 'npm start' should be run. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 In order to run the tests that were created for this interface, the command 'npm test' should be ran, and then 'a' should be entered in order to run all of the tests. 
 
